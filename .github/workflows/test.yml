@@ -13,7 +13,7 @@ jobs:
         os: [ ubuntu-latest, macos-latest ]
     if: github.event.pull_request.draft == false
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
 
@@ -36,11 +36,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 
@@ -80,11 +80,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 
@@ -122,11 +122,11 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.pull_request.draft == false
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: 20
 

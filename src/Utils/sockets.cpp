@@ -1,16 +1,21 @@
 #include "sockets.h"
 
+#ifndef __ZEPHYR__
 #include <netdb.h>
 #include <netinet/in.h>
 #include <sys/socket.h>
+#endif
 #include <unistd.h>
 
+#ifndef __ZEPHYR__
 #include <csignal>
+#endif
 #include <cstdarg>
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
 
+#ifndef __ZEPHYR__
 // Socket Debugger Interface
 void setFileDescriptorOptions(int socket_fd) {
     int opt = 1;
@@ -71,6 +76,7 @@ int listenForIncomingConnection(int socket_fd, struct sockaddr_in address) {
     }
     return new_socket;
 }
+#endif
 
 Sink::Sink(FILE *out) {
     this->outStream = out;
@@ -80,7 +86,7 @@ Sink::Sink(FILE *out) {
 int Sink::write(const char *fmt, ...) const {
     va_list args;
     va_start(args, fmt);
-    int written = vdprintf(this->outDescriptor, fmt, args);
+    int written = vfprintf(this->outStream, fmt, args);
     va_end(args);
     fflush(this->outStream);
     return written;
@@ -94,6 +100,7 @@ ssize_t Duplex::read(void *out, size_t size) {
     return ::read(this->inDescriptor, out, size);
 }
 
+#ifndef __ZEPHYR__
 FileDescriptorChannel::FileDescriptorChannel(int fileDescriptor) {
     this->fd = fileDescriptor;
 }
@@ -116,6 +123,8 @@ WebSocket::WebSocket(int port) {
     this->socket = -1;
 }
 
+ClientSocket::ClientSocket(int server) : WebSocket(server) {}
+
 void WebSocket::open() {
     // bind socket to address
     this->fileDescriptor = createSocketFileDescriptor();
@@ -127,6 +136,19 @@ void WebSocket::open() {
 
     // block until a connection is established
     this->socket = listenForIncomingConnection(this->fileDescriptor, address);
+}
+
+void ClientSocket::open() {
+    // bind socket to address
+    this->fileDescriptor = createSocketFileDescriptor();
+    struct sockaddr_in address = createAddress(this->port);  // server port
+    if (connect(this->fileDescriptor, (struct sockaddr *)&address,
+                sizeof(address)) < 0) {
+        perror("Failed to connect to socket");
+        exit(EXIT_FAILURE);
+    }
+
+    this->socket = this->fileDescriptor;
 }
 
 int WebSocket::write(const char *fmt, ...) const {
@@ -159,3 +181,4 @@ void WebSocket::close() {
     sendAlarm();  // stop possible blocking accept call
     shutdown(this->fileDescriptor, SHUT_RDWR);  // shutdown connection
 }
+#endif

@@ -12,11 +12,17 @@
 
 #include "../Edward/proxy.h"
 #include "../Edward/proxy_supervisor.h"
+#include "../Threading/warduino-thread.h"
 #include "../Utils/sockets.h"
 
 struct Module;
 struct Block;
 struct StackValue;
+
+enum operation {
+    STORE = 0,
+    LOAD = 1,
+};
 
 enum RunningState {
     WARDUINOinit,
@@ -69,6 +75,7 @@ enum InterruptTypes {
 
     // Pull Debugging
     interruptSnapshot = 0x60,
+    interruptEnableSnapshots = 0x61,
     interruptLoadSnapshot = 0x62,
     interruptMonitorProxies = 0x63,
     interruptProxyCall = 0x64,
@@ -80,7 +87,12 @@ enum InterruptTypes {
     interruptPOPEvent = 0x72,
     interruptPUSHEvent = 0x73,
     interruptDUMPCallbackmapping = 0x74,
-    interruptRecvCallbackmapping = 0x75
+    interruptRecvCallbackmapping = 0x75,
+
+    // Operations
+    interruptStore = 0xa0,
+    interruptStored = 0xa1,
+
 };
 
 class Debugger {
@@ -100,7 +112,9 @@ class Debugger {
     Proxy *proxy = nullptr;  // proxy module for debugger
 
     bool connected_to_proxy = false;
-    std::mutex *supervisor_mutex;
+    warduino::mutex *supervisor_mutex;
+
+    bool asyncSnapshots;
 
     // Private methods
 
@@ -171,10 +185,12 @@ class Debugger {
 
     static void updateCallbackmapping(Module *m, const char *interruptData);
 
+    bool operation(Module *m, operation op);
+
    public:
     // Public fields
-    std::mutex messageQueueMutex;  // mutual exclude debugMessages
-    std::condition_variable messageQueueConditionVariable;
+    warduino::mutex messageQueueMutex;  // mutual exclude debugMessages
+    warduino::condition_variable messageQueueConditionVariable;
     bool freshMessages = false;
     Channel *channel;
     ProxySupervisor *supervisor = nullptr;
@@ -220,6 +236,10 @@ class Debugger {
 
     void snapshot(Module *m);
 
+    void enableSnapshots(uint8_t *interruptData);
+
+    void sendAsyncSnapshots(Module *m);
+
     void proxify();
 
     void handleProxyCall(Module *m, RunningState *program_state,
@@ -228,6 +248,8 @@ class Debugger {
     RFC *topProxyCall();
 
     void sendProxyCallResult(Module *m);
+
+    bool isProxy() const;
 
     bool isProxied(uint32_t fidx) const;
 
