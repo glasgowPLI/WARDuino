@@ -534,10 +534,12 @@ bool i_instr_mem_store(Module *m, uint8_t opcode) {
             flags, offset, addr, value_repr(sval));
     }
 
+#if !defined(__CHERI_PURE_CAPABILITY__)
     if (offset + addr < addr && !m->options.disable_memory_bounds) {
         m->warduino->interpreter->report_overflow(
             m, m->memory.bytes + offset + addr);
     }
+#endif /* !defined(__CHERI_PURE_CAPABILITY__) */
 
     addr += offset;
     return m->warduino->interpreter->store(m, I32 + (0x36 - opcode), addr,
