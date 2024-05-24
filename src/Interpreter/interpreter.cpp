@@ -132,13 +132,32 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
         overflow = true;
     }
 
+#endif /* !defined(__CHERI_PURE_CAPABILITY__) */
+
+#if defined(__CHERI_PURE_CAPABILITY__)
+    void *bounded_mem;
+
+    // Create a capability for the memory range and set bounds
+    bounded_mem = cheri_bounds_set(m->memory.bytes, m->memory.pages * (uint32_t)PAGE_SIZE);
+
+    // Check if maddr is within the bounds
+    if (!cheri_is_address_inbounds(bounded_mem, maddr)) {
+        overflow = true;
+    }
+
+    // Check if maddr + size is within the bounds
+    if (!cheri_is_address_inbounds(bounded_mem, maddr + size)) {
+        overflow = true;
+    }
+
+#endif /* defined(__CHERI_PURE_CAPABILITY__) */
+
     if (!m->options.disable_memory_bounds) {
         if (overflow) {
             report_overflow(m, maddr);
             return false;
         }
     }
-#endif /* !defined(__CHERI_PURE_CAPABILITY__) */
 
     memcpy(maddr, &sval.value, size);
     return true;
