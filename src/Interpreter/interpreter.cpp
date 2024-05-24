@@ -1,4 +1,5 @@
 #include <cheri/cheric.h>
+
 // Undefine conflicting macros before including cheriintrin.h
 #undef CHERI_PERM_GLOBAL
 #undef CHERI_PERM_EXECUTE
@@ -11,6 +12,7 @@
 #undef CHERI_PERM_UNSEAL
 #undef CHERI_PERM_SYSTEM_REGS
 #undef CHERI_PERM_SYSTEM
+
 #include <cheriintrin.h>
 
 #include "interpreter.h"
@@ -147,9 +149,7 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
         overflow = true;
     }
 
-#endif /* !defined(__CHERI_PURE_CAPABILITY__) */
-
-#if !defined(__CHERI_PURE_CAPABILITY__)
+#elif defined(__CHERI_PURE_CAPABILITY__)
     void * __capability bounded_mem;
     
     // Create a capability for the memory range and set bounds
@@ -199,13 +199,27 @@ bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
 #if !defined(__CHERI_PURE_CAPABILITY__)
     overflow |= maddr < m->memory.bytes || maddr + size > mem_end;
 
+#elif defined(__CHERI_PURE_CAPABILITY__)
+    if (offset + addr < addr) {
+        overflow = true;
+    }
+
+    void * __capability bounded_mem = cheri_bounds_set(m->memory.bytes, m->memory.pages * (uint32_t)PAGE_SIZE);
+    ptraddr_t maddr_addr = (ptraddr_t)maddr;
+    ptraddr_t maddr_size_addr = (ptraddr_t)(maddr + size);
+
+    if (!cheri_is_address_inbounds(bounded_mem, maddr_addr) || !cheri_is_address_inbounds(bounded_mem, maddr_size_addr)) {
+        overflow = true;
+    }
+
+#endif /* !defined(__CHERI_PURE_CAPABILITY__) */
+
     if (!m->options.disable_memory_bounds) {
         if (overflow) {
             report_overflow(m, maddr);
             return false;
         }
     }
-#endif /* !defined(__CHERI_PURE_CAPABILITY__) */
 
     m->stack[++m->sp].value.uint64 = 0;  // initialize to 0
 
