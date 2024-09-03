@@ -9,6 +9,10 @@
 #include "../WARDuino/CallbackHandler.h"
 #include "instructions.h"
 
+#ifdef __CHERI_PURE_CAPABILITY__
+#include <cheriintrin.h>
+#endif
+
 void Interpreter::push_block(Module *m, Block *block, int sp) {
     m->csp += 1;
     m->callstack[m->csp].block = block;
