@@ -5,6 +5,11 @@ option(BUILD_ESP "Build for esp" OFF)
 option(BUILD_EMULATOR "Build for emulator" OFF)
 option(BUILD_UNITTEST "Build for testing" OFF)
 
+if (BUILD_MORELLO)
+    message(STATUS "compiling for purecap Morello")
+    add_compile_options(-march=morello -mabi=purecap)
+endif ()
+
 # Use C++17
 set(CMAKE_CXX_STANDARD 17)
 
