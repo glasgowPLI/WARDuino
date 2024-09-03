@@ -1,20 +1,3 @@
-#include <cheri/cheric.h>
-
-// Undefine conflicting macros before including cheriintrin.h
-#undef CHERI_PERM_GLOBAL
-#undef CHERI_PERM_EXECUTE
-#undef CHERI_PERM_LOAD
-#undef CHERI_PERM_STORE
-#undef CHERI_PERM_LOAD_CAP
-#undef CHERI_PERM_STORE_CAP
-#undef CHERI_PERM_STORE_LOCAL_CAP
-#undef CHERI_PERM_SEAL
-#undef CHERI_PERM_UNSEAL
-#undef CHERI_PERM_SYSTEM_REGS
-#undef CHERI_PERM_SYSTEM
-
-#include <cheriintrin.h>
-
 #include "interpreter.h"
 
 #include <cmath>
