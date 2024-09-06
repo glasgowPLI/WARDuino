@@ -138,33 +138,18 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
 
 #elif defined(__CHERI_PURE_CAPABILITY__)
     void * __capability bounded_mem;
-    
-    // Create a capability for the memory range and set bounds
-    bounded_mem = cheri_bounds_set(m->memory.bytes, m->memory.pages * (uint32_t)PAGE_SIZE);
-
-    // Convert maddr to ptraddr_t for the check
-    ptraddr_t maddr_addr = (ptraddr_t)maddr;
-    ptraddr_t maddr_size_addr = (ptraddr_t)(maddr + size);
-
-    // Check if maddr is within the bounds
-    if (!cheri_is_address_inbounds(bounded_mem, maddr_addr)) {
-        overflow = true;
-    }
-
-    // Check if maddr + size is within the bounds
-    if (!cheri_is_address_inbounds(bounded_mem, maddr_size_addr)) {
-        overflow = true;
-    }
 
 #endif /* !defined(__CHERI_PURE_CAPABILITY__) */
 
+#if !defined(__CHERI_PURE_CAPABILITY__)
     if (!m->options.disable_memory_bounds) {
         if (overflow) {
             report_overflow(m, maddr);
             return false;
         }
     }
-
+#endif /* !defined(__CHERI__PURE_CAPABILITY) **/
+    
     memcpy(maddr, &sval.value, size);
     return true;
 }
@@ -191,23 +176,17 @@ bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
         overflow = true;
     }
 
-    void * __capability bounded_mem = cheri_bounds_set(m->memory.bytes, m->memory.pages * (uint32_t)PAGE_SIZE);
-    ptraddr_t maddr_addr = (ptraddr_t)maddr;
-    ptraddr_t maddr_size_addr = (ptraddr_t)(maddr + size);
-
-    if (!cheri_is_address_inbounds(bounded_mem, maddr_addr) || !cheri_is_address_inbounds(bounded_mem, maddr_size_addr)) {
-        overflow = true;
-    }
-
 #endif /* !defined(__CHERI_PURE_CAPABILITY__) */
 
+#if !defined(__CHERI_PURE_CAPABILITY__)
     if (!m->options.disable_memory_bounds) {
         if (overflow) {
             report_overflow(m, maddr);
             return false;
         }
     }
-
+#endif /* !defined(__CHERI_PURE_CAPABILITY) **/
+    
     m->stack[++m->sp].value.uint64 = 0;  // initialize to 0
 
     memcpy(&m->stack[m->sp].value, maddr, size);
