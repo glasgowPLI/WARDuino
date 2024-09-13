@@ -1,3 +1,5 @@
+__attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
+
 unsigned long __attribute__((noinline)) fac(int x) {
     if (x <= 1) {
         return 1;
@@ -13,5 +15,6 @@ int bench() {
         sum += fac(i % 12);
         sum %= 97;
     }
+    print_int(sum);
     return sum;
 }

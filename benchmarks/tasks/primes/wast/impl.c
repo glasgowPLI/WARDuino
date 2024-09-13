@@ -1,3 +1,5 @@
+__attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
+
 int __attribute__((noinline)) is_prime(unsigned n) {
     if (n < 3) {
         return n > 1;
@@ -40,5 +42,6 @@ int bench() {
             count++;
         }
     }
+    print_int(count);
     return count;
 }

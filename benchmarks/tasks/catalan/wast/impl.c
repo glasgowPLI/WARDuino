@@ -1,3 +1,5 @@
+__attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
+
 typedef unsigned long ull;
 
 ull binomial(ull m, ull n) {
@@ -27,5 +29,6 @@ int bench() {
     for (int i = 0; i < 10000; ++i) {
         sum += catalan((i + sum) % 18) % 100;
     }
+    print_int(sum % 256);
     return sum % 256;  // 113
 }

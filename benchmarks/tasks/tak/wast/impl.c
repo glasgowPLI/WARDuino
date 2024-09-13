@@ -1,3 +1,5 @@
+__attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
+
 int __attribute__((noinline)) tak(int x, int y, int z) {
     if (!(y < x)) {
         return z;
@@ -6,4 +8,4 @@ int __attribute__((noinline)) tak(int x, int y, int z) {
     }
 }
 
-int bench() { return tak(18, 12, 6); }
+int bench() { print_int(tak(18, 12, 6)); return tak(18, 12, 6); }
