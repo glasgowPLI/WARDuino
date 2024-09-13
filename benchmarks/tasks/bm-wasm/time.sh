@@ -6,7 +6,7 @@ OUTPUT_FILE="time.csv"
 RUNS=30
 
 # Initialize CSV file with header
-echo "Benchmark,Average Time (seconds),Standard Error (seconds)" > $OUTPUT_FILE
+echo "Benchmark,Time,Error" > $OUTPUT_FILE
 
 # Function to calculate standard deviation
 calculate_sd() {
