@@ -3,7 +3,7 @@
 # Define directories and output file
 WASM_DIR="bm-wasm"
 BENCHMARKS=("catalan" "fac" "fib" "gcd" "primes" "tak" "tak-mem")
-OUTPUT_FILE="benchmark_times.csv"
+OUTPUT_FILE="time.csv"
 
 # Initialize CSV file with header
 echo "Benchmark,Time" > $OUTPUT_FILE
