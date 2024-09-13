@@ -6,11 +6,42 @@ OUTPUT_FILE="time.csv"
 RUNS=30
 
 # Initialize CSV file with header
-echo "Benchmark,Time" > $OUTPUT_FILE
+echo "Benchmark,Average Time (seconds),Standard Error (seconds)" > $OUTPUT_FILE
+
+# Function to calculate standard deviation
+calculate_sd() {
+    local times=("$@")
+    local count=${#times[@]}
+    local sum=0
+    local mean
+    local sq_diff_sum=0
+
+    # Calculate the mean
+    for time in "${times[@]}"; do
+        sum=$(echo "$sum + $time" | bc -l)
+    done
+    mean=$(echo "$sum / $count" | bc -l)
+
+    # Calculate the sum of squared differences from the mean
+    for time in "${times[@]}"; do
+        sq_diff=$(echo "$time - $mean" | bc -l)
+        sq_diff=$(echo "$sq_diff * $sq_diff" | bc -l)
+        sq_diff_sum=$(echo "$sq_diff_sum + $sq_diff" | bc -l)
+    done
+
+    # Calculate standard deviation
+    sd=$(echo "scale=10; sqrt($sq_diff_sum / ($count - 1))" | bc -l)
+
+    # Calculate standard error
+    sem=$(echo "scale=10; $sd / sqrt($count)" | bc -l)
+
+    echo "$sem"
+}
 
 # Loop through each benchmark
 for benchmark in "${BENCHMARKS[@]}"; do
     total_time=0
+    times=()
 
     # Run the benchmark 30 times
     for ((i=1; i<=RUNS; i++)); do
@@ -33,13 +64,18 @@ for benchmark in "${BENCHMARKS[@]}"; do
 
         # Add the current time to the total time
         total_time=$(echo "$total_time + $current_time" | bc -l)
+        # Save each time for standard deviation calculation
+        times+=("$current_time")
     done
 
     # Calculate the average time over 30 runs
     average_time=$(echo "$total_time / $RUNS" | bc -l)
 
-    # Save the benchmark name and average time to the CSV file
-    echo "$benchmark,$average_time" >> $OUTPUT_FILE
+    # Calculate the standard error
+    standard_error=$(calculate_sd "${times[@]}")
+
+    # Save the benchmark name, average time, and standard error to the CSV file
+    echo "$benchmark,$average_time,$standard_error" >> $OUTPUT_FILE
 done
 
-echo "Benchmark average times have been saved to $OUTPUT_FILE."
+echo "Benchmark average times and standard errors have been saved to $OUTPUT_FILE."
