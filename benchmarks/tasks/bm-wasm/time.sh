@@ -51,6 +51,9 @@ for benchmark in "${BENCHMARKS[@]}"; do
         
         # Extract the real time (format could be XmYs or just Xs)
         real_time=$(echo "$result" | grep "real" | awk '{print $2}')
+
+        # Print benchmark and time result
+        echo "$benchmark,$real_time"
         
         # Check if there is a minute part in the time
         if [[ "$real_time" == *m* ]]; then
