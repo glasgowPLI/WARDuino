@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Define directories and output file
+WDCLI="/home/yuxin/WARDuino/build-emu/wdcli"
 BENCHMARKS=("catalan" "fac" "fib" "gcd" "primes" "tak" "tak-mem")
 OUTPUT_FILE="time.csv"
 RUNS=30
@@ -46,7 +47,7 @@ for benchmark in "${BENCHMARKS[@]}"; do
     # Run the benchmark 30 times
     for ((i=1; i<=RUNS; i++)); do
         # Run the command and measure time
-        result=$( { time wdcli $benchmark.wasm --invoke bench --no-debug > /dev/null; } 2>&1 )
+        result=$( { time $WDCLI $benchmark.wasm --invoke bench --no-debug > /dev/null; } 2>&1 )
         
         # Extract the real time (format could be XmYs or just Xs)
         real_time=$(echo "$result" | grep "real" | awk '{print $2}')
