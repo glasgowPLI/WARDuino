@@ -12,21 +12,19 @@ for benchmark in "${BENCHMARKS[@]}"; do
     # Run the command and measure time
     result=$( { time wdcli $benchmark.wasm --invoke bench --no-debug > /dev/null; } 2>&1 )
     
-    # Extract real time and format to seconds
+    # Extract the real time and format to seconds
     real_time=$(echo "$result" | grep "real" | awk '{print $2}')
     
-    # Convert "m" and "s" to seconds (if in format mm:ss)
-    minutes=$(echo $real_time | cut -d'm' -f1)
-    seconds=$(echo $real_time | cut -d'm' -f2 | sed 's/s//')
-
-    # If there's no minutes part, just assign seconds
-    if [[ "$real_time" != *m* ]]; then
-        minutes=0
-        seconds=$(echo $real_time | sed 's/s//')
+    # Handle cases with or without minutes
+    if [[ "$real_time" == *m* ]]; then
+        # Extract minutes and seconds if present
+        minutes=$(echo $real_time | cut -d'm' -f1)
+        seconds=$(echo $real_time | cut -d'm' -f2 | sed 's/s//')
+        total_time=$(echo "$minutes * 60 + $seconds" | bc)
+    else
+        # Only seconds are present
+        total_time=$(echo $real_time | sed 's/s//')
     fi
-
-    # Calculate total time in seconds
-    total_time=$(echo "$minutes * 60 + $seconds" | bc)
 
     # Save the benchmark name and real time to the CSV file
     echo "$benchmark,$total_time" >> $OUTPUT_FILE
