@@ -1,8 +1,0 @@
-Benchmark,Time
-catalan,.002
-fac,.001
-fib,.001
-gcd,.001
-primes,.001
-tak,.001
-tak-mem,.001
