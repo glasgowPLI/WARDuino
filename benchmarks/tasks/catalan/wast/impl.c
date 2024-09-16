@@ -1,4 +1,8 @@
+#ifdef __CHERI_PURE_CAPABILITY__
 __attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
+#elif __linux__
+#include <stdio.h>
+#endif
 
 typedef unsigned long ull;
 
@@ -29,6 +33,12 @@ int bench() {
     for (int i = 0; i < 10000; ++i) {
         sum += catalan((i + sum) % 18) % 100;
     }
+
+    #ifdef __CHERI_PURE_CAPABILITY__
     print_int(sum % 256);
+    #elif __linux__
+    printf(sum % 256);
+    #endif
+    
     return sum % 256;  // 113
 }
