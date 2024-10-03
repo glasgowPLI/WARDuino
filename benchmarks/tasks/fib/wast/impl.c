@@ -1,4 +1,6 @@
+#ifdef __CHERI_PURE_CAPABILITY__
 __attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
+#endif
 
 long __attribute__((noinline)) fib(int n) {
     unsigned long first = 0, second = 1, next = 0;
@@ -21,7 +23,11 @@ int bench() {
         sum += fib(i);
         sum %= 97;
     }
+
+    #ifdef __CHERI_PURE_CAPABILITY__
     print_int(sum);
+    #endif
+
     return sum;
     // .       ..122583354898000
 }

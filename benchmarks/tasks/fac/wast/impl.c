@@ -1,4 +1,6 @@
+#ifdef __CHERI_PURE_CAPABILITY__
 __attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
+#endif
 
 unsigned long __attribute__((noinline)) fac(int x) {
     if (x <= 1) {
@@ -15,6 +17,10 @@ int bench() {
         sum += fac(i % 12);
         sum %= 97;
     }
+
+    #ifdef __CHERI_PURE_CAPABILITY__
     print_int(sum);
+    #endif
+    
     return sum;
 }

@@ -1,8 +1,10 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
-# Define the input CSV file
-input_csv = 'time.csv'
+# Define the input CSV file and output PDF file paths
+input_csv = '../data/time-execution.csv'
+output_pdf = '../graphs/time-plot.pdf'
 
 # Load the CSV file into a pandas DataFrame
 df = pd.read_csv(input_csv)
@@ -22,7 +24,11 @@ plt.xticks(rotation=45)  # Rotate benchmark names for better readability
 
 # Save the plot as a PDF file
 plt.tight_layout()
-plt.savefig('time.pdf')
+
+# Ensure the output directory exists
+os.makedirs(os.path.dirname(output_pdf), exist_ok=True)
+
+plt.savefig(output_pdf)
 
 # Show the plot
 plt.show()

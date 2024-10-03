@@ -1,4 +1,6 @@
+#ifdef __CHERI_PURE_CAPABILITY__
 __attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
+#endif
 
 int __attribute__((noinline)) is_prime(unsigned n) {
     if (n < 3) {
@@ -42,6 +44,10 @@ int bench() {
             count++;
         }
     }
+
+    #ifdef __CHERI_PURE_CAPABILITY__
     print_int(count);
+    #endif    
+
     return count;
 }
