@@ -1,4 +1,6 @@
+#ifdef __CHERI_PURE_CAPABILITY__
 __attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
+#endif
 
 int tak(int x, int y, int z) {
     if (!(y < x)) {
@@ -8,4 +10,11 @@ int tak(int x, int y, int z) {
     }
 }
 
-int bench() { print_int(tak(18, 12, 6)); return tak(18, 12, 6); }
+int bench() { 
+
+    #ifdef __CHERI_PURE_CAPABILITY__
+    print_int(tak(18, 12, 6)); 
+    #endif
+    
+    return tak(18, 12, 6); 
+    }
