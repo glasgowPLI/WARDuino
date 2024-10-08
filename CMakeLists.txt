@@ -5,9 +5,15 @@ option(BUILD_ESP "Build for esp" OFF)
 option(BUILD_EMULATOR "Build for emulator" OFF)
 option(BUILD_UNITTEST "Build for testing" OFF)
 
-if (BUILD_MORELLO)
-    message(STATUS "compiling for purecap Morello")
-    add_compile_options(-march=morello -mabi=purecap)
+if (BUILD_MORELLO_PURECAP)
+     message(STATUS "compiling for purecap Morello")
+     add_compile_options(-march=morello -mabi=purecap)
+endif ()
+
+if (BUILD_MORELLO_HYBRID)
+    message(STATUS "compiling for hybrid Morello")
+    add_compile_options(-march=morello -mabi=aapcs)
+    add_link_options(-march=morello -mabi=aapcs)
 endif ()
 
 # Use C++17
@@ -17,7 +23,7 @@ if (ESP_PLATFORM)
     set(BUILD_ESP ON)
 endif ()
 
-if (NOT BUILD_ESP AND NOT BUILD_EMULATOR AND NOT BUILD_UNITTEST)
+if (NOT BUILD_ESP AND NOT BUILD_EMULATOR AND NOT BUILD_UNITTEST AND NOT BUILD_MORELLO_PURECAP AND NOT BUILD_MORELLO_HYBRID)
     message(WARNING "No build target set. Nothing to do.")
 endif ()
 
