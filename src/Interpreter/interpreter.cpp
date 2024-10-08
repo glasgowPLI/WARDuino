@@ -2,16 +2,12 @@
 
 #include <cmath>
 #include <cstring>
-
+//cmake .. -D BUILD_EMULATOR=ON -D BUILD_MORELLO=ON
 #include "../Memory/mem.h"
 #include "../Utils/macros.h"
 #include "../Utils/util.h"
 #include "../WARDuino/CallbackHandler.h"
 #include "instructions.h"
-
-#ifdef __CHERI_PURE_CAPABILITY__
-#include <cheriintrin.h>
-#endif
 
 void Interpreter::push_block(Module *m, Block *block, int sp) {
     m->csp += 1;
@@ -126,8 +122,6 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
     bool overflow = false;
 
     maddr = m->memory.bytes + addr;
-
-#if !defined(__CHERI_PURE_CAPABILITY__)
     if (maddr < m->memory.bytes) {
         overflow = true;
     }
@@ -136,20 +130,13 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
         overflow = true;
     }
 
-#elif defined(__CHERI_PURE_CAPABILITY__)
-    void * __capability bounded_mem;
-
-#endif /* !defined(__CHERI_PURE_CAPABILITY__) */
-
-#if !defined(__CHERI_PURE_CAPABILITY__)
     if (!m->options.disable_memory_bounds) {
         if (overflow) {
             report_overflow(m, maddr);
             return false;
         }
     }
-#endif /* !defined(__CHERI__PURE_CAPABILITY) **/
-    
+
     memcpy(maddr, &sval.value, size);
     return true;
 }
@@ -157,36 +144,23 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
 bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
                        uint32_t offset = 0) {
     bool overflow = false;
-
-#if !defined(__CHERI_PURE_CAPABILITY__)
     if (offset + addr < addr) {
         overflow = true;
     }
-#endif /* !defined(__CHERI_PURE_CAPABILITY__) */
 
     uint8_t *maddr = m->memory.bytes + addr + offset;
     uint32_t size = LOAD_SIZE[abs(type - I32)];
     uint8_t *mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
 
-#if !defined(__CHERI_PURE_CAPABILITY__)
     overflow |= maddr < m->memory.bytes || maddr + size > mem_end;
 
-#elif defined(__CHERI_PURE_CAPABILITY__)
-    if (offset + addr < addr) {
-        overflow = true;
-    }
-
-#endif /* !defined(__CHERI_PURE_CAPABILITY__) */
-
-#if !defined(__CHERI_PURE_CAPABILITY__)
     if (!m->options.disable_memory_bounds) {
         if (overflow) {
             report_overflow(m, maddr);
             return false;
         }
     }
-#endif /* !defined(__CHERI_PURE_CAPABILITY) **/
-    
+
     m->stack[++m->sp].value.uint64 = 0;  // initialize to 0
 
     memcpy(&m->stack[m->sp].value, maddr, size);
