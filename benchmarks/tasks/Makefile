@@ -1,5 +1,6 @@
 # Define directories
-TASKS_DIR := catalan fac fib gcd primes tak tak-mem
+# TASKS_DIR := catalan fac fib gcd primes tak tak-mem
+TASKS_DIR := salloc
 WASM_TARGET := --target=wasm32
 CFLAGS := -Oz -flto -nostdlib
 LDFLAGS := -Wl,--export-all -Wl,--no-entry -Wl,--strip-all -Wl,--lto-O3

@@ -2,7 +2,8 @@
 
 # Define directories and output file
 WDCLI="/home/yuxin/WARDuino/build-emu/wdcli"
-BENCHMARKS=("catalan" "fac" "fib" "gcd" "primes" "tak" "tak-mem")
+# BENCHMARKS=("catalan" "fac" "fib" "gcd" "primes" "tak" "tak-mem")
+BENCHMARKS=("salloc")
 OUTPUT_FILE="../data/time-execution.csv"
 RUNS=1
 
