@@ -1,8 +1,8 @@
 #define NULL (void *)0
 #define BUFFER_LENGTH 100
-#ifdef __CHERI_PURE_CAPABILITY__
+// #ifdef __CHERI_PURE_CAPABILITY__
 __attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
-#endif
+// #endif
 
 int buffer[BUFFER_LENGTH];  /* this is the large array we will split up */
 int *ptrs[BUFFER_LENGTH];   /* this is an array of pointers into buffer */
@@ -35,8 +35,8 @@ int bench(void) {
     // printf("%d %d %d\n", i, *ptrs[i], total);
     total += *ptrs[i];
   }
-  #ifdef __CHERI_PURE_CAPABILITY__
+  // #ifdef __CHERI_PURE_CAPABILITY__
   print_int(total);
-  #endif
+  // #endif
   return total;
 }
