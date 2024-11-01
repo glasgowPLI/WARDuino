@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Define directories and output file
-WDCLI="/home/yuxin/WARDuino/build-emu/wdcli"
+WDCLI="/home/yuxin/WARDuino/build_hybird/wdcli"
 # BENCHMARKS=("catalan" "fac" "fib" "gcd" "primes" "tak" "tak-mem")
 BENCHMARKS=("salloc")
-OUTPUT_FILE="../data/time-execution.csv"
-RUNS=1
+OUTPUT_FILE="../data/time-execution-hybird.csv"
+RUNS=30
 
 # Ensure the data directory exists
 mkdir -p ../data
