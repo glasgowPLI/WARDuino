@@ -12,29 +12,35 @@ int *allocate() {
   if (next < BUFFER_LENGTH) {
     /* return a pointer to the next free slot in buffer */
     return &(buffer[next++]);
-  }
-  else {
+  } else {
     /* no space left in buffer, return NULL */
     return NULL;
   }
 }
 
 int bench(void) {
-  int i;
-  int iter_total = BUFFER_LENGTH;
+  int i, j;
   int total = 0;
+  int iterations = 10;  // Number of times to allocate BUFFER_LENGTH elements
 
-  for (i = 0; i<iter_total; i++) {
-    int *p = allocate();
-    if (p) {
-      *p = i;
-      ptrs[i] = p;
+  for (j = 0; j < iterations; j++) {  // Outer loop to repeat allocations
+    int iter_total = BUFFER_LENGTH;
+
+    // Allocate and store pointers
+    for (i = 0; i < iter_total; i++) {
+      int *p = allocate();
+      if (p) {
+        *p = i;
+        ptrs[i] = p;
+      }
+    }
+
+    // Sum values
+    for (i = 0; i < iter_total; i++) {
+      total += *ptrs[i];
     }
   }
-  for (i=0; i<iter_total; i++) {
-    // printf("%d %d %d\n", i, *ptrs[i], total);
-    total += *ptrs[i];
-  }
+
   // #ifdef __CHERI_PURE_CAPABILITY__
   print_int(total);
   // #endif
