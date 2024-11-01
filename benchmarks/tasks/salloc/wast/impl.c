@@ -21,7 +21,7 @@ int *allocate() {
 int bench(void) {
   int i, j;
   int total = 0;
-  int iterations = 10;  // Number of times to allocate BUFFER_LENGTH elements
+  int iterations = 1000;  // Number of times to allocate BUFFER_LENGTH elements
 
   for (j = 0; j < iterations; j++) {  // Outer loop to repeat allocations
     int iter_total = BUFFER_LENGTH;
