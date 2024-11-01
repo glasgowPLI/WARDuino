@@ -534,12 +534,26 @@ bool i_instr_mem_store(Module *m, uint8_t opcode) {
             flags, offset, addr, value_repr(sval));
     }
 
-#if !defined(__CHERI_PURE_CAPABILITY__)
+// Define new flags to specify bound checking conditions
+#if !defined(PURECAP_MODE)
+#define PURECAP_MODE 0  // 1 for purecap, 0 for hybrid
+#endif
+
+#if !defined(SOFTWARE_BOUND_CHECKS)
+#define SOFTWARE_BOUND_CHECKS 1  // Enable software bounds check
+#endif
+
+#if !defined(HARDWARE_BOUND_CHECKS)
+#define HARDWARE_BOUND_CHECKS 0  // Disable hardware bounds check unless specified
+#endif
+
+// Modify the original ifdef to use the new flags
+#if SOFTWARE_BOUND_CHECKS && (!PURECAP_MODE || PURECAP_MODE && HARDWARE_BOUND_CHECKS == 0)
     if (offset + addr < addr && !m->options.disable_memory_bounds) {
         m->warduino->interpreter->report_overflow(
             m, m->memory.bytes + offset + addr);
     }
-#endif /* !defined(__CHERI_PURE_CAPABILITY__) */
+#endif /* SOFTWARE_BOUND_CHECKS && !PURECAP_MODE */
 
     addr += offset;
     return m->warduino->interpreter->store(m, I32 + (0x36 - opcode), addr,

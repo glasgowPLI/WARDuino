@@ -1,20 +1,40 @@
-# The following lines of boilerplate have to be in your project's
-# CMakeLists in this exact order for cmake to work correctly
 cmake_minimum_required(VERSION 3.15)
 option(BUILD_ESP "Build for esp" OFF)
 option(BUILD_EMULATOR "Build for emulator" OFF)
 option(BUILD_UNITTEST "Build for testing" OFF)
 
-if (BUILD_MORELLO_PURECAP)
-     message(STATUS "compiling for purecap Morello")
-     add_compile_options(-march=morello -mabi=purecap)
-endif ()
+# Define options for building in purecap or hybrid mode for Morello
+option(BUILD_MORELLO_PURECAP "Compile for purecap Morello" OFF)
+option(BUILD_MORELLO_HYBRID "Compile for hybrid Morello" OFF)
+option(ENABLE_SOFTWARE_BOUND_CHECKS "Enable software-based bounds checks" ON)
+option(ENABLE_HARDWARE_BOUND_CHECKS "Enable hardware-based bounds checks" OFF)
 
-if (BUILD_MORELLO_HYBRID)
-    message(STATUS "compiling for hybrid Morello")
+# Set compile and link options based on build type
+if (BUILD_MORELLO_PURECAP)
+    message(STATUS "Compiling for purecap Morello with software and/or hardware bound checks")
+    add_compile_options(-march=morello -mabi=purecap)
+    # Pass flags to the compiler to enable purecap-specific checks
+    if (ENABLE_SOFTWARE_BOUND_CHECKS)
+        add_compile_definitions(SOFTWARE_BOUND_CHECKS=1)
+    endif()
+    if (ENABLE_HARDWARE_BOUND_CHECKS)
+        add_compile_definitions(HARDWARE_BOUND_CHECKS=1)
+    endif()
+    add_compile_definitions(PURECAP_MODE=1)
+
+elseif (BUILD_MORELLO_HYBRID)
+    message(STATUS "Compiling for hybrid Morello with software bound checks only")
     add_compile_options(-march=morello -mabi=aapcs)
     add_link_options(-march=morello -mabi=aapcs)
-endif ()
+    if (ENABLE_SOFTWARE_BOUND_CHECKS)
+        add_compile_definitions(SOFTWARE_BOUND_CHECKS=1)
+    endif()
+    add_compile_definitions(PURECAP_MODE=0)
+
+else()
+    message(WARNING "No Morello build mode selected. Define either BUILD_MORELLO_PURECAP or BUILD_MORELLO_HYBRID.")
+endif()
+
 
 # Use C++17
 set(CMAKE_CXX_STANDARD 17)
