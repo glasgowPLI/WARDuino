@@ -36,6 +36,9 @@ int prim_index = 0;
 
 double sensor_emu = 0;
 
+static int interpreter_running = 1;  // 1 means running, 0 means exit
+static int exit_code = 0;            // Stores the exit code when `exit_w` is called
+
 /*
    Private macros to install a primitive
 */
@@ -262,6 +265,13 @@ def_prim(print_int, oneToNoneU32) {
     debug("EMU: print ");
     printf("%u\n", arg0.uint32);
     pop_args(1);
+    return true;
+}
+
+def_prim(exit_w, oneToNoneU32) {
+    pop_args(1);           // Pop the exit code argument
+    exit_code = arg0.uint32;  // Set the exit code for reference
+    interpreter_running = 0;  // Signal the interpreter to stop runnin
     return true;
 }
 

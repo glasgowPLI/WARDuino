@@ -926,6 +926,10 @@ void WARDuino::setInterpreter(Interpreter *interpreter) {
 }
 
 int WARDuino::run_module(Module *m) {
+    interpreter_running = true;  // Start the interpreter
+    while (interpreter_running) {
+        // Main interpreter execution logic here
+
     uint32_t fidx = this->get_main_fidx(m);
 
     // execute main
@@ -937,6 +941,7 @@ int WARDuino::run_module(Module *m) {
     // wait
     m->warduino->debugger->pauseRuntime(m);
     return interpreter->interpret(m, true);
+    }
 }
 
 // Called when an interrupt comes in (not concurre
