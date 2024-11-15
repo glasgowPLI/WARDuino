@@ -396,7 +396,7 @@ int bench() {
     if (!(qpktcount == Qpktcountval && holdcount == Holdcountval)) {
         printf("qpkt count = %d  holdcount = %d\n", qpktcount, holdcount);
         printf("These results are incorrect");
-        exit(1);
+        exit_vm(1);
     }
     // printf("\nend of run\n");
     return qpktcount;
@@ -420,9 +420,9 @@ int main(int argc, char* argv[])
 
     int result = 0;
     while (iterations > 0) {
-         unsigned long start = clock();
+         //unsigned long start = clock();
         result += inner_loop(inner_iterations);
-         unsigned long elapsed = clock() - start;
+         //unsigned long elapsed = clock() - start;
         //printf("Richards: iterations=100 runtime: %lu%s\n", elapsed, "us");
         iterations--;
     }

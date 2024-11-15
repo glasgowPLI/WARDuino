@@ -268,6 +268,13 @@ def_prim(print_int, oneToNoneU32) {
     return true;
 }
 
+def_prim(exit_vm, oneToNoneU32) {
+    debug("EMU: exit_w called with exit code ");
+    printf("Exit code: %u\n", arg0.uint32);  // Print exit code passed as argument
+    exit(arg0.uint32);  // Use the exit code passed in to exit
+    pop_args(1);  // Pop the exit code argument
+}
+
 def_prim(exit_w, oneToNoneU32) {
     pop_args(1);           // Pop the exit code argument
     exit_code = arg0.uint32;  // Set the exit code for reference
@@ -510,6 +517,8 @@ void install_primitives() {
 
     install_primitive(print_int);
     install_primitive(print_string);
+
+    install_primitive(exit_vm);
 
     install_primitive(wifi_connect);
     install_primitive(wifi_status);
