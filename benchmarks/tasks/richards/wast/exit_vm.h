@@ -2,6 +2,6 @@
 #define EXIT_VM_H
 
 // Declare the exit_vm function
-void exit_vm(uint32_t code);
+void exit_vm(int code);
 
 #endif // EXIT_VM_H

@@ -247,12 +247,6 @@ def_prim(print_int, oneToNoneU32) {
     return true;
 }
 
-def_prim(exit_vm, oneToNoneU32) {
-    printf("Exit code: %u\n", arg0.uint32);  // Print exit code passed as argument
-    exit(arg0.uint32);  // Use the exit code passed in to exit
-    pop_args(1);  // Pop the exit code argument
-}
-
 //------------------------------------------------------
 // Installing all the primitives
 //------------------------------------------------------
@@ -263,7 +257,6 @@ void install_primitives() {
     install_primitive(chip_digital_write);
     install_primitive(chip_digital_read);
     install_primitive(print_int);
-    install_primitive(exit_vm);
 }
 
 //------------------------------------------------------

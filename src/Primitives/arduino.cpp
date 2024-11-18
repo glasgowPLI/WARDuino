@@ -347,18 +347,6 @@ def_prim(print_int, oneToNoneU32) {
 static bool vm_running = true;   // Flag to control VM execution
 static uint32_t exit_code = 0;   // Stores the exit code
 
-def_prim(exit_vm, oneToNoneU32) {
-    uint32_t code = arg0.uint32;  // Retrieve the exit code
-    debug("EMU: exit_vm called with exit code ");
-    Serial.print("Exit code: ");
-    Serial.println(code);        // Print the exit code
-    Serial.flush();
-
-    pop_args(1);                 // Pop the argument
-    
-    exit(code);                  // Use the standard C library's exit function
-}
-
 def_prim(print_string, twoToNoneU32) {
     uint32_t addr = arg1.uint32;
     uint32_t size = arg0.uint32;
@@ -969,8 +957,6 @@ void install_primitives() {
 
     install_primitive(print_int);
     install_primitive(print_string);
-
-    install_primitive(exit_vm);
 
     install_primitive(wifi_connect);
     install_primitive(wifi_connected);
