@@ -335,14 +335,6 @@ def_prim(micros, NoneToOneU64) {
     return true;
 }
 
-def_prim(print_int, oneToNoneU32) {
-    uint32_t integer = arg0.uint32;
-    Serial.print(integer);
-    Serial.flush();
-    pop_args(1);
-    return true;
-}
-
 // Global variables for exit status
 static bool vm_running = true;   // Flag to control VM execution
 static uint32_t exit_code = 0;   // Stores the exit code
@@ -955,7 +947,6 @@ void install_primitives() {
     install_primitive(millis);
     install_primitive(micros);
 
-    install_primitive(print_int);
     install_primitive(print_string);
 
     install_primitive(wifi_connect);

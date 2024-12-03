@@ -241,12 +241,6 @@ def_prim(chip_digital_read, oneToOneU32) {
     return true;
 }
 
-def_prim(print_int, oneToNoneU32) {
-    printf("%u\n", arg0.uint32);
-    pop_args(1);
-    return true;
-}
-
 //------------------------------------------------------
 // Installing all the primitives
 //------------------------------------------------------
@@ -256,7 +250,6 @@ void install_primitives() {
     install_primitive(chip_pin_mode);
     install_primitive(chip_digital_write);
     install_primitive(chip_digital_read);
-    install_primitive(print_int);
 }
 
 //------------------------------------------------------
