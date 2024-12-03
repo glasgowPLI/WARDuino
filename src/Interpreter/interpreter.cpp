@@ -121,21 +121,24 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
     uint32_t size = STORE_SIZE[abs(type - I32)];
     bool overflow = false;
 
-    maddr = m->memory.bytes + addr;
-    if (maddr < m->memory.bytes) {
-        overflow = true;
-    }
-    mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
-    if (maddr + size > mem_end) {
-        overflow = true;
-    }
+    #ifdef ENABLE_SOFTWARE_BOUND_CHECKS
 
-    if (!m->options.disable_memory_bounds) {
-        if (overflow) {
-            report_overflow(m, maddr);
-            return false;
+        maddr = m->memory.bytes + addr;
+        if (maddr < m->memory.bytes) {
+            overflow = true;
         }
-    }
+        mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
+        if (maddr + size > mem_end) {
+            overflow = true;
+        }
+
+        if (!m->options.disable_memory_bounds) {
+            if (overflow) {
+                report_overflow(m, maddr);
+                return false;
+            }
+        }
+    #endif
 
     memcpy(maddr, &sval.value, size);
     return true;
@@ -144,9 +147,13 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
 bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
                        uint32_t offset = 0) {
     bool overflow = false;
-    if (offset + addr < addr) {
-        overflow = true;
-    }
+
+    #ifdef ENABLE_SOFTWARE_BOUND_CHECKS
+
+        if (offset + addr < addr) {
+            overflow = true;
+        }
+    #endif
 
     uint8_t *maddr = m->memory.bytes + addr + offset;
     uint32_t size = LOAD_SIZE[abs(type - I32)];
@@ -154,12 +161,16 @@ bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
 
     overflow |= maddr < m->memory.bytes || maddr + size > mem_end;
 
-    if (!m->options.disable_memory_bounds) {
-        if (overflow) {
-            report_overflow(m, maddr);
-            return false;
+    #ifdef ENABLE_SOFTWARE_BOUND_CHECKS
+
+        if (!m->options.disable_memory_bounds) {
+            if (overflow) {
+                report_overflow(m, maddr);
+                return false;
+            }
         }
-    }
+
+    #endif
 
     m->stack[++m->sp].value.uint64 = 0;  // initialize to 0
 
