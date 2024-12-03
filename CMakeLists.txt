@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-#cmake .. -DBUILD_EMULATOR=ON -DBUILD_MORELLO_PURECAP=ON -DBUILD_MORELLO_HYBRID=OFF
+#cmake .. -DBUILD_EMULATOR=ON -DBUILD_MORELLO_PURECAP=ON -DBUILD_MORELLO_HYBRID=OFF -DSOFTWARE_BOUND_CHECKS=OFF -DHARDWARE_BOUND_CHECKS=ON
 
 # Define build options
 option(BUILD_ESP "Build for ESP" OFF)
@@ -27,7 +27,7 @@ endif ()
 if (BUILD_MORELLO_PURECAP)
     message(STATUS "Compiling for purecap Morello with software and hardware bound checks")
     add_compile_options(-march=morello -mabi=purecap)
-    add_link_options(-march=morello -mabi=aapcs)
+    add_link_options(-march=morello -mabi=purecap)
     # Pass flags to the compiler to enable purecap-specific checks
     add_compile_definitions(SOFTWARE_BOUND_CHECKS=1)
     add_compile_definitions(HARDWARE_BOUND_CHECKS=1)
