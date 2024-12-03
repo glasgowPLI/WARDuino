@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
 
+#cmake .. -DBUILD_EMULATOR=ON -DBUILD_MORELLO_PURECAP=ON -DBUILD_MORELLO_HYBRID=OFF
+
 # Define build options
 option(BUILD_ESP "Build for ESP" OFF)
 option(BUILD_EMULATOR "Build for emulator" OFF)

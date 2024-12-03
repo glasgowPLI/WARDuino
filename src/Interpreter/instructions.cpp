@@ -1,5 +1,4 @@
 #include "instructions.h"
-#include <cheriintrin.h>
 
 #include <cmath>
 #include <cstring>
@@ -531,10 +530,26 @@ bool i_instr_mem_store(Module *m, uint8_t opcode) {
             flags, offset, addr, value_repr(sval));
     }
 
+// Define new flags to specify bound checking conditions
+#if !defined(PURECAP_MODE)
+#define PURECAP_MODE 0  // 1 for purecap, 0 for hybrid
+#endif
+
+#if !defined(SOFTWARE_BOUND_CHECKS)
+#define SOFTWARE_BOUND_CHECKS 1  // Enable software bounds check
+#endif
+
+#if !defined(HARDWARE_BOUND_CHECKS)
+#define HARDWARE_BOUND_CHECKS 0  // Disable hardware bounds check unless specified
+#endif
+
+// Modify the original ifdef to use the new flags
+#if SOFTWARE_BOUND_CHECKS && (!PURECAP_MODE || PURECAP_MODE && HARDWARE_BOUND_CHECKS == 0)
     if (offset + addr < addr && !m->options.disable_memory_bounds) {
         m->warduino->interpreter->report_overflow(
             m, m->memory.bytes + offset + addr);
     }
+#endif /* SOFTWARE_BOUND_CHECKS && !PURECAP_MODE */
 
     addr += offset;
     return m->warduino->interpreter->store(m, I32 + (0x36 - opcode), addr,
@@ -880,7 +895,6 @@ bool i_instr_binary_i32(Module *m, uint8_t opcode) {
             c = a * b;
             break;  // i32.mul
         case 0x6d:
-        // Checking if the integer diviation can be happened, not bound checking.
             if (a == 0x80000000 && b == (uint32_t)-1) {
                 sprintf(exception, "integer overflow");
                 return false;
