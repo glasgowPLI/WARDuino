@@ -121,7 +121,7 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
     uint32_t size = STORE_SIZE[abs(type - I32)];
     bool overflow = false;
 
-    #ifdef ENABLE_SOFTWARE_BOUND_CHECKS
+    #ifdef SOFTWARE_BOUND_CHECKS
 
         maddr = m->memory.bytes + addr;
         if (maddr < m->memory.bytes) {
@@ -148,7 +148,7 @@ bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
                        uint32_t offset = 0) {
     bool overflow = false;
 
-    #ifdef ENABLE_SOFTWARE_BOUND_CHECKS
+    #ifdef SOFTWARE_BOUND_CHECKS
 
         if (offset + addr < addr) {
             overflow = true;
@@ -161,7 +161,7 @@ bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
 
     overflow |= maddr < m->memory.bytes || maddr + size > mem_end;
 
-    #ifdef ENABLE_SOFTWARE_BOUND_CHECKS
+    #ifdef SOFTWARE_BOUND_CHECKS
 
         if (!m->options.disable_memory_bounds) {
             if (overflow) {
