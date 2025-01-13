@@ -17,13 +17,6 @@
 **                                       the main loop 100x more often)
 */
 
-//#include <time.h>
-
-//#if GC
-//#include <gc.h>
-//#define malloc GC_malloc
-//#endif
-
 #include "exit_vm.h"
 #include "myalloc.h"
 
@@ -129,15 +122,16 @@ struct packet *pkt(struct packet *link, int id, int kind)
     int i;
     struct packet *p = (struct packet *)myalloc(sizeof(struct packet));
 
-    for (i=0; i<=BUFSIZE; i++)
+    for (i = 0; i <= BUFSIZE; i++) {
         p->p_a2[i] = 0;
+    }
 
     p->p_link = link;
     p->p_id = id;
     p->p_kind = kind;
     p->p_a1 = 0;
 
-    return (p);
+    return p;
 }
 
 void trace(char a)

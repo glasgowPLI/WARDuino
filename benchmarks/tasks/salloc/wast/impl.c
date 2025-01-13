@@ -1,53 +1,52 @@
-#define NULL (void *)0
-#define BUFFER_LENGTH 100
-#define ITERATIONS 1000  // Number of iterations per benchmark run
-#define ALLOCATIONS_PER_ITERATION 100  // Number of allocations per iteration
-#define NUM_BENCHMARK_RUNS 1  // Total number of benchmark runs
-
-// Pre-allocated buffer for custom memory allocation
-int salloc_buffer[BUFFER_LENGTH * ALLOCATIONS_PER_ITERATION];
-int salloc_index = 0;  // Keep track of the next available slot
-
-// Custom salloc function to simulate dynamic memory allocation
-int* salloc() {
-    if (salloc_index < BUFFER_LENGTH * ALLOCATIONS_PER_ITERATION) {
-        return &salloc_buffer[salloc_index++];
-    } else {
-        return NULL;  // No space left
-    }
-}
+#define MEMORY_POOL_SIZE (1024 * 1024) // 1 MB
+#define NUM_ELEMENTS 100000           // Number of elements to process
+#define ITERATIONS 1000               // Number of iterations for benchmarking
 
 __attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
 
-// Bench function to run the benchmark
-int bench() {
-    int *buffer[ALLOCATIONS_PER_ITERATION];  // Array to hold pointers
-    int i, j;
-    int total = 0;
+// Static memory pool to simulate linear memory
+static char memory_pool[MEMORY_POOL_SIZE];
 
-    // Loop for benchmark run
-    for (int k = 0; k < NUM_BENCHMARK_RUNS; k++) {
-        // Iterate for a number of times for allocations
-        for (j = 0; j < ITERATIONS; j++) {
-            // Allocate memory for each slot using salloc
-            for (i = 0; i < ALLOCATIONS_PER_ITERATION; i++) {
-                buffer[i] = salloc();  // Replace malloc with salloc
+// Simulated memory allocation
+static int current_offset = 0;
 
-                if (buffer[i] == NULL) {
-                    print_int(-1);  // Indicate memory allocation failure
-                    return -1;  // Exit early if allocation fails
-                }
+void *my_malloc(int size) {
+    if (current_offset + size > MEMORY_POOL_SIZE) return 0;
+    void *allocated_memory = &memory_pool[current_offset];
+    current_offset += size;
+    return allocated_memory;
+}
 
-                *buffer[i] = i;  // Assign a value to the allocated memory
-            }
+// Benchmark function
+void bench() {
+    // Allocate two large arrays
+    int *array1 = (int *)my_malloc(NUM_ELEMENTS * sizeof(int));
+    int *array2 = (int *)my_malloc(NUM_ELEMENTS * sizeof(int));
 
-            // Perform simple operation on the allocated memory (sum)
-            for (i = 0; i < ALLOCATIONS_PER_ITERATION; i++) {
-                total += *buffer[i];
-            }
+    if (!array1 || !array2) {
+        print_int(-1); // Indicate memory allocation failure
+        return;
+    }
+
+    // Initialize arrays
+    for (int i = 0; i < NUM_ELEMENTS; i++) {
+        array1[i] = i;          // Store operation
+        array2[i] = NUM_ELEMENTS - i; // Store operation
+    }
+
+    // Perform load and store operations repeatedly
+    for (int iter = 0; iter < ITERATIONS; iter++) {
+        for (int i = 0; i < NUM_ELEMENTS; i++) {
+            array1[i] += array2[i]; // Load and store
         }
     }
 
-    print_int(total);  // Print the result after benchmark is complete
-    return total;  // Return the total sum after all allocations
+    // Compute and output the sum of array1
+    int sum = 0;
+    for (int i = 0; i < NUM_ELEMENTS; i++) {
+        sum += array1[i]; // Load operation
+    }
+
+    print_int(sum); // Print the result
 }
+  

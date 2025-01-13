@@ -6,7 +6,7 @@ static int *ptrs[BUFFER_LENGTH];   /* Array of pointers pointing to allocated me
 static int next = 0;               /* Index for the next available space in buffer */
 
 /* Function to allocate memory */
-void *myalloc() {
+void *myalloc(int size) {
     if (next < BUFFER_LENGTH) {
         /* Return a pointer to the next free slot in the buffer */
         ptrs[next] = &(buffer[next]);
