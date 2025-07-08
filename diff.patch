@@ -1,0 +1,477 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 7144b61..74e24eb 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,136 +1,154 @@
+-# The following lines of boilerplate have to be in your project's
+-# CMakeLists in this exact order for cmake to work correctly
+ cmake_minimum_required(VERSION 3.15)
+-option(BUILD_ESP "Build for esp" OFF)
++
++project(WARDuino VERSION 0.4.4)
++
++# Define build options
++option(BUILD_ESP "Build for ESP" OFF)
+ option(BUILD_EMULATOR "Build for emulator" OFF)
+ option(BUILD_UNITTEST "Build for testing" OFF)
+ 
+-# Use C++17
++# CHERI-related
++option(BUILD_MORELLO_PURECAP "Compile for purecap Morello" OFF)
++option(BUILD_MORELLO_HYBRID "Compile for hybrid Morello" OFF)
++option(SOFTWARE_BOUND_CHECKS "Enable software-based bounds checks" OFF)
++option(HARDWARE_BOUND_CHECKS "Enable hardware-based bounds checks" OFF)
++
++# Language standards
+ set(CMAKE_CXX_STANDARD 17)
+ 
+-if (ESP_PLATFORM)
+-    set(BUILD_ESP ON)
+-endif ()
++# Output version header
++set(WARDUINO_VERSION_STRING "${PROJECT_VERSION}")
++configure_file(src/config.h.in include/warduino/config.h)
+ 
++# Warn if no top-level build target
+ if (NOT BUILD_ESP AND NOT BUILD_EMULATOR AND NOT BUILD_UNITTEST)
+-    message(WARNING "No build target set. Nothing to do.")
+-endif ()
+-
+-# Build WARDuino with the ESP-IDF toolchain
+-if (BUILD_ESP)
++    message(WARNING "No top-level build target set. Nothing to do.")
++endif()
++
++# =========================
++# CHERI CONFIGURATION
++# =========================
++if (BUILD_MORELLO_PURECAP)
++    message(STATUS "Compiling for CHERI purecap (Morello)")
++    add_compile_options(-march=morello -mabi=purecap)
++    add_link_options(-march=morello -mabi=purecap)
++    add_compile_definitions(PURECAP_MODE=1)
++endif()
++
++if (BUILD_MORELLO_HYBRID)
++    message(STATUS "Compiling for CHERI hybrid (Morello)")
++    add_compile_options(-march=morello -mabi=aapcs)
++    add_link_options(-march=morello -mabi=aapcs)
++    add_compile_definitions(PURECAP_MODE=0)
++endif()
++
++if (HARDWARE_BOUND_CHECKS)
++    message(STATUS "Enabling CHERI hardware bound checks")
++    add_compile_definitions(HARDWARE_BOUND_CHECKS=1)
++endif()
++
++if (SOFTWARE_BOUND_CHECKS)
++    message(STATUS "Enabling software bound checks")
++    add_compile_definitions(SOFTWARE_BOUND_CHECKS=1)
++endif()
++
++# =========================
++# ESP-IDF Platform
++# =========================
++if (ESP_PLATFORM OR BUILD_ESP)
+     if (NOT EXISTS $ENV{IDF_PATH}/tools/cmake/project.cmake)
+-        message(FATAL_ERROR "Can't find $IDF_PATH/tools/cmake/project.cmake. Make sure ESP-IDF is installed and $IDF_PATH is set.")
+-    endif ()
+-
+-    message(VERBOSE "Using ESP-IDF toolchain")
+-
++        message(FATAL_ERROR "Can't find $IDF_PATH/tools/cmake/project.cmake. Make sure ESP-IDF is installed and \$IDF_PATH is set.")
++    endif()
+     set(EXTRA_COMPONENT_DIRS "platforms/ESP-IDF")
+-
+     include($ENV{IDF_PATH}/tools/cmake/project.cmake "${PROJECT_BINARY_DIR}/../include")
+-endif (BUILD_ESP)
+-
+-project(WARDuino VERSION 0.4.4)
+-
+-set(WARDUINO_VERSION_STRING "${PROJECT_VERSION}")
+-configure_file(src/config.h.in include/warduino/config.h)
++endif()
+ 
+-# Build the emulator version of WARDuino
++# =========================
++# Emulator Build
++# =========================
+ if (BUILD_EMULATOR)
++    message(STATUS "Building emulator (CLI)")
+     set(EXTERNAL_LIB_HEADERS lib/json/single_include)
+ 
+     find_package(Threads REQUIRED)
+ 
+     set(SOURCE_FILES
+-            src/WARDuino/WARDuino.cpp
+-            src/WARDuino/CallbackHandler.cpp
+-            src/Primitives/emulated.cpp
+-            src/Interpreter/instructions.cpp
+-            src/Interpreter/interpreter.cpp
+-            src/Memory/mem.cpp
+-            src/Utils/util.cpp
+-            src/Utils/util_arduino.cpp
+-            src/Utils/macros.cpp
+-            src/Utils/sockets.cpp
+-            src/Debug/debugger.cpp
+-            src/Edward/proxy.cpp
+-            src/Edward/proxy_supervisor.cpp
+-            src/Edward/RFC.cpp
++        src/WARDuino/WARDuino.cpp
++        src/WARDuino/CallbackHandler.cpp
++        src/Primitives/emulated.cpp
++        src/Interpreter/instructions.cpp
++        src/Interpreter/interpreter.cpp
++        src/Memory/mem.cpp
++        src/Utils/util.cpp
++        src/Utils/util_arduino.cpp
++        src/Utils/macros.cpp
++        src/Utils/sockets.cpp
++        src/Debug/debugger.cpp
++        src/Edward/proxy.cpp
++        src/Edward/proxy_supervisor.cpp
++        src/Edward/RFC.cpp
+     )
+ 
+-    add_definitions(-DINFO=0)
+-    add_definitions(-DDEBUG=0)
+-    add_definitions(-DTRACE=0)
+-    add_definitions(-DWARN=0)
++    add_definitions(-DINFO=0 -DDEBUG=0 -DTRACE=0 -DWARN=0)
+ 
+-    # Set default compile flags for GCC
+     if (CMAKE_COMPILER_IS_GNUCXX)
+         add_compile_options(-g -v -Wall -Wextra -Wunused -O3)
+-    endif (CMAKE_COMPILER_IS_GNUCXX)
++    endif()
+ 
+-    # WARDuino CLI
+     add_executable(wdcli platforms/CLI-Emulator/main.cpp ${SOURCE_FILES})
+     target_link_libraries(wdcli PRIVATE Threads::Threads)
+     target_include_directories(wdcli PRIVATE ${EXTERNAL_LIB_HEADERS} "${PROJECT_BINARY_DIR}/include")
+-endif (BUILD_EMULATOR)
++endif()
+ 
++# =========================
++# Unit Test Build
++# =========================
+ if (BUILD_UNITTEST)
+     enable_testing()
++    message(STATUS "Building unit tests")
+ 
+-    message(VERBOSE "Building for unit tests ")
+-
+-    set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # for tooling support
++    set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+     set(EXTERNAL_LIB_HEADERS lib/json/single_include)
+ 
+     set(SOURCE_FILES
+-            src/WARDuino/WARDuino.cpp
+-            src/WARDuino/CallbackHandler.cpp
+-            src/Primitives/emulated.cpp
+-            src/Interpreter/instructions.cpp
+-            src/Interpreter/interpreter.cpp
+-            src/Memory/mem.cpp
+-            src/Utils/util.cpp
+-            src/Utils/util_arduino.cpp
+-            src/Utils/macros.cpp
+-            src/Utils/sockets.cpp
+-            src/Debug/debugger.cpp
+-            src/Edward/proxy.cpp
+-            src/Edward/proxy_supervisor.cpp
+-            src/Edward/RFC.cpp
++        src/WARDuino/WARDuino.cpp
++        src/WARDuino/CallbackHandler.cpp
++        src/Primitives/emulated.cpp
++        src/Interpreter/instructions.cpp
++        src/Interpreter/interpreter.cpp
++        src/Memory/mem.cpp
++        src/Utils/util.cpp
++        src/Utils/util_arduino.cpp
++        src/Utils/macros.cpp
++        src/Utils/sockets.cpp
++        src/Debug/debugger.cpp
++        src/Edward/proxy.cpp
++        src/Edward/proxy_supervisor.cpp
++        src/Edward/RFC.cpp
+     )
+ 
+-    # Set default compile flags for GCC
+     if (CMAKE_COMPILER_IS_GNUCXX)
+         add_compile_options(-g -v -Wall -Wextra -Wunused -O3)
+-    endif (CMAKE_COMPILER_IS_GNUCXX)
+-
++    endif()
+ 
+     include(FetchContent)
+     FetchContent_Declare(
+-            googletest
+-            GIT_REPOSITORY https://github.com/google/googletest.git
+-            GIT_TAG release-1.12.1
++        googletest
++        GIT_REPOSITORY https://github.com/google/googletest.git
++        GIT_TAG release-1.12.1
+     )
+-
+-    # For Windows: Prevent overriding the parent project's compiler/linker settings
+     set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+     FetchContent_MakeAvailable(googletest)
+ 
+     set(PATH_TO_UNIT_TEST ${PROJECT_SOURCE_DIR}/tests/unit)
+-
+     aux_source_directory(${PATH_TO_UNIT_TEST}/shared/ SHARED_SRC)
+-
+-    message(DEBUG "Shared source code for unit tests path: " ${SHARED_SRC})
+-
+     file(GLOB TEST_SRC_FILES ${PATH_TO_UNIT_TEST}/*.cpp)
+ 
+-    message(DEBUG "Unit test source codes: " ${TEST_SRC_FILES})
+-
+     foreach (TEST_FILE ${TEST_SRC_FILES})
+         get_filename_component(TEST_NAME ${TEST_FILE} NAME_WE)
+-        message(DEBUG "Add executable for " ${TEST_FILE})
+         add_executable(${TEST_NAME} ${TEST_FILE} ${SOURCE_FILES} ${SHARED_SRC})
+         target_link_libraries(${TEST_NAME} gtest_main)
+         target_include_directories(${TEST_NAME} PRIVATE ${EXTERNAL_LIB_HEADERS} "${PROJECT_BINARY_DIR}/include")
+         add_test(${TEST_NAME} ${TEST_NAME})
+-    endforeach ()
+-endif (BUILD_UNITTEST)
++    endforeach()
++endif()
+diff --git a/README.md b/README.md
+index 0a92f9a..7402dad 100644
+--- a/README.md
++++ b/README.md
+@@ -43,7 +43,7 @@ This project is released under the Mozilla Public License 2.0, and is being deve
+ The project uses CMake. Quick install looks like this:
+ 
+ ```bash
+-git clone --recursive git@github.com:TOPLLab/WARDuino.git
++git clone --recursive git@github.com:glasgowPLI/WARDuino.git
+ cd WARDuino
+ mkdir build-emu
+ cd build-emu
+diff --git a/platforms/CLI-Emulator/main.cpp b/platforms/CLI-Emulator/main.cpp
+index 24261d8..07bf3b7 100644
+--- a/platforms/CLI-Emulator/main.cpp
++++ b/platforms/CLI-Emulator/main.cpp
+@@ -3,6 +3,7 @@
+ //
+ #include <fcntl.h>
+ #include <netinet/in.h>
++#include <sys/socket.h>
+ #include <termios.h>
+ 
+ #include <cstdio>
+@@ -415,4 +416,4 @@ int main(int argc, const char *argv[]) {
+     }
+ 
+     return 0;
+-}
++}
+\ No newline at end of file
+diff --git a/src/Interpreter/instructions.cpp b/src/Interpreter/instructions.cpp
+index 0337e8f..af688d4 100644
+--- a/src/Interpreter/instructions.cpp
++++ b/src/Interpreter/instructions.cpp
+@@ -1,5 +1,4 @@
+ #include "instructions.h"
+-#include <cheriintrin.h>
+ 
+ #include <cmath>
+ #include <cstring>
+@@ -531,10 +530,26 @@ bool i_instr_mem_store(Module *m, uint8_t opcode) {
+             flags, offset, addr, value_repr(sval));
+     }
+ 
++// Define new flags to specify bound checking conditions
++#if !defined(PURECAP_MODE)
++#define PURECAP_MODE 0  // 1 for purecap, 0 for hybrid
++#endif
++
++#if !defined(SOFTWARE_BOUND_CHECKS)
++#define SOFTWARE_BOUND_CHECKS 1  // Enable software bounds check
++#endif
++
++#if !defined(HARDWARE_BOUND_CHECKS)
++#define HARDWARE_BOUND_CHECKS 0  // Disable hardware bounds check unless specified
++#endif
++
++// Modify the original ifdef to use the new flags
++#if SOFTWARE_BOUND_CHECKS && (!PURECAP_MODE || PURECAP_MODE && HARDWARE_BOUND_CHECKS == 0)
+     if (offset + addr < addr && !m->options.disable_memory_bounds) {
+         m->warduino->interpreter->report_overflow(
+             m, m->memory.bytes + offset + addr);
+     }
++#endif /* SOFTWARE_BOUND_CHECKS && !PURECAP_MODE */
+ 
+     addr += offset;
+     return m->warduino->interpreter->store(m, I32 + (0x36 - opcode), addr,
+@@ -880,7 +895,6 @@ bool i_instr_binary_i32(Module *m, uint8_t opcode) {
+             c = a * b;
+             break;  // i32.mul
+         case 0x6d:
+-        // Checking if the integer diviation can be happened, not bound checking.
+             if (a == 0x80000000 && b == (uint32_t)-1) {
+                 sprintf(exception, "integer overflow");
+                 return false;
+diff --git a/src/Interpreter/interpreter.cpp b/src/Interpreter/interpreter.cpp
+index e3f368a..eedf788 100644
+--- a/src/Interpreter/interpreter.cpp
++++ b/src/Interpreter/interpreter.cpp
+@@ -121,21 +121,24 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
+     uint32_t size = STORE_SIZE[abs(type - I32)];
+     bool overflow = false;
+ 
+-    maddr = m->memory.bytes + addr;
+-    if (maddr < m->memory.bytes) {
+-        overflow = true;
+-    }
+-    mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
+-    if (maddr + size > mem_end) {
+-        overflow = true;
+-    }
++    #ifdef SOFTWARE_BOUND_CHECKS
+ 
+-    if (!m->options.disable_memory_bounds) {
+-        if (overflow) {
+-            report_overflow(m, maddr);
+-            return false;
++        maddr = m->memory.bytes + addr;
++        if (maddr < m->memory.bytes) {
++            overflow = true;
++        }
++        mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
++        if (maddr + size > mem_end) {
++            overflow = true;
+         }
+-    }
++
++        if (!m->options.disable_memory_bounds) {
++            if (overflow) {
++                report_overflow(m, maddr);
++                return false;
++            }
++        }
++    #endif
+ 
+     memcpy(maddr, &sval.value, size);
+     return true;
+@@ -144,9 +147,13 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
+ bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
+                        uint32_t offset = 0) {
+     bool overflow = false;
+-    if (offset + addr < addr) {
+-        overflow = true;
+-    }
++
++    #ifdef SOFTWARE_BOUND_CHECKS
++
++        if (offset + addr < addr) {
++            overflow = true;
++        }
++    #endif
+ 
+     uint8_t *maddr = m->memory.bytes + addr + offset;
+     uint32_t size = LOAD_SIZE[abs(type - I32)];
+@@ -154,12 +161,16 @@ bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
+ 
+     overflow |= maddr < m->memory.bytes || maddr + size > mem_end;
+ 
+-    if (!m->options.disable_memory_bounds) {
+-        if (overflow) {
+-            report_overflow(m, maddr);
+-            return false;
++    #ifdef SOFTWARE_BOUND_CHECKS
++
++        if (!m->options.disable_memory_bounds) {
++            if (overflow) {
++                report_overflow(m, maddr);
++                return false;
++            }
+         }
+-    }
++
++    #endif
+ 
+     m->stack[++m->sp].value.uint64 = 0;  // initialize to 0
+ 
+diff --git a/src/Memory/mem.cpp b/src/Memory/mem.cpp
+index 922eff6..4073e6e 100644
+--- a/src/Memory/mem.cpp
++++ b/src/Memory/mem.cpp
+@@ -9,6 +9,10 @@
+ #include "Arduino.h"
+ #endif
+ 
++#ifdef __CHERI_PURE_CAPABILITY__
++#include <cheriintrin.h>
++#endif
++
+ // Assert calloc
+ void *acalloc(size_t nmemb, size_t size, const char *name, bool psram) {
+     if ((int)(nmemb * size) == 0) {
+@@ -32,6 +36,12 @@ void *acalloc(size_t nmemb, size_t size, const char *name, bool psram) {
+                   name);
+         }
+         debug("NOT FAILED ... Acalloc\n");
++
++        #if defined(__HARDWARE_BOUND_CHECKS__)
++            // CHERI hardware bounds checking enabled
++            res = cheri_bounds_set(res, nmemb*size);
++        #endif
++
+         return res;
+     }
+ }
+diff --git a/src/Primitives/emulated.cpp b/src/Primitives/emulated.cpp
+index 0a139ec..51fd479 100644
+--- a/src/Primitives/emulated.cpp
++++ b/src/Primitives/emulated.cpp
+@@ -36,6 +36,9 @@ int prim_index = 0;
+ 
+ double sensor_emu = 0;
+ 
++static int interpreter_running = 1;  // 1 means running, 0 means exit
++static int exit_code = 0;            // Stores the exit code when `exit_w` is called
++
+ /*
+    Private macros to install a primitive
+ */
+@@ -265,6 +268,20 @@ def_prim(print_int, oneToNoneU32) {
+     return true;
+ }
+ 
++def_prim(exit_vm, oneToNoneU32) {
++    debug("EMU: exit_w called with exit code ");
++    printf("Exit code: %u\n", arg0.uint32);  // Print exit code passed as argument
++    exit(arg0.uint32);  // Use the exit code passed in to exit
++    pop_args(1);  // Pop the exit code argument
++}
++
++def_prim(exit_w, oneToNoneU32) {
++    pop_args(1);           // Pop the exit code argument
++    exit_code = arg0.uint32;  // Set the exit code for reference
++    interpreter_running = 0;  // Signal the interpreter to stop runnin
++    return true;
++}
++
+ def_prim(print_string, twoToNoneU32) {
+     uint32_t addr = arg1.uint32;
+     uint32_t size = arg0.uint32;
+@@ -501,6 +518,8 @@ void install_primitives() {
+     install_primitive(print_int);
+     install_primitive(print_string);
+ 
++    install_primitive(exit_vm);
++
+     install_primitive(wifi_connect);
+     install_primitive(wifi_status);
+     install_primitive(wifi_connected);
+@@ -572,4 +591,4 @@ bool resolve_external_memory(char *symbol, Memory **val) {
+     return false;
+ }
+ 
+-#endif  // ARDUINO
++#endif  // ARDUINO
+\ No newline at end of file
