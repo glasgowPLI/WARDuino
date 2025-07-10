@@ -1,3 +1,7 @@
+extern Type oneToNoneU32;
+#define arg0 get_arg(m, 0)
+#define pop_args(n) m->sp -= n
+
 #ifndef WARDUINO_PRIM_H
 #define WARDUINO_PRIM_H
 
