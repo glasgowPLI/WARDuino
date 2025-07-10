@@ -9,6 +9,10 @@
 #include "Arduino.h"
 #endif
 
+#ifdef __CHERI_PURE_CAPABILITY__
+#include <cheriintrin.h>
+#endif
+
 // Assert calloc
 void *acalloc(size_t nmemb, size_t size, const char *name,
               [[maybe_unused]] bool psram) {
@@ -33,6 +37,11 @@ void *acalloc(size_t nmemb, size_t size, const char *name,
                   static_cast<int>(nmemb * size), name);
         }
         debug("NOT FAILED ... Acalloc\n");
+
+        #if defined(__HARDWARE_BOUND_CHECKS__)  // CHERI hardware bounds checking enabled
+            res = cheri_bounds_set(res, nmemb*size);
+        #endif
+      
         return res;
     }
 }
