@@ -1,6 +1,4 @@
 #include "../Interpreter/instructions.h"
-#include "primitives.h"   // for def_prim, oneToNoneU32, etc.
-#include "../Interpreter/interpreter.h"  // for arg0, pop_args, etc.
 #ifndef ARDUINO
 
 /**
