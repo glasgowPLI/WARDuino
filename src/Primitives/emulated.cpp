@@ -1,4 +1,3 @@
-#include "../Interpreter/instructions.h"
 #ifndef ARDUINO
 
 /**
@@ -25,6 +24,25 @@
 #include "../Utils/util.h"
 #include "../WARDuino/CallbackHandler.h"
 #include "primitives.h"
+#include "../Interpreter/instructions.h"
+
+#define pop_args(n) m->sp -= n
+#define get_arg(m, arg) m->stack[(m)->sp - (arg)].value
+#define pushUInt32(arg) m->stack[++m->sp].value.uint32 = arg
+#define pushInt32(arg) m->stack[++m->sp].value.int32 = arg
+#define pushUInt64(arg)                 \
+    m->stack[++m->sp].value_type = I64; \
+    m->stack[m->sp].value.uint64 = arg
+#define arg0 get_arg(m, 0)
+#define arg1 get_arg(m, 1)
+#define arg2 get_arg(m, 2)
+#define arg3 get_arg(m, 3)
+#define arg4 get_arg(m, 4)
+#define arg5 get_arg(m, 5)
+#define arg6 get_arg(m, 6)
+#define arg7 get_arg(m, 7)
+#define arg8 get_arg(m, 8)
+#define arg9 get_arg(m, 9)
 
 #define NUM_PRIMITIVES 0
 #define NUM_PRIMITIVES_ARDUINO 29
