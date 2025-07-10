@@ -123,6 +123,7 @@ if (BUILD_UNITTEST)
         src/Edward/proxy.cpp
         src/Edward/proxy_supervisor.cpp
         src/Edward/RFC.cpp
+        src/Primitives/types.cpp
     )
 
     if (CMAKE_COMPILER_IS_GNUCXX)
