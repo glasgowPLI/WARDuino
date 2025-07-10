@@ -117,21 +117,20 @@ uint32_t LOAD_TYPES[] = {I32, I64, F32, F64, I32, I32, I32,
                          I32, I64, I64, I64, I64, I64, I64};
 uint32_t STORE_SIZE[] = {4, 8, 4, 8, 1, 2, 1, 2, 4};
 
-bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
-                        StackValue &sval) {
+bool Interpreter::store(Module *m, uint8_t type, uint32_t addr, StackValue &sval) {
     if (m->warduino->debugger->isProxy()) {
         return m->warduino->debugger;
     }
 
-    uint8_t *maddr, *mem_end;
     uint32_t size = STORE_SIZE[abs(type - I32)];
-    bool overflow = false;
+    uint8_t *maddr = m->memory.bytes + addr;
+    uint8_t *mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
 
-    maddr = m->memory.bytes + addr;
+#ifdef SOFTWARE_BOUND_CHECKS
+    bool overflow = false;
     if (maddr < m->memory.bytes) {
         overflow = true;
     }
-    mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
     if (maddr + size > mem_end) {
         overflow = true;
     }
@@ -142,22 +141,25 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr,
             return false;
         }
     }
+#endif
 
     memcpy(maddr, &sval.value, size);
     return true;
 }
 
-bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
-                       uint32_t offset = 0) {
+bool Interpreter::load(Module *m, uint8_t type, uint32_t addr, uint32_t offset) {
+#ifdef SOFTWARE_BOUND_CHECKS
     bool overflow = false;
     if (offset + addr < addr) {
         overflow = true;
     }
+#endif
 
     uint8_t *maddr = m->memory.bytes + addr + offset;
     uint32_t size = LOAD_SIZE[abs(type - I32)];
     uint8_t *mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
 
+#ifdef SOFTWARE_BOUND_CHECKS
     overflow |= maddr < m->memory.bytes || maddr + size > mem_end;
 
     if (!m->options.disable_memory_bounds) {
@@ -166,6 +168,7 @@ bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
             return false;
         }
     }
+#endif
 
     m->stack[++m->sp].value.uint64 = 0;  // initialize to 0
 
@@ -173,24 +176,14 @@ bool Interpreter::load(Module *m, uint8_t type, uint32_t addr,
     m->stack[m->sp].value_type = LOAD_TYPES[abs(type - I32)];
 
     switch (type) {
-        case I32_8_s:
-            sext_8_32(&m->stack[m->sp].value.uint32);
-            break;
-        case I32_16_s:
-            sext_16_32(&m->stack[m->sp].value.uint32);
-            break;
-        case I64_8_s:
-            sext_8_64(&m->stack[m->sp].value.uint64);
-            break;
-        case I64_16_s:
-            sext_16_64(&m->stack[m->sp].value.uint64);
-            break;
-        case I64_32_s:
-            sext_32_64(&m->stack[m->sp].value.uint64);
-            break;
-        default:
-            break;
+        case I32_8_s:  sext_8_32(&m->stack[m->sp].value.uint32); break;
+        case I32_16_s: sext_16_32(&m->stack[m->sp].value.uint32); break;
+        case I64_8_s:  sext_8_64(&m->stack[m->sp].value.uint64); break;
+        case I64_16_s: sext_16_64(&m->stack[m->sp].value.uint64); break;
+        case I64_32_s: sext_32_64(&m->stack[m->sp].value.uint64); break;
+        default: break;
     }
+
     return true;
 }
 
