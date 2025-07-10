@@ -85,7 +85,6 @@ if (BUILD_EMULATOR)
         src/Edward/proxy.cpp
         src/Edward/proxy_supervisor.cpp
         src/Edward/RFC.cpp
-        src/Primitives/types.cpp
     )
 
     add_definitions(-DINFO=0 -DDEBUG=0 -DTRACE=0 -DWARN=0)
