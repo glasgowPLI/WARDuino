@@ -1,32 +1,3 @@
-#ifndef WARDUINO_PRIMITIVES_MACROS_H
-#define WARDUINO_PRIMITIVES_MACROS_H
-
-// Primitive function signature macros
-#define def_prim(function_name, type) void prim_##function_name()
-#define def_prim_reverse(function_name) void reverse_##function_name()
-#define def_prim_serialize(function_name) void serialize_##function_name()
-
-// Signature typedefs or enums (adjust as needed)
-#define NoneToNoneU32 0
-#define NoneToOneU32 1
-#define NoneToOneU64 2
-#define oneToNoneU32 3
-#define oneToOneU32 4
-#define oneToOneI32 5
-#define twoToNoneU32 6
-#define twoToOneU32 7
-#define threeToNoneU32 8
-#define fourToNoneU32 9
-#define fourToOneU32 10
-#define tenToOneU32 11
-
-// Argument access macros (adjust based on your call convention)
-#define arg0 args[0]
-#define pop_args(n) /* TODO: pop n args from the stack */
-
-#endif // WARDUINO_PRIMITIVES_MACROS_H
-
-
 #ifndef WARDUINO_PRIM_H
 #define WARDUINO_PRIM_H
 
