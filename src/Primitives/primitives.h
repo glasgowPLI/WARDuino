@@ -1,5 +1,3 @@
-extern Type oneToNoneU32;
-
 #ifndef WARDUINO_PRIM_H
 #define WARDUINO_PRIM_H
 
