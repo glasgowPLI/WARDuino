@@ -142,7 +142,7 @@ cmake .. -D BUILD_EMULATOR=ON
 make
 ```
 
-### Build for ESP-IDF
+### Build for CHERI
 
 ```bash
 mkdir build-cheri
