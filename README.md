@@ -39,40 +39,22 @@ This project is released under the Mozilla Public License 2.0, and is being deve
 ## Build and Development Instructions
 
 > [!NOTE]
-> **Supported platforms:** Linux (Ubuntu), macOS, ESP-IDF, Arduino
+> **Supported platforms:** Linux (Ubuntu), macOS, ESP-IDF, Arduino, CHERI
 
 The project uses CMake. Quick install looks like this:
 
-bash
+```bash
 git clone --recursive git@github.com:TOPLLab/WARDuino.git
 cd WARDuino
 mkdir build-emu
 cd build-emu
 cmake .. -D BUILD_EMULATOR=ON
 make
+```
 
-
-This will build the command-line tool (emulator), which has been tested on both linux and macOS.
+This will build the command-line tool (`emulator`), which has been tested on both linux and macOS.
 
 The WARDuino VM can be compiled with both the Arduino and ESP-IDF toolchains, and has been extensively tested on different ESP8266 and ESP32 microcontrollers.
-
-### Build for CHERI
-
-bash
-mkdir build-cheri
-cd build-cheri
-
-bash
-cmake .. \
-  -DCMAKE_C_COMPILER=clang \
-  -DCMAKE_C_FLAGS="-march=morello -mabi=purecap -O2" \
-  -DBUILD_EMULATOR=ON \
-  -DBUILD_MORELLO_PURECAP=ON \
-  -DHARDWARE_BOUND_CHECKS=ON \
-  -DSOFTWARE_BOUND_CHECKS=OFF
-
-bash
-make
 
 ### Build for ESP-IDF
 
@@ -83,7 +65,7 @@ Before you can compile and flash with ESP-IDF, you must install and enable [the 
 You also need to disable the watchdog timer:
 
 1. Go to the root folder of the WARDuino repo
-2. run idf.py menuconfig
+2. run `idf.py menuconfig`
 3. Under **Component config → ESP System Settings** disable the following options:
    - Interrupt watchdog
    - Initialize Task Watchdog Timer on startup
@@ -93,14 +75,14 @@ Make sure the ESP-IDF tools are enabled, otherwise these steps will not work.
 
 To install the WARDuino with the ESP-IDF toolchain perform the following steps starting from the project root folder:
 
-bash
+```bash
 mkdir build
 cd build
 cmake .. -D BUILD_ESP=ON
 make flash
+```
 
-
-Or simply run idf.py flash.
+Or simply run `idf.py flash`.
 
 ### Build for Arduino
 
@@ -109,39 +91,39 @@ You will also need python3 with the pyserial pacakge.
 
 Second, create the config file:
 
-bash
+```bash
 arduino-cli config init
-
+```
 
 If you need additional boards, such as the esp32 boards, you can add them in the generated config file. More information on how to install the esp32 boards can be found <a href="./documentation/InstallArduinoESP32.md">here</a>.
 (_note: WARDuino requires at least version 3.0.0 of the esp32 board manager when using esp32 devices)_
 
-Thirdly, make sure you install the PubSubClient and Adafruit NeoPixel library. (used for MQTT and pixel primitives)
+Thirdly, make sure you install the `PubSubClient` and `Adafruit NeoPixel` library. (used for MQTT and pixel primitives)
 
-bash
+```bash
 arduino-cli lib install "PubSubClient" # for MQTT
 arduino-cli lib install "Adafruit NeoPixel" # for some primitives
-
+```
 
 To build for Arduino with Wi-Fi support you need to also install the following third-party libraries.
-(You might need to set enable_unsafe_install to true in your Arduino config)
+(You might need to set `enable_unsafe_install` to `true` in your Arduino config)
 
-bash
+```bash
 arduino-cli lib install FreeRTOS
 arduino-cli lib install --git-url https://github.com/me-no-dev/AsyncTCP.git
+```
 
-
-If you haven't done so already, clone (or symlink) this repository to ~/Arduino/libraries to make WARDuino available to Arduino.
+If you haven't done so already, clone (or symlink) this repository to `~/Arduino/libraries` to make WARDuino available to Arduino.
 
 
 After this initial installation steps you can start using WARDuino with the Arduino toolchain.
 You can upload the example file as follows, starting from the project root:
 
-bash
+```bash
 cd platforms/Arduino
 make compile BINARY={{Path to .wasm file}}
 make flash
-
+```
 
 For more information on how to change the board type, or configure the serial port, see the [platform specific documentation](./platforms/Arduino/README.md).
 
@@ -153,19 +135,40 @@ The CLI is also used to run the various unit and specification tests for WARDuin
 
 To install the CLI perform the following steps starting from the project root folder:
 
-bash
+```bash
 mkdir build-emu
 cd build-emu
 cmake .. -D BUILD_EMULATOR=ON
 make
+```
 
+### Build for ESP-IDF
+
+```bash
+mkdir build-cheri
+cd build-cheri
+```
+
+```bash
+cmake .. \
+  -DCMAKE_C_COMPILER=clang \
+  -DCMAKE_C_FLAGS="-march=morello -mabi=purecap -O2" \
+  -DBUILD_EMULATOR=ON \
+  -DBUILD_MORELLO_PURECAP=ON \
+  -DHARDWARE_BOUND_CHECKS=ON \
+  -DSOFTWARE_BOUND_CHECKS=OFF
+```
+
+```bash
+make
+```
 
 ## WebAssembly Specification tests
 
-shell
+```shell
 cd tests/latch
 npm run spectest
-
+```
 
 ## Technical support and feedback
 
@@ -178,7 +181,7 @@ An early version of this work was derived from [kanaka/wac](https://github.com/k
 
 If you need to cite WARDuino in your research, use:
 
-bibtex
+```bibtex
 @article{	  WARDuino2024,
   title		= {WARDuino: An Embedded WebAssembly Virtual Machine},
   shorttitle	= {WARDuino},
@@ -193,3 +196,4 @@ bibtex
   keywords	= {Internet-of-Things,Language symbiosis,Virtual
 		  machine,WARDuino,WebAssembly}
 }
+```
