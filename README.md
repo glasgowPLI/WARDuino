@@ -176,4 +176,3 @@ If you need to cite WARDuino in your research, use:
 		  machine,WARDuino,WebAssembly}
 }
 ```
-
