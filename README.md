@@ -56,6 +56,24 @@ This will build the command-line tool (emulator), which has been tested on both 
 
 The WARDuino VM can be compiled with both the Arduino and ESP-IDF toolchains, and has been extensively tested on different ESP8266 and ESP32 microcontrollers.
 
+### Build for CHERI
+
+bash
+mkdir build-cheri
+cd build-cheri
+
+bash
+cmake .. \
+  -DCMAKE_C_COMPILER=clang \
+  -DCMAKE_C_FLAGS="-march=morello -mabi=purecap -O2" \
+  -DBUILD_EMULATOR=ON \
+  -DBUILD_MORELLO_PURECAP=ON \
+  -DHARDWARE_BOUND_CHECKS=ON \
+  -DSOFTWARE_BOUND_CHECKS=OFF
+
+bash
+make
+
 ### Build for ESP-IDF
 
 > [!WARNING]
