@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Directory containing wasm benchmarks
-BENCHMARK_DIR=~/warduino_benchmarks
+BENCHMARK_DIR=../warduino_benchmarks
 
 # Output CSV file
 RESULT_FILE="benchmark_results.csv"
