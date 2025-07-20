@@ -1,8 +1,10 @@
 #!/bin/bash
 
 BENCHMARK_DIR=~/warduino_benchmarks
-RESULT_FILE="benchmark_results.csv"
-echo "Benchmark,Build,Time(s)" > "$RESULT_FILE"
+TIMESTAMP=$(date +%Y%m%d_%H%M%S)
+RESULT_FILE="benchmark_results_${TIMESTAMP}.csv"
+
+echo "Benchmark,Build,User(s),Sys(s),Real(s)" > "$RESULT_FILE"
 
 declare -A BUILD_PATHS=(
   ["purecap-hw-sw"]="build-purecap-hw-sw"
@@ -27,12 +29,14 @@ for build in "${!BUILD_PATHS[@]}"; do
     echo "▶️  Running $wasm_name on $build..."
 
     tmpfile=$(mktemp)
-    if /usr/bin/time -f "%e" -o "$tmpfile" "$wdcli" "$wasm" --invoke start --no-debug > /dev/null 2>&1; then
-      time_result=$(cat "$tmpfile")
+
+    if /usr/bin/time -f "%U,%S,%e" -o "$tmpfile" "$wdcli" "$wasm" --invoke start --no-debug > /dev/null 2>&1; then
+      result=$(cat "$tmpfile")
     else
-      time_result="FAIL"
+      result="FAIL,FAIL,FAIL"
     fi
-    echo "$wasm_name,$build,$time_result" >> "$RESULT_FILE"
+
+    echo "$wasm_name,$build,$result" >> "$RESULT_FILE"
     rm -f "$tmpfile"
   done
 done
