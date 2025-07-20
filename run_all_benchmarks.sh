@@ -1,50 +1,50 @@
-#!/bin/sh
+#!/bin/bash
 
-# Paths
-BENCHMARK_DIR=~/warduino_benchmarks
-CSV_FILE=benchmark_results.csv
+# Path to benchmarks and output
+BENCHMARK_DIR="../warduino_benchmarks"
+OUTPUT_CSV="benchmark_results.csv"
 
-# Output header
-echo "wasm_file,build_config,exit_code,time_ms" > "$CSV_FILE"
+# List of build directories and names
+declare -A BUILD_DIRS=(
+  ["purecap-hw"]="build-purecap-hw"
+  ["purecap-hw-sw"]="build-purecap-hw-sw"
+  ["purecap-sw"]="build-purecap-sw"
+  ["purecap-nocheck"]="build-purecap-nocheck"
+  ["native"]="build-native"
+  ["native-sw"]="build-native-sw"
+)
 
-# Build folders
-BUILD_CONFIGS="
-build-purecap-hw-sw
-build-purecap-hw
-build-purecap-sw
-build-purecap-nocheck
-build-native-sw
-build-native
-"
+# Write CSV header
+echo "benchmark,build,elapsed_ms,stdout" > "$OUTPUT_CSV"
 
-# Loop through all .wasm benchmark files
-for wasm in "$BENCHMARK_DIR"/*.wasm; do
-  wasm_name=$(basename "$wasm")
-  
-  for build_dir in $BUILD_CONFIGS; do
-    cli="./$build_dir/wdcli"
+# Loop over benchmarks
+for wasm_file in "$BENCHMARK_DIR"/*.wasm; do
+  bench_name=$(basename "$wasm_file")
 
-    if [ ! -x "$cli" ]; then
-      echo "⚠️  Skipping $cli (not found or not executable)" >&2
+  # Loop over builds
+  for label in "${!BUILD_DIRS[@]}"; do
+    build_path="${BUILD_DIRS[$label]}"
+    wdcli_path="./$build_path/wdcli"
+
+    echo "▶️  Running $bench_name on $label..."
+
+    if [[ ! -x "$wdcli_path" ]]; then
+      echo "⚠️  Skipping $label: wdcli not found or not executable"
       continue
     fi
 
-    echo "▶️  Running $wasm_name on $build_dir..."
+    # Run benchmark and time it in milliseconds
+    start_time=$(date +%s%3N)
+    output=$("$wdcli_path" "$BENCHMARK_DIR/$bench_name" --invoke start --no-debug 2>&1)
+    end_time=$(date +%s%3N)
+    elapsed=$((end_time - start_time))
 
-    # Capture start time (ms)
-    start=$(date +%s%3N)
+    # Sanitize output
+    clean_output=$(echo "$output" | tr '\n' ' ' | tr -d '\r' | cut -c1-200)
 
-    # Run the wasm with correct flags
-    "$cli" "$wasm" --invoke start --no-debug > /dev/null 2>&1
-    exit_code=$?
-
-    # End time
-    end=$(date +%s%3N)
-    elapsed=$((end - start))
-
-    # Append to CSV
-    echo "$wasm_name,$build_dir,$exit_code,$elapsed" >> "$CSV_FILE"
+    # Save to CSV
+    echo "$bench_name,$label,$elapsed,\"$clean_output\"" >> "$OUTPUT_CSV"
   done
 done
 
-echo "✅ Benchmark results saved to $CSV_FILE"
+echo "✅ Benchmark results saved to $OUTPUT_CSV"
