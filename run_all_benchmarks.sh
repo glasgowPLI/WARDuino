@@ -1,50 +1,49 @@
 #!/bin/bash
 
-# Path to benchmarks and output
-BENCHMARK_DIR="../warduino_benchmarks"
-OUTPUT_CSV="benchmark_results.csv"
+# Directory containing wasm benchmarks
+BENCHMARK_DIR=~/warduino_benchmarks
 
-# List of build directories and names
-declare -A BUILD_DIRS=(
-  ["purecap-hw"]="build-purecap-hw"
+# Output CSV file
+RESULT_FILE="benchmark_results.csv"
+echo "Benchmark,Build,Time(s)" > "$RESULT_FILE"
+
+# Build configurations and corresponding paths
+declare -A BUILD_PATHS=(
   ["purecap-hw-sw"]="build-purecap-hw-sw"
+  ["purecap-hw"]="build-purecap-hw"
   ["purecap-sw"]="build-purecap-sw"
   ["purecap-nocheck"]="build-purecap-nocheck"
-  ["native"]="build-native"
   ["native-sw"]="build-native-sw"
+  ["native"]="build-native"
 )
 
-# Write CSV header
-echo "benchmark,build,elapsed_ms,stdout" > "$OUTPUT_CSV"
+# Check if /usr/bin/time is available
+if ! command -v /usr/bin/time &> /dev/null; then
+  echo "❌ /usr/bin/time is not available. Install it first."
+  exit 1
+fi
 
-# Loop over benchmarks
-for wasm_file in "$BENCHMARK_DIR"/*.wasm; do
-  bench_name=$(basename "$wasm_file")
+# Loop over builds and wasm files
+for build in "${!BUILD_PATHS[@]}"; do
+  build_path=${BUILD_PATHS[$build]}
+  wdcli_path="./$build_path/wdcli"
 
-  # Loop over builds
-  for label in "${!BUILD_DIRS[@]}"; do
-    build_path="${BUILD_DIRS[$label]}"
-    wdcli_path="./$build_path/wdcli"
+  if [ ! -x "$wdcli_path" ]; then
+    echo "⚠️  Skipping $build: $wdcli_path not found or not executable"
+    continue
+  fi
 
-    echo "▶️  Running $bench_name on $label..."
+  for bench_file in "$BENCHMARK_DIR"/*.wasm; do
+    bench_name=$(basename "$bench_file")
 
-    if [[ ! -x "$wdcli_path" ]]; then
-      echo "⚠️  Skipping $label: wdcli not found or not executable"
-      continue
-    fi
+    echo "▶️  Running $bench_name on $build..."
 
-    # Run benchmark and time it in milliseconds
-    start_time=$(date +%s%3N)
-    output=$("$wdcli_path" "$BENCHMARK_DIR/$bench_name" --invoke start --no-debug 2>&1)
-    end_time=$(date +%s%3N)
-    elapsed=$((end_time - start_time))
+    # Run and time
+    /usr/bin/time -f "%e" -o time_output.txt "$wdcli_path" "$bench_file" --invoke start --no-debug > /dev/null 2>&1
+    elapsed=$(cat time_output.txt)
 
-    # Sanitize output
-    clean_output=$(echo "$output" | tr '\n' ' ' | tr -d '\r' | cut -c1-200)
-
-    # Save to CSV
-    echo "$bench_name,$label,$elapsed,\"$clean_output\"" >> "$OUTPUT_CSV"
+    echo "$bench_name,$build,$elapsed" >> "$RESULT_FILE"
   done
 done
 
-echo "✅ Benchmark results saved to $OUTPUT_CSV"
+echo "✅ Benchmark results saved to $RESULT_FILE"
