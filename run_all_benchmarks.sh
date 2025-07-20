@@ -7,7 +7,7 @@ CSV_FILE=benchmark_results.csv
 # Output header
 echo "wasm_file,build_config,exit_code,time_ms" > "$CSV_FILE"
 
-# Build folders and readable names
+# Build folders
 BUILD_CONFIGS="
 build-purecap-hw-sw
 build-purecap-hw
@@ -17,7 +17,7 @@ build-native-sw
 build-native
 "
 
-# Loop through all wasm files
+# Loop through all .wasm benchmark files
 for wasm in "$BENCHMARK_DIR"/*.wasm; do
   wasm_name=$(basename "$wasm")
   
@@ -31,21 +31,20 @@ for wasm in "$BENCHMARK_DIR"/*.wasm; do
 
     echo "▶️  Running $wasm_name on $build_dir..."
 
-    # Capture start time in ms
+    # Capture start time (ms)
     start=$(date +%s%3N)
-    
-    # Run and capture exit code
-    "$cli" "$wasm" > /dev/null 2>&1
+
+    # Run the wasm with correct flags
+    "$cli" "$wasm" --invoke start --no-debug > /dev/null 2>&1
     exit_code=$?
 
-    # Capture end time and compute elapsed
+    # End time
     end=$(date +%s%3N)
     elapsed=$((end - start))
 
-    # Write to CSV
+    # Append to CSV
     echo "$wasm_name,$build_dir,$exit_code,$elapsed" >> "$CSV_FILE"
   done
 done
 
-echo "✅ Results saved to $CSV_FILE"
-
+echo "✅ Benchmark results saved to $CSV_FILE"
