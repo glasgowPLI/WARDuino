@@ -1,13 +1,9 @@
 #!/bin/bash
 
-# Directory containing wasm benchmarks
-BENCHMARK_DIR=../warduino_benchmarks
-
-# Output CSV file
+BENCHMARK_DIR=~/warduino_benchmarks
 RESULT_FILE="benchmark_results.csv"
 echo "Benchmark,Build,Time(s)" > "$RESULT_FILE"
 
-# Build configurations and corresponding paths
 declare -A BUILD_PATHS=(
   ["purecap-hw-sw"]="build-purecap-hw-sw"
   ["purecap-hw"]="build-purecap-hw"
@@ -17,32 +13,27 @@ declare -A BUILD_PATHS=(
   ["native"]="build-native"
 )
 
-# Check if /usr/bin/time is available
-if ! command -v /usr/bin/time &> /dev/null; then
-  echo "❌ /usr/bin/time is not available. Install it first."
-  exit 1
-fi
-
-# Loop over builds and wasm files
 for build in "${!BUILD_PATHS[@]}"; do
-  build_path=${BUILD_PATHS[$build]}
-  wdcli_path="./$build_path/wdcli"
+  build_path="${BUILD_PATHS[$build]}"
+  wdcli="./$build_path/wdcli"
 
-  if [ ! -x "$wdcli_path" ]; then
-    echo "⚠️  Skipping $build: $wdcli_path not found or not executable"
+  if [[ ! -x "$wdcli" ]]; then
+    echo "⚠️  Skipping $build (no wdcli binary found)"
     continue
   fi
 
-  for bench_file in "$BENCHMARK_DIR"/*.wasm; do
-    bench_name=$(basename "$bench_file")
+  for wasm in "$BENCHMARK_DIR"/*.wasm; do
+    wasm_name=$(basename "$wasm")
+    echo "▶️  Running $wasm_name on $build..."
 
-    echo "▶️  Running $bench_name on $build..."
-
-    # Run and time
-    /usr/bin/time -f "%e" -o time_output.txt "$wdcli_path" "$bench_file" --invoke start --no-debug > /dev/null 2>&1
-    elapsed=$(cat time_output.txt)
-
-    echo "$bench_name,$build,$elapsed" >> "$RESULT_FILE"
+    tmpfile=$(mktemp)
+    if /usr/bin/time -f "%e" -o "$tmpfile" "$wdcli" "$wasm" --invoke start --no-debug > /dev/null 2>&1; then
+      time_result=$(cat "$tmpfile")
+    else
+      time_result="FAIL"
+    fi
+    echo "$wasm_name,$build,$time_result" >> "$RESULT_FILE"
+    rm -f "$tmpfile"
   done
 done
 
