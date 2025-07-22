@@ -4,7 +4,7 @@ BENCHMARK_DIR=~/warduino_benchmarks
 RESULT_FILE="results_timing.csv"
 
 # CSV Header
-echo "Benchmark,Build,User(s),Sys(s),Real(s)" > "$RESULT_FILE"
+echo "Build,Benchmark,Real(s)" > "$RESULT_FILE"
 
 # Ordered build folder names and labels
 declare -A BUILD_PATHS=(
@@ -16,7 +16,7 @@ declare -A BUILD_PATHS=(
   ["native-nocheck"]="build-native"
 )
 
-# Run benchmarks
+# Iterate builds first
 for build in purecap-hw purecap-sw purecap-hw-sw purecap-nocheck native-sw native-nocheck; do
   build_path="${BUILD_PATHS[$build]}"
   wdcli="./$build_path/wdcli"
@@ -26,24 +26,19 @@ for build in purecap-hw purecap-sw purecap-hw-sw purecap-nocheck native-sw nativ
     continue
   fi
 
+  echo "▶️ Running all benchmarks for build: $build"
+
   for wasm in "$BENCHMARK_DIR"/*.wasm; do
     wasm_name=$(basename "$wasm")
-    echo "▶️  Running $wasm_name on $build..."
+    echo "   🧪 $wasm_name..."
 
     tmpfile=$(mktemp)
     if { /usr/bin/time "$wdcli" "$wasm" --invoke start --no-debug; } > /dev/null 2> "$tmpfile"; then
-      # Parse user, sys, real
-      read user sys real < <(awk '
-        /user/ { u=$1 }
-        /sys/  { s=$1 }
-        /real/ { r=$1 }
-        END { print u, s, r }
-      ' "$tmpfile")
-      echo "$wasm_name,$build,$user,$sys,$real" >> "$RESULT_FILE"
+      real_time=$(awk '/real/ { print $1 }' "$tmpfile")
+      echo "$build,$wasm_name,$real_time" >> "$RESULT_FILE"
     else
-      echo "$wasm_name,$build,FAIL,FAIL,FAIL" >> "$RESULT_FILE"
+      echo "$build,$wasm_name,FAIL" >> "$RESULT_FILE"
     fi
-
     rm -f "$tmpfile"
   done
 done
