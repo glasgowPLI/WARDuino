@@ -44,7 +44,7 @@ This project is released under the Mozilla Public License 2.0, and is being deve
 The project uses CMake. Quick install looks like this:
 
 ```bash
-git clone --recursive git@github.com:TOPLLab/WARDuino.git
+git clone --recursive git@github.com:glasgowPLI/WARDuino.git
 cd WARDuino
 mkdir build-emu
 cd build-emu
