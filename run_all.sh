@@ -3,7 +3,10 @@
 BENCHMARK_DIR=~/warduino_benchmarks
 RESULT_FILE="results_timing.csv"
 
-echo "Build,Benchmark,Real(s)" > "$RESULT_FILE"
+# If not exists, create header
+if [[ ! -f "$RESULT_FILE" ]]; then
+  echo "Build,Benchmark,Real(s)" > "$RESULT_FILE"
+fi
 
 declare -A BUILD_PATHS=(
   ["purecap-hw"]="build-purecap-hw"
@@ -19,7 +22,7 @@ for build in "purecap-hw" "purecap-sw" "purecap-hw-sw" "purecap-nocheck" "native
   wdcli="./$build_path/wdcli"
 
   if [[ ! -x "$wdcli" ]]; then
-    echo "⚠️  Skipping $build (no wdcli)"
+    echo "⚠️  Skipping $build (no wdcli binary)"
     continue
   fi
 
@@ -27,9 +30,7 @@ for build in "purecap-hw" "purecap-sw" "purecap-hw-sw" "purecap-nocheck" "native
     wasm_name=$(basename "$wasm")
     echo "▶️  Running $wasm_name on $build..."
 
-    time_output=$(/usr/bin/time -f "%e" "$wdcli" "$wasm" --invoke start --no-debug 2>&1 > /dev/null)
-    echo "$build,$wasm_name,$time_output" >> "$RESULT_FILE"
+    real_time=$(/usr/bin/time -f "%e" "$wdcli" "$wasm" --invoke start --no-debug 2>&1 > /dev/null)
+    echo "$build,$wasm_name,$real_time" >> "$RESULT_FILE"
   done
 done
-
-echo "✅ Results saved to $RESULT_FILE"
