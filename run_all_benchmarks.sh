@@ -1,7 +1,7 @@
 #!/bin/bash
 
 BENCHMARK_DIR=~/warduino_benchmarks
-RESULT_FILE="benchmark_results.csv"
+RESULT_FILE="results.csv"
 echo "Benchmark,Build,User(s),Sys(s),Real(s)" > "$RESULT_FILE"
 
 declare -A BUILD_PATHS=(
