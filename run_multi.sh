@@ -1,7 +1,7 @@
 #!/bin/bash
 
 N=5  # number of times to run
-SCRIPT="./run_all_benchmarks.sh"
+SCRIPT="./run_all.sh"
 
 for i in $(seq 1 $N); do
   echo "🔁 Run $i of $N..."

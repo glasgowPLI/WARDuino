@@ -71,3 +71,123 @@ usage: time [-al] [-h | -p] [-o file] utility [argument ...],time: illegal optio
 usage: time [-al] [-h | -p] [-o file] utility [argument ...],time: illegal option -- f
 usage: time [-al] [-h | -p] [-o file] utility [argument ...],time: illegal option -- f
 usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-nocheck,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-nocheck,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-nocheck,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-nocheck,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-nocheck,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-nocheck,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-nocheck,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-nocheck,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-hw-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-nocheck,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+purecap-nocheck,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native-sw,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native-sw,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native,binarytrees.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
+native,mandelbrot.wasm,time: illegal option -- f
+usage: time [-al] [-h | -p] [-o file] utility [argument ...]
