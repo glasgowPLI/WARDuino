@@ -1,33 +1,63 @@
 #!/bin/bash
 
-RUN_SCRIPT="./run_all_benchmarks.sh"
-TMP_PREFIX="tmp_results_run"
-FINAL_RESULT="results_timing.csv"
-NUM_RUNS=2
+BENCHMARK_DIR=~/warduino_benchmarks
+RUNS=5
+RESULT_FILE="results_timing.csv"
+TMP_PREFIX="tmp_run"
 
-# Clean up any existing temp files
-rm -f ${TMP_PREFIX}_*.csv "$FINAL_RESULT"
+declare -A BUILD_PATHS=(
+  ["purecap-hw"]="build-purecap-hw"
+  ["purecap-sw"]="build-purecap-sw"
+  ["purecap-hw-sw"]="build-purecap-hw-sw"
+  ["purecap-nocheck"]="build-purecap-nocheck"
+  ["native-sw"]="build-native-sw"
+  ["native"]="build-native"
+)
 
-echo "Build,Benchmark" > "$FINAL_RESULT"
+# Create base columns if result file doesn't exist
+if [[ ! -f "$RESULT_FILE" ]]; then
+  echo -n "Build,Benchmark" > "$RESULT_FILE"
+  for i in $(seq 1 $RUNS); do
+    echo -n ",Real(s)_$i" >> "$RESULT_FILE"
+  done
+  echo >> "$RESULT_FILE"
+fi
 
-# Run multiple times and collect results
-for run in $(seq 1 $NUM_RUNS); do
-  echo "▶️ Run #$run..."
-  TMP_FILE="${TMP_PREFIX}_${run}.csv"
+# Build header list of results for merging
+declare -A results
 
-  # Run once and save intermediate results (assumes run_all_benchmarks.sh can reuse RESULT_FILE variable)
-  RESULT_FILE="$TMP_FILE" bash "$RUN_SCRIPT"
+for build in "purecap-hw" "purecap-sw" "purecap-hw-sw" "purecap-nocheck" "native-sw" "native"; do
+  build_path="${BUILD_PATHS[$build]}"
+  wdcli="./$build_path/wdcli"
 
-  # Prepare columns: Build,Benchmark,Real
-  if [[ $run -eq 1 ]]; then
-    # Initialize with Build and Benchmark
-    awk -F',' 'NR>1 { print $1","$2 }' "$TMP_FILE" >> "$FINAL_RESULT"
+  if [[ ! -x "$wdcli" ]]; then
+    echo "⚠️  Skipping $build (no wdcli)"
+    continue
   fi
 
-  # Extract the "Real(s)" column and paste into final CSV
-  paste -d',' "$FINAL_RESULT" <(awk -F',' 'NR==1{print "Run'$run'"} NR>1{print $3}' "$TMP_FILE") > "${FINAL_RESULT}.tmp"
-  mv "${FINAL_RESULT}.tmp" "$FINAL_RESULT"
+  for wasm in "$BENCHMARK_DIR"/*.wasm; do
+    wasm_name=$(basename "$wasm")
+    key="$build,$wasm_name"
+    echo "▶️  Running $wasm_name on $build..."
+
+    for i in $(seq 1 $RUNS); do
+      time_result=$(/usr/bin/time -f "%e" "$wdcli" "$wasm" --invoke start --no-debug 2>&1 > /dev/null)
+      results["$key"]+=",${time_result}"
+    done
+  done
 done
 
-echo "✅ Final result saved to $FINAL_RESULT"
+# Write to CSV
+> "$RESULT_FILE"
+echo -n "Build,Benchmark" > "$RESULT_FILE"
+for i in $(seq 1 $RUNS); do
+  echo -n ",Real(s)_$i" >> "$RESULT_FILE"
+done
+echo >> "$RESULT_FILE"
+
+for key in "${!results[@]}"; do
+  echo "$key${results[$key]}" >> "$RESULT_FILE"
+done
+
+echo "✅ Multi-run results saved to $RESULT_FILE"
 
