@@ -34,14 +34,15 @@ for build in "${!BUILD_PATHS[@]}"; do
     tmpfile=$(mktemp)
     
     # Run and capture time
-    if { /usr/bin/time "$wdcli" "$wasm" --invoke start --no-debug; } > /dev/null 2> "$tmpfile"; then
-      read real user sys < <(awk '{
-        if ($2 == "real") r = $1;
-        if ($2 == "user") u = $1;
-        if ($2 == "sys") s = $1;
-      } END {
-        print r, u, s
-      }' "$tmpfile")
+    if output=$( /usr/bin/time "$wdcli" "$wasm" --invoke start --no-debug > /dev/null 2>&1 ); then
+      { read real user sys < <(/usr/bin/time -p "$wdcli" "$wasm" --invoke start --no-debug 2>&1 | awk '
+        BEGIN { r=u=s="FAIL" }
+        $1 == "real" { r = $2 }
+        $1 == "user" { u = $2 }
+        $1 == "sys"  { s = $2 }
+        END { print r, u, s }
+      '); } 2>/dev/null
+    
       echo "$wasm_name,$build,$user,$sys,$real" >> "$RESULT_FILE"
     else
       echo "$wasm_name,$build,FAIL,FAIL,FAIL" >> "$RESULT_FILE"
