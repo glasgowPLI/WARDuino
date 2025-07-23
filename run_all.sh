@@ -1,14 +1,12 @@
 #!/bin/bash
 
 BENCHMARK_DIR=~/warduino_benchmarks
-RESULT_FILE="results_timing.csv"
+RESULT_FILE="results_matrix.csv"
 
-# Only write header if file does not exist
-if [[ ! -f "$RESULT_FILE" ]]; then
-  echo "Benchmark,Build,Time" > "$RESULT_FILE"
-fi
+# Build labels in desired order
+BUILD_ORDER=("purecap-hw" "purecap-sw" "purecap-hw-sw" "purecap-nocheck" "native-sw" "native-nocheck")
 
-# Ordered build folder names and labels
+# Map build label to folder
 declare -A BUILD_PATHS=(
   ["purecap-hw"]="build-purecap-hw"
   ["purecap-sw"]="build-purecap-sw"
@@ -18,36 +16,68 @@ declare -A BUILD_PATHS=(
   ["native-nocheck"]="build-native"
 )
 
-# List of builds in desired order
-BUILD_ORDER=("purecap-hw" "purecap-sw" "purecap-hw-sw" "purecap-nocheck" "native-sw" "native-nocheck")
-
-# Iterate over each benchmark
-for wasm in "$BENCHMARK_DIR"/*.wasm; do
-  wasm_name=$(basename "$wasm")
-  echo "▶️ Running $wasm_name on all builds..."
-
-  # Run this benchmark in each build
+# Initialize matrix if not exist
+if [[ ! -f "$RESULT_FILE" ]]; then
+  echo -n "Benchmark" > "$RESULT_FILE"
   for build in "${BUILD_ORDER[@]}"; do
-    build_path="${BUILD_PATHS[$build]}"
-    wdcli="./$build_path/wdcli"
+    echo -n ",$build" >> "$RESULT_FILE"
+  done
+  echo >> "$RESULT_FILE"
+fi
+
+# Ensure temporary file
+tmpfile=$(mktemp)
+
+# Process each benchmark
+for wasm in "$BENCHMARK_DIR"/*.wasm; do
+  benchmark=$(basename "$wasm")
+
+  echo "▶️  Running $benchmark..."
+
+  # Read current row if exists
+  existing=$(grep "^$benchmark," "$RESULT_FILE")
+  if [[ -z "$existing" ]]; then
+    existing="$benchmark"
+    for _ in "${BUILD_ORDER[@]}"; do
+      existing="$existing,"
+    done
+  fi
+
+  # Convert to array for update
+  IFS=',' read -ra row <<< "$existing"
+
+  for i in "${!BUILD_ORDER[@]}"; do
+    build="${BUILD_ORDER[$i]}"
+    wdcli="./${BUILD_PATHS[$build]}/wdcli"
+
+    echo "   🧪 $build..."
 
     if [[ ! -x "$wdcli" ]]; then
-      echo "⚠️  Skipping $build (no wdcli binary found)"
+      echo "     ⚠️  Skipping (no binary)"
       continue
     fi
 
-    echo "   🧪 $build..."
-    tmpfile=$(mktemp)
-
     if { /usr/bin/time "$wdcli" "$wasm" --invoke start --no-debug; } > /dev/null 2> "$tmpfile"; then
-      real_time=$(awk '/real/ { print $1 }' "$tmpfile")
-      echo "$wasm_name,$build,$real_time" >> "$RESULT_FILE"
+      time=$(awk '/real/ { print $1 }' "$tmpfile")
+      if [[ -z "${row[$((i+1))]}" ]]; then
+        row[$((i+1))]="$time"
+      else
+        row[$((i+1))]+=";$time"
+      fi
     else
-      echo "$wasm_name,$build,FAIL" >> "$RESULT_FILE"
+      if [[ -z "${row[$((i+1))]}" ]]; then
+        row[$((i+1))]="FAIL"
+      else
+        row[$((i+1))]+=";FAIL"
+      fi
     fi
-
-    rm -f "$tmpfile"
   done
+
+  # Update or append the row
+  grep -v "^$benchmark," "$RESULT_FILE" > "$RESULT_FILE.tmp"
+  (IFS=','; echo "${row[*]}") >> "$RESULT_FILE.tmp"
+  mv "$RESULT_FILE.tmp" "$RESULT_FILE"
 done
 
-echo "✅ Benchmark results saved to $RESULT_FILE"
+rm -f "$tmpfile"
+echo "✅ All results appended to $RESULT_FILE"
