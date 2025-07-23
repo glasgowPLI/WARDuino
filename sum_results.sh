@@ -4,12 +4,12 @@ INPUT_FILE="results_timing.csv"
 OUTPUT_FILE="results_sum.csv"
 
 # Write header
-echo "Build,Benchmark,Mean(s),StdDev(s)" > "$OUTPUT_FILE"
+echo "Benchmark,Build,Mean(s),StdDev(s)" > "$OUTPUT_FILE"
 
-# Use awk to group and compute mean/stddev
+# Use awk to compute mean and stddev grouped by Benchmark + Build
 awk -F',' '
-NR > 1 {
-  key = $1 "," $2
+NR > 1 && $3 != "FAIL" {
+  key = $1 "," $2  # Benchmark,Build
   times[key] = times[key] " " $3
   count[key]++
 }
@@ -35,4 +35,3 @@ END {
 ' "$INPUT_FILE" >> "$OUTPUT_FILE"
 
 echo "✅ Summary saved to $OUTPUT_FILE"
-
