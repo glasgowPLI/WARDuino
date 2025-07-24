@@ -1,37 +1,120 @@
-#!/bin/bash
+#define NULL 0
 
-INPUT_FILE="results_matrix.csv"
-OUTPUT_FILE="results_sum.csv"
+/**************
+ * Memory Allocator
+ */
+#define CELL_SIZE 64
 
-echo "Benchmark,Build,Mean(s),StdDev(s)" > "$OUTPUT_FILE"
+typedef union {
+  char bytes[CELL_SIZE];
+  void *ptr;
+} Cell;
 
-# Extract header
-IFS=',' read -r -a header < "$INPUT_FILE"
+#define POOL_SIZE_IN_PAGES 2000
+#define PAGE_SIZE (1 << 12)
 
-# Process each benchmark row
-tail -n +2 "$INPUT_FILE" | while IFS=',' read -r -a row; do
-  benchmark="${row[0]}"
-  for ((i=1; i<${#row[@]}; i++)); do
-    build="${header[$i]}"
-    values="${row[$i]}"
+char mem[POOL_SIZE_IN_PAGES * PAGE_SIZE];
 
-    if [[ -z "$values" || "$values" == "FAIL"* ]]; then
-      echo "$benchmark,$build,FAIL,FAIL" >> "$OUTPUT_FILE"
-      continue
-    fi
+void *pool = NULL;
+Cell *freelist = NULL;
 
-    IFS=';' read -ra times <<< "$values"
-    n=${#times[@]}
-    sum=0
-    for t in "${times[@]}"; do sum=$(awk "BEGIN {print $sum + $t}"); done
-    mean=$(awk "BEGIN {print $sum / $n}")
+void init_mem_pool() {
+  void *p = &mem[0];
+  unsigned int pool_size = POOL_SIZE_IN_PAGES * PAGE_SIZE;
+  Cell *cell = (Cell *)p;
+  while ((char *)cell < ((char *)p + pool_size - CELL_SIZE)) {
+    cell->ptr = cell + 1;
+    cell++;
+  }
+  cell->ptr = NULL;
+  freelist = (Cell *)p;
+  pool = p;
+}
 
-    sumsq=0
-    for t in "${times[@]}"; do sumsq=$(awk "BEGIN {print $sumsq + ($t - $mean)^2}"); done
-    stddev=$(awk "BEGIN {print ($n > 1) ? sqrt($sumsq / ($n - 1)) : 0}")
+void *my_malloc(unsigned int num_bytes) {
+  if (freelist == NULL) return NULL;
+  void *p = (void *)freelist;
+  freelist = freelist->ptr;
+  return p;
+}
 
-    printf "%s,%s,%.4f,%.4f\n" "$benchmark" "$build" "$mean" "$stddev" >> "$OUTPUT_FILE"
-  done
-done
+void my_free(void *ptr) {
+  Cell *empty = (Cell *)ptr;
+  empty->ptr = freelist;
+  freelist = empty;
+}
 
-echo "✅ Summary written to $OUTPUT_FILE"
+/**************
+ * Integer-Based N-Body
+ */
+#define NUM_BODIES 3
+#define STEPS 1000
+
+typedef struct {
+  int x[3];  // position scaled by 1000
+  int v[3];  // velocity
+  int mass;
+} Body;
+
+void zero_velocity(Body *bodies[NUM_BODIES]) {
+  for (int k = 0; k < 3; ++k)
+    for (int i = 1; i < NUM_BODIES; ++i)
+      bodies[0]->v[k] -= (bodies[i]->v[k] * bodies[i]->mass) / bodies[0]->mass;
+}
+
+void advance(Body *bodies[NUM_BODIES]) {
+  for (int i = 0; i < NUM_BODIES; ++i) {
+    for (int j = i + 1; j < NUM_BODIES; ++j) {
+      int dx = bodies[i]->x[0] - bodies[j]->x[0];
+      int dy = bodies[i]->x[1] - bodies[j]->x[1];
+      int dz = bodies[i]->x[2] - bodies[j]->x[2];
+      int dist = dx * dx + dy * dy + dz * dz + 1;
+
+      int f = 1000 / dist;  // fake inverse-square law
+      for (int k = 0; k < 3; ++k) {
+        int dv = (bodies[j]->x[k] - bodies[i]->x[k]) * f;
+        bodies[i]->v[k] += dv * bodies[j]->mass / 10000;
+        bodies[j]->v[k] -= dv * bodies[i]->mass / 10000;
+      }
+    }
+  }
+
+  for (int i = 0; i < NUM_BODIES; ++i)
+    for (int k = 0; k < 3; ++k)
+      bodies[i]->x[k] += bodies[i]->v[k];
+}
+
+void print_state(Body *bodies[NUM_BODIES]) {
+  for (int i = 0; i < NUM_BODIES; ++i) {
+    print_string("Body "); print_int(i); print_string(": ");
+    for (int k = 0; k < 3; ++k) {
+      print_int(bodies[i]->x[k]); print_string(" ");
+    }
+    print_string("\n");
+  }
+}
+
+/**************
+ * Benchmark Entrypoint
+ */
+void start() {
+  print_string("1\n");
+  init_mem_pool();
+  print_string("2\n");
+
+  Body *bodies[NUM_BODIES];
+  for (int i = 0; i < NUM_BODIES; ++i) {
+    bodies[i] = (Body *)my_malloc(sizeof(Body));
+  }
+
+  // Simplified initial conditions (scaled by 1000)
+  *bodies[0] = (Body){{0, 0, 0}, {0, 0, 0}, 10000};
+  *bodies[1] = (Body){{1000, 0, 0}, {0, 2, 0}, 1};
+  *bodies[2] = (Body){{-1000, 0, 0}, {0, -2, 0}, 1};
+
+  zero_velocity(bodies);
+  for (int i = 0; i < STEPS; ++i)
+    advance(bodies);
+
+  print_state(bodies);
+}
