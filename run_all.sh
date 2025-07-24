@@ -9,9 +9,7 @@ BUILD_ORDER=("purecap-hw" "purecap-sw" "purecap-hw-sw" "purecap-nocheck" "native
 # Map build label to folder
 declare -A BUILD_PATHS=(
   ["purecap-hw"]="build-purecap-hw"
-  ["purecap-sw"]="build-purecap-sw"
   ["purecap-hw-sw"]="build-purecap-hw-sw"
-  ["purecap-nocheck"]="build-purecap-nocheck"
   ["native-sw"]="build-native-sw"
   ["native-nocheck"]="build-native"
 )
