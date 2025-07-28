@@ -288,20 +288,6 @@ def_prim(print_string, twoToNoneU32) {
     uint32_t size = arg0.uint32;
     uint32_t addr = arg1.uint32;
 
-    // Validate memory bounds (safeguard)
-    if (addr + size > m->memory.size) {
-        fprintf(stderr, "[ERROR] print_string: out-of-bounds addr=%u size=%u (mem size=%zu)\n", addr, size, m->memory.size);
-        pop_args(2);
-        return false;
-    }
-
-    // Prevent printing zero-length strings
-    if (size == 0) {
-        debug("EMU: print_string skipped (empty string)\n");
-        pop_args(2);
-        return true;
-    }
-
     debug("EMU: print_string addr=%u size=%u\n", addr, size);
     fwrite(m->memory.bytes + addr, 1, size, stdout);
     fflush(stdout);
