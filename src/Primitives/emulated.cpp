@@ -288,9 +288,27 @@ def_prim(print_string, twoToNoneU32) {
     uint32_t size = arg0.uint32;
     uint32_t addr = arg1.uint32;
 
-    debug("EMU: print_string addr=%u size=%u\n", addr, size);
-    fwrite(m->memory.bytes + addr, 1, size, stdout);
+    size_t mem_size = m->memory.bytes.size();  // ✅ correct memory size
+
+    if ((size_t)addr + size > mem_size) {
+        fprintf(stderr, "[ERROR] print_string: out-of-bounds addr=%u size=%u (mem size=%zu)\n",
+                addr, size, mem_size);
+        pop_args(2);
+        return false;
+    }
+
+    if (size == 0) {
+        pop_args(2);
+        return true;
+    }
+
+    const char* data = reinterpret_cast<const char*>(m->memory.bytes.data() + addr);
+    size_t written = fwrite(data, 1, size, stdout);
     fflush(stdout);
+
+    if (written != size) {
+        fprintf(stderr, "[WARN] print_string: only wrote %zu of %u bytes\n", written, size);
+    }
 
     pop_args(2);
     return true;
