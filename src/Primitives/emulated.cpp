@@ -297,40 +297,6 @@ def_prim(print_string, twoToNoneU32) {
     return true;
 }
 
-    if (size == 0) {
-        pop_args(2);
-        return true;
-    }
-
-    const char* data = reinterpret_cast<const char*>(m->memory.bytes + addr);
-    size_t written = fwrite(data, 1, size, stdout);
-    fflush(stdout);
-
-    if (written != size) {
-        fprintf(stderr, "[WARN] print_string: only wrote %zu of %u bytes\n", written, size);
-    }
-
-    pop_args(2);
-    return true;
-}
-
-    if (size == 0) {
-        pop_args(2);
-        return true;
-    }
-
-    const char* data = reinterpret_cast<const char*>(m->memory.bytes.data() + addr);
-    size_t written = fwrite(data, 1, size, stdout);
-    fflush(stdout);
-
-    if (written != size) {
-        fprintf(stderr, "[WARN] print_string: only wrote %zu of %u bytes\n", written, size);
-    }
-
-    pop_args(2);
-    return true;
-}
-
 def_prim(wifi_connect, fourToNoneU32) {
     uint32_t ssid = arg3.uint32;
     uint32_t len0 = arg2.uint32;
