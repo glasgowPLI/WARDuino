@@ -285,11 +285,13 @@ def_prim(print_int, oneToNoneU32) {
 }
 
 def_prim(print_string, twoToNoneU32) {
-    uint32_t addr = arg1.uint32;
     uint32_t size = arg0.uint32;
-    std::string text = parse_utf8_string(m->memory.bytes, size, addr);
-    debug("EMU: print string at %i: ", addr);
-    printf("%s", text.c_str());
+    uint32_t addr = arg1.uint32;
+
+    debug("EMU: print string from addr=%u, size=%u\n", addr, size);
+    fwrite(m->memory.bytes + addr, 1, size, stdout);
+    fflush(stdout);
+
     pop_args(2);
     return true;
 }
