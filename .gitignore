@@ -7,9 +7,8 @@
 *.o
 
 # Build folders
-build/
+build*/
 cmake-build-*
-build*
 
 # CMake
 CMakeLists.txt.user

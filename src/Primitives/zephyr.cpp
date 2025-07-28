@@ -302,6 +302,13 @@ def_prim(print_int, oneToNoneI32) {
     return true;
 }
 
+def_prim(print_string, oneToNoneI32) {
+    const char* str = (const char*)&m->memory.bytes[arg0.uint32];
+    printf("%s", str);
+    pop_args(1);
+    return true;
+}
+
 def_prim(abort, NoneToNoneU32) {
     printf("abort\n");
     return false;
@@ -477,6 +484,7 @@ void install_primitives() {
     install_primitive_reverse(chip_digital_write);
     install_primitive(chip_digital_read);
     install_primitive(print_int);
+    install_primitive(print_string);
     install_primitive(abort);
 
 #ifdef CONFIG_BOARD_STM32L496G_DISCO

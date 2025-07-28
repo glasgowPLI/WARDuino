@@ -365,13 +365,13 @@ def_prim(print_string, twoToNoneU32) {
     uint32_t addr = arg1.uint32;
     uint32_t size = arg0.uint32;
 
-    String str = parse_utf8_string(m->memory.bytes, size, addr).c_str();
-
-    Serial.print(str);
+    std::string host_str = parse_utf8_string(m->memory.bytes, size, addr);
+    Serial.print(host_str.c_str());
     Serial.flush();
     pop_args(2);
     return true;
 }
+
 
 def_prim(wifi_connect, fourToNoneU32) {
     uint32_t ssid = arg3.uint32;
