@@ -288,14 +288,14 @@ def_prim(print_string, twoToNoneU32) {
     uint32_t size = arg0.uint32;
     uint32_t addr = arg1.uint32;
 
-    size_t mem_size = m->memory.length;  // ✅ correct way for raw memory
+    const char* data = reinterpret_cast<const char*>(m->memory.bytes + addr);
 
-    if ((size_t)addr + size > mem_size) {
-        fprintf(stderr, "[ERROR] print_string: out-of-bounds addr=%u size=%u (mem size=%zu)\n",
-                addr, size, mem_size);
-        pop_args(2);
-        return false;
-    }
+    fwrite(data, 1, size, stdout);
+    fflush(stdout);
+
+    pop_args(2);
+    return true;
+}
 
     if (size == 0) {
         pop_args(2);
