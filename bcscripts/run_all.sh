@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BENCHMARK_DIR=~/warduino_benchmarks
+BENCHMARK_DIR=~/warduino_benchmarks/wasm
 RESULT_FILE="results_matrix.csv"
 
 # Build labels in desired order
@@ -8,10 +8,10 @@ BUILD_ORDER=("purecap-hw" "purecap-hw-sw" "native-sw" "native-nocheck")
 
 # Map build label to folder
 declare -A BUILD_PATHS=(
-  ["purecap-hw"]="build-purecap-hw"
-  ["purecap-hw-sw"]="build-purecap-hw-sw"
-  ["native-sw"]="build-native-sw"
-  ["native-nocheck"]="build-native"
+  ["purecap-hw"]="../build-purecap-hw"
+  ["purecap-hw-sw"]="../build-purecap-hw-sw"
+  ["native-sw"]="../build-native-sw"
+  ["native-nocheck"]="../build-native"
 )
 
 # Initialize matrix if not exist

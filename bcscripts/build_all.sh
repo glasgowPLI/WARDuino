@@ -3,10 +3,10 @@
 set -e  # Stop on first error
 
 BUILD_DIRS="
-build-purecap-hw
-build-purecap-hw-sw
-build-native-sw
-build-native-nocheck
+../build-purecap-hw
+../build-purecap-hw-sw
+../build-native-sw
+../build-native-nocheck
 "
 
 for dir in $BUILD_DIRS; do
