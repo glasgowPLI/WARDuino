@@ -14,14 +14,21 @@ declare -A BUILD_PATHS=(
   ["native-nocheck"]="../build-native-nocheck"
 )
 
-# Initialize matrix if not exist
+# --- CSV header block (added) ---
 if [[ ! -f "$RESULT_FILE" ]]; then
-  echo -n "Benchmark" > "$RESULT_FILE"
-  for build in "${BUILD_ORDER[@]}"; do
-    echo -n ",$build" >> "$RESULT_FILE"
-  done
-  echo >> "$RESULT_FILE"
+  {
+    echo "# WARDuino benchmark results"
+    echo "# generated: $(date -Iseconds)"
+    echo "# columns: Benchmark,$(IFS=','; echo "${BUILD_ORDER[*]}")"
+    echo "# values: ';'-separated elapsed times per run or 'FAIL'"
+    echo -n "Benchmark"
+    for build in "${BUILD_ORDER[@]}"; do
+      echo -n ",$build"
+    done
+    echo
+  } > "$RESULT_FILE"
 fi
+# --- end header block ---
 
 # Ensure temporary file
 tmpfile=$(mktemp)
