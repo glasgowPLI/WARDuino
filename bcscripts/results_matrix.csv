@@ -1,0 +1,7 @@
+binarytrees.wasm,10.76,10.78,4.53
+fann.wasm,7.93,7.95,3.34
+knucleotide.wasm,6.01,6.02,2.56
+mandelbrot.wasm,7.10,7.11,3.02
+memory_copy.wasm,2.85,2.87,1.23
+memory_matrix.wasm,FAIL,FAIL,FAIL
+revcomp.wasm,0.29,0.29,0.12
