@@ -11,7 +11,7 @@ declare -A BUILD_PATHS=(
   ["purecap-hw"]="../build-purecap-hw"
   ["purecap-hw-sw"]="../build-purecap-hw-sw"
   ["native-sw"]="../build-native-sw"
-  ["native-nocheck"]="../build-native"
+  ["native-nocheck"]="../build-native-nocheck"
 )
 
 # Initialize matrix if not exist
