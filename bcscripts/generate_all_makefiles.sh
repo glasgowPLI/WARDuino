@@ -7,12 +7,12 @@ CMAKE_FLAGS_COMMON='-DCMAKE_C_COMPILER=clang -DCMAKE_C_FLAGS="-march=morello -ma
 
 # List of folder names and flags
 build_dirs=(
-  "build-purecap-hw-sw"
-  "build-purecap-hw"
-  "build-purecap-sw"
-  "build-purecap-nocheck"
-  "build-native-sw"
-  "build-native"
+  "../build-purecap-hw-sw"
+  "../build-purecap-hw"
+  "../build-purecap-sw"
+  "../build-purecap-nocheck"
+  "../build-native-sw"
+  "../build-native"
 )
 
 flags_list=(
