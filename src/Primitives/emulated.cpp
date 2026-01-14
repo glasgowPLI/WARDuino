@@ -306,26 +306,6 @@ def_prim(warduino_sum2, twoToNoneU32) {
     return true;
 }
 
-def_prim(warduino_sum2, twoToOneU32) {
-    // Interpret args as: offset into linear memory, and length in bytes.
-    uint32_t offset = arg0.uint32;
-    uint32_t len    = arg1.uint32;
-
-    // Base of Wasm linear memory in the host.
-    unsigned char *base = (unsigned char *) m->memory.bytes;
-
-    // This is the *bug*: no bounds checking at all.
-    unsigned char *p = base + offset;
-    for (uint32_t i = 0; i < len; i++) {
-        p[i] = 0xAA;    // arbitrary pattern
-    }
-
-    // Return len just so there is some result.
-    push_u32(len);
-    pop_args(2);
-    return true;
-}
-
 def_prim(wifi_connect, fourToNoneU32) {
     uint32_t ssid = arg3.uint32;
     uint32_t len0 = arg2.uint32;
