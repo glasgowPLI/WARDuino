@@ -372,7 +372,6 @@ def_prim(print_string, twoToNoneU32) {
     return true;
 }
 
-
 def_prim(wifi_connect, fourToNoneU32) {
     uint32_t ssid = arg3.uint32;
     uint32_t len0 = arg2.uint32;

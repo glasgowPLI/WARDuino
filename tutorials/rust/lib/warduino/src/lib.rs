@@ -184,6 +184,9 @@ pub fn print(text: &str) { unsafe { _print_buffer(text.as_ptr(), text.len()) } }
 /// Print an integer to the serial port.
 pub fn print_int(integer: i32) { unsafe { _print_int(integer) } }
 
+/// Call the warduino_sum2 primitive.
+pub fn sum2(a: i32, b: i32) -> i32 { unsafe { _warduino_sum2(a, b) } }
+
 /// subscribe a callback function to an interrupt on the given pin
 pub fn sub_interrupt(pin: u32, mode: InterruptMode, f: fn(&str, &str, u32)) { unsafe { _sub_interrupt(pin, f, mode as u32) } }
 

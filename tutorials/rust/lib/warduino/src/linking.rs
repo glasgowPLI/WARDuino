@@ -25,6 +25,8 @@ extern {
     pub fn _print_buffer(text: *const u8, length: usize);
     #[link_name = "print_int"]
     pub fn _print_int(integer: i32);
+    #[link_name = "warduino_sum2"]
+    pub fn _warduino_sum2(a: i32, b: i32) -> i32;
 
     // Wi-Fi
     #[link_name = "wifi_connect"]

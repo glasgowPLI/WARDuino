@@ -42,13 +42,17 @@ def load_matrix(path):
         data.append(row)
     return builds, data
 
+def clean_label(name: str) -> str:
+    base = os.path.basename(name)
+    return base[:-5] if base.endswith(".wasm") else base  # why: cleaner x-axis
+
 def main():
     if not os.path.exists(CSV_IN):
         sys.exit(f"Missing CSV: {CSV_IN}")
     builds, data = load_matrix(CSV_IN)
-    benchmarks = [row["Benchmark"] for row in data]
+    benchmarks_raw = [row["Benchmark"] for row in data]
+    benchmarks = [clean_label(bm) for bm in benchmarks_raw]
 
-    # Compute per-benchmark stats per build
     means = {b: [] for b in builds}
     stds  = {b: [] for b in builds}
     counts= {b: [] for b in builds}
@@ -57,13 +61,11 @@ def main():
             m, s, n = mean_std(parse_cell(row.get(b, "")))
             means[b].append(m); stds[b].append(s); counts[b].append(n)
 
-    # Try to plot; if matplotlib missing, print summary
     try:
         import matplotlib.pyplot as plt
     except Exception:
         print("matplotlib not available. Summary:")
         for b in builds:
-            # overall mean across benchmarks (ignoring NaN)
             vals = [v for v in means[b] if not math.isnan(v)]
             overall = sum(vals) / len(vals) if vals else math.nan
             print(f"{b:>16}: mean={overall if not math.isnan(overall) else 'nan'} (n_bench={len(vals)})")
@@ -79,7 +81,6 @@ def main():
         bar_x = [xi + offsets[i] for xi in x]
         y     = means[b]
         yerr  = [0 if math.isnan(s) else s for s in stds[b]]
-        # mask NaNs to avoid plotting as zeros
         bx = [bx for bx, yy in zip(bar_x, y) if not math.isnan(yy)]
         by = [yy for yy in y if not math.isnan(yy)]
         be = [ee for yy, ee in zip(y, yerr) if not math.isnan(yy)]
