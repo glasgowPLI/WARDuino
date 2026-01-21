@@ -23,8 +23,8 @@ option(HARDWARE_BOUND_CHECKS "Enable hardware-based bounds checks" OFF)
 # =========================
 if (BUILD_MORELLO_PURECAP)
     message(STATUS "Compiling for CHERI purecap (Morello)")
-    add_compile_options(-march=morello -mabi=purecap)
-    add_link_options(-march=morello -mabi=purecap)
+    add_compile_options(-march=morello -mabi=purecap-benchmark)
+    add_link_options(-march=morello -mabi=purecap-benchmark)
     add_compile_definitions(PURECAP_MODE=1)
 endif()
 
