@@ -318,6 +318,14 @@ def_prim(warduino_sum2, twoToNoneU32) {
     return true;
 }
 
+def_prim(print_cap, oneToNoneU32) {
+    uint32_t x = arg0.uint32; 
+    printf("%#p\n", x);
+    fflush(stdout);
+    pop_args(1);
+    return true;
+}
+
 def_prim(abort, NoneToNoneU32) {
     printf("abort\n");
     return false;
@@ -495,6 +503,7 @@ void install_primitives() {
     install_primitive(print_int);
     install_primitive(print_string);
     install_primitive(warduino_sum2);
+    install_primitive(print_cap);
     install_primitive(abort);
 
 #ifdef CONFIG_BOARD_STM32L496G_DISCO

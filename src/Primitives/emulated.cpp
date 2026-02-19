@@ -306,6 +306,14 @@ def_prim(warduino_sum2, twoToNoneU32) {
     return true;
 }
 
+def_prim(print_cap, oneToNoneU32) {
+    uint32_t x = arg0.uint32; 
+    printf("%#p\n", x);
+    fflush(stdout);
+    pop_args(1);
+    return true;
+}
+
 def_prim(wifi_connect, fourToNoneU32) {
     uint32_t ssid = arg3.uint32;
     uint32_t len0 = arg2.uint32;
@@ -584,6 +592,7 @@ void install_primitives() {
     install_primitive(print_int);
     install_primitive(print_string);
     install_primitive(warduino_sum2);
+    install_primitive(print_cap);
 
     install_primitive(wifi_connect);
     install_primitive(wifi_status);
