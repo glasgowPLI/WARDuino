@@ -27,7 +27,7 @@
 #include "primitives.h"
 
 #define NUM_PRIMITIVES 0
-#define NUM_PRIMITIVES_ARDUINO 30 // was 27
+#define NUM_PRIMITIVES_ARDUINO 31 // was 27 before add print_int
 
 #define ALL_PRIMITIVES (NUM_PRIMITIVES + NUM_PRIMITIVES_ARDUINO)
 
