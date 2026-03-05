@@ -21,6 +21,12 @@ option(HARDWARE_BOUND_CHECKS "Enable hardware-based bounds checks" OFF)
 # =========================
 # CHERI Configuration
 # =========================
+
+if (SOFTWARE_BOUND_CHECKS)
+    message(STATUS "Enabling software bound checks")
+    add_compile_definitions(SOFTWARE_BOUND_CHECKS=1)
+endif()
+
 if (BUILD_MORELLO_PURECAP)
     message(STATUS "Compiling for CHERI purecap (Morello)")
     add_compile_options(-march=morello -mabi=purecap)
@@ -38,11 +44,6 @@ endif()
 if (HARDWARE_BOUND_CHECKS)
     message(STATUS "Enabling CHERI hardware bound checks")
     add_compile_definitions(HARDWARE_BOUND_CHECKS=1)
-endif()
-
-if (SOFTWARE_BOUND_CHECKS)
-    message(STATUS "Enabling software bound checks")
-    add_compile_definitions(SOFTWARE_BOUND_CHECKS=1)
 endif()
 
 # Warn if no target is set
