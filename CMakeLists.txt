@@ -12,10 +12,10 @@ option(BUILD_ESP "Build for ESP" OFF)
 option(BUILD_EMULATOR "Build for emulator" OFF)
 option(BUILD_UNITTEST "Build for testing" OFF)
 
-# CHERI-specific build options
+# Specific build options
+option(SOFTWARE_BOUND_CHECKS "Enable software-based bounds checks" OFF)
 option(BUILD_MORELLO_PURECAP "Compile for purecap Morello" OFF)
 option(BUILD_MORELLO_HYBRID "Compile for hybrid Morello" OFF)
-option(SOFTWARE_BOUND_CHECKS "Enable software-based bounds checks" OFF)
 option(HARDWARE_BOUND_CHECKS "Enable hardware-based bounds checks" OFF)
 
 # =========================
