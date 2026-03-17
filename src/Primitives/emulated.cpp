@@ -309,7 +309,7 @@ def_prim(warduino_sum2, twoToNoneU32) {
 def_prim(print_cap, oneToNoneU32) {
     uint32_t addr = arg0.uint32;
     uint8_t *x = m->memory.bytes + addr;
-    printf("%#p\n", x);
+    printf("%p\n", x);
     fflush(stdout);
     pop_args(1);
     return true;
