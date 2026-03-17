@@ -127,6 +127,8 @@ bool Interpreter::store(Module *m, uint8_t type, uint32_t addr, StackValue &sval
     //uint8_t *mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
 
 #ifdef SOFTWARE_BOUND_CHECKS
+    uint8_t *mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
+
     bool overflow = false;
     if (maddr < m->memory.bytes) {
         overflow = true;
@@ -160,6 +162,8 @@ bool Interpreter::load(Module *m, uint8_t type, uint32_t addr, uint32_t offset) 
     //uint8_t *mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
 
 #ifdef SOFTWARE_BOUND_CHECKS
+    uint8_t *mem_end = m->memory.bytes + m->memory.pages * (uint32_t)PAGE_SIZE;
+
     overflow |= maddr < m->memory.bytes || maddr + size > mem_end;
 
     if (!m->options.disable_memory_bounds) {
