@@ -1,6 +1,3 @@
-Cite Qin, Yuxin , Singer, Jeremy and Wang, Xin (2026) Evaluating and Enhancing Memory Safety in LLM-Generated Code on CHERI. In: 29th International Conference on Computer Supported Cooperative Work in Design (CSCWD 2026), Fuzhou, China, 13 - 15 May 2026
-
-
 <div align="center">
   <h1>WARDuino</h1>
 
