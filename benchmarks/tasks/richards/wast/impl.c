@@ -17,14 +17,8 @@
 **                                       the main loop 100x more often)
 */
 
-//#include <stdio.h>
-//#include <stdlib.h>
-//#include <time.h>
-
-//#if GC
-//#include <gc.h>
-//#define malloc GC_malloc
-//#endif
+#include "exit_vm.h"
+#include "myalloc.h"
 
 #ifdef bench100
 #define                Count           10000*100
@@ -109,7 +103,7 @@ void createtask(int id,
                 long v1,
                 long v2)
 {
-    struct task *t = (struct task *)malloc(sizeof(struct task));
+    struct task *t = (struct task *)myalloc(sizeof(struct task));
 
     tasktab[id] = t;
     t->t_link   = tasklist;
@@ -126,28 +120,29 @@ void createtask(int id,
 struct packet *pkt(struct packet *link, int id, int kind)
 {
     int i;
-    struct packet *p = (struct packet *)malloc(sizeof(struct packet));
+    struct packet *p = (struct packet *)myalloc(sizeof(struct packet));
 
-    for (i=0; i<=BUFSIZE; i++)
+    for (i = 0; i <= BUFSIZE; i++) {
         p->p_a2[i] = 0;
+    }
 
     p->p_link = link;
     p->p_id = id;
     p->p_kind = kind;
     p->p_a1 = 0;
 
-    return (p);
+    return p;
 }
 
 void trace(char a)
 {
    if ( --layout <= 0 )
    {
-        printf("\n");
+        //printf("\n");
         layout = 50;
     }
 
-    printf("%c", a);
+    //printf("%c", a);
 }
 
 void schedule()
@@ -213,7 +208,7 @@ struct task *findtcb(int id)
 
     if (1<=id && id<=(long)tasktab[0])
     t = tasktab[id];
-    if (t==0) printf("\nBad task id %d\n", id);
+    //if (t==0) printf("\nBad task id %d\n", id);
     return(t);
 }
 
@@ -394,9 +389,9 @@ int bench() {
 
 
     if (!(qpktcount == Qpktcountval && holdcount == Holdcountval)) {
-        printf("qpkt count = %d  holdcount = %d\n", qpktcount, holdcount);
-        printf("These results are incorrect");
-        exit(1);
+        //printf("qpkt count = %d  holdcount = %d\n", qpktcount, holdcount);
+        //printf("These results are incorrect");
+        exit_vm(1);
     }
     // printf("\nend of run\n");
     return qpktcount;
@@ -420,9 +415,9 @@ int main(int argc, char* argv[])
 
     int result = 0;
     while (iterations > 0) {
-         unsigned long start = clock();
+         //unsigned long start = clock();
         result += inner_loop(inner_iterations);
-         unsigned long elapsed = clock() - start;
+         //unsigned long elapsed = clock() - start;
         //printf("Richards: iterations=100 runtime: %lu%s\n", elapsed, "us");
         iterations--;
     }

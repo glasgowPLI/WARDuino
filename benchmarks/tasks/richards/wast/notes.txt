@@ -1,0 +1,1 @@
+/home/yuxin/wasi-sdk-dlmalloc/build/wasi-sdk-20.11gf3b43c703f1a+m/bin/clang --target=wasm32-wasi -Oz -flto -Wl,--export-all -Wl,--no-entry -Wl,--strip-all -Wl,--lto-O3 richards/wast/impl.c richards/wast/myalloc.c richards/wast/exit_vm.c -o richards.wasm --sysroot=/home/yuxin/wasi-sdk-dlmalloc/build/wasi-sdk-20.11gf3b43c703f1a+m/share/wasi-sysroot -lc

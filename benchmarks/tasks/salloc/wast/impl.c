@@ -1,48 +1,59 @@
-#define NULL (void *)0
-#define BUFFER_LENGTH 100
-// #ifdef __CHERI_PURE_CAPABILITY__
+#define MEMORY_POOL_SIZE (1024 * 1024) // 1 MB
+#define NUM_ELEMENTS 100000           // Number of elements to process
+#define ITERATIONS 1000               // Number of iterations for benchmarking
+
 __attribute__((import_module("env"), import_name("print_int"))) void print_int(int);
-// #endif
 
-int buffer[BUFFER_LENGTH];  /* this is the large array we will split up */
-int *ptrs[BUFFER_LENGTH];   /* this is an array of pointers into buffer */
+// Static memory pool to simulate linear memory
+static char memory_pool[MEMORY_POOL_SIZE];
 
-int *allocate() {
-  static int next = 0;
-  if (next < BUFFER_LENGTH) {
-    /* return a pointer to the next free slot in buffer */
-    return &(buffer[next++]);
-  } else {
-    /* no space left in buffer, return NULL */
-    return NULL;
-  }
+// Simulated memory allocation
+static int current_offset = 0;
+
+void *my_malloc(int size) {
+    if (current_offset + size > MEMORY_POOL_SIZE) return 0;
+    void *allocated_memory = &memory_pool[current_offset];
+    current_offset += size;
+    return allocated_memory;
 }
 
-int bench(void) {
-  int i, j;
-  int total = 0;
-  int iterations = 10;  // Number of times to allocate BUFFER_LENGTH elements
 
-  for (j = 0; j < iterations; j++) {  // Outer loop to repeat allocations
-    int iter_total = BUFFER_LENGTH;
+//int bench(void) {
+//  int i, j;
+//  int total = 0;
+//  int iterations = 10;  // Number of times to allocate BUFFER_LENGTH elements
 
-    // Allocate and store pointers
-    for (i = 0; i < iter_total; i++) {
-      int *p = allocate();
-      if (p) {
-        *p = i;
-        ptrs[i] = p;
-      }
+// Benchmark function
+void bench() {
+    // Allocate two large arrays
+    int *array1 = (int *)my_malloc(NUM_ELEMENTS * sizeof(int));
+    int *array2 = (int *)my_malloc(NUM_ELEMENTS * sizeof(int));
+
+
+    if (!array1 || !array2) {
+        print_int(-1); // Indicate memory allocation failure
+        return;
     }
 
-    // Sum values
-    for (i = 0; i < iter_total; i++) {
-      total += *ptrs[i];
+    // Initialize arrays
+    for (int i = 0; i < NUM_ELEMENTS; i++) {
+        array1[i] = i;          // Store operation
+        array2[i] = NUM_ELEMENTS - i; // Store operation
     }
-  }
 
-  // #ifdef __CHERI_PURE_CAPABILITY__
-  print_int(total);
-  // #endif
-  return total;
+    // Perform load and store operations repeatedly
+    for (int iter = 0; iter < ITERATIONS; iter++) {
+        for (int i = 0; i < NUM_ELEMENTS; i++) {
+            array1[i] += array2[i]; // Load and store
+        }
+    }
+
+    // Compute and output the sum of array1
+    int sum = 0;
+    for (int i = 0; i < NUM_ELEMENTS; i++) {
+        sum += array1[i]; // Load operation
+    }
+
+    print_int(sum); // Print the result
 }
+  
