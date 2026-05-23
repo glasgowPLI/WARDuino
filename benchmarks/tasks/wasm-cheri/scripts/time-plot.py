@@ -1,33 +1,50 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+import numpy as np
 
-# Define the input CSV file and output PDF file paths
+# Define input and output file paths
 input_csv = '../data/time-execution.csv'
-output_pdf = '../graphs/time-plot.pdf'
+output_pdf = '../data/time-plot.pdf'
 
-# Load the CSV file into a pandas DataFrame
+# Load the data from the CSV file into a DataFrame
 df = pd.read_csv(input_csv)
 
-# Check if the DataFrame is loaded correctly
-print(df.head())
+# Get unique benchmarks and tools for dynamic plotting
+benchmarks = df['Benchmark'].unique()
+tools = df['Tool'].unique()
 
-# Plotting
-plt.figure(figsize=(12, 7))
-plt.bar(df['Benchmark'], df['Time'], yerr=df['Error'], 
-        capsize=5, color='skyblue', edgecolor='black')
+# Set up the figure
+bar_width = 0.25
+x = np.arange(len(benchmarks))  # The label locations for each benchmark group
+fig, ax = plt.subplots(figsize=(10, 7))
 
-# Adding labels and title
-plt.ylabel('Time(s)')
-plt.title('Average Execution Time of Benchmarks with Standard Error')
-plt.xticks(rotation=45)  # Rotate benchmark names for better readability
+# Plot each tool as a separate bar within each benchmark group
+for i, tool in enumerate(tools):
+    # Filter data for the current tool
+    tool_data = df[df['Tool'] == tool]
+    
+    # Create a bar for each tool at the correct x position
+    ax.bar(
+        x + i * bar_width, 
+        tool_data['Time'], 
+        yerr=tool_data['Error'], 
+        capsize=5, 
+        width=bar_width, 
+        label=tool
+    )
 
-# Save the plot as a PDF file
-plt.tight_layout()
+# Add labels and title
+ax.set_xlabel('Benchmark')
+ax.set_ylabel('Time (s)')
+ax.set_title('Execution Time of Benchmarks by Tool')
+ax.set_xticks(x + bar_width * (len(tools) - 1) / 2)
+ax.set_xticklabels(benchmarks)
+ax.legend(title='Tool')
 
-# Ensure the output directory exists
+# Save the plot as a PDF file in the specified directory
 os.makedirs(os.path.dirname(output_pdf), exist_ok=True)
-
+plt.tight_layout()
 plt.savefig(output_pdf)
 
 # Show the plot
