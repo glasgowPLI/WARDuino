@@ -1,0 +1,205 @@
+{
+  "platform": "WARDuino",
+  "timestamp": "2025-10-25T11:19:26.727338",
+  "wdcli_path": "/home/yuxin/WARDuino/build-emu/wdcli",
+  "timeout": 5,
+  "test_environment": {
+    "test_directory": "ward_tests",
+    "report_directory": "ward_tests/report",
+    "total_tests": 19
+  },
+  "results": {
+    "compute_test": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:02.718627",
+      "file_size": 2804,
+      "entry_point": "_start"
+    },
+    "control_test": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:03.984544",
+      "file_size": 2652,
+      "entry_point": "_start"
+    },
+    "memory_test": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:05.252003",
+      "file_size": 1360,
+      "entry_point": "_start"
+    },
+    "oob_read": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:06.521657",
+      "file_size": 730,
+      "entry_point": "_start"
+    },
+    "oob_write": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:07.790948",
+      "file_size": 888,
+      "entry_point": "_start"
+    },
+    "stack_overflow": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:09.060502",
+      "file_size": 653,
+      "entry_point": "_start"
+    },
+    "test_Buffer_Underflow": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:10.336937",
+      "file_size": 945,
+      "entry_point": "_start"
+    },
+    "test_Division_By_Zero": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:11.627546",
+      "file_size": 591,
+      "entry_point": "_start"
+    },
+    "test_Double_Free": {
+      "status": "FILE_NOT_FOUND",
+      "details": "文件不存在: ward_tests/test_Double_Free.wasm",
+      "timestamp": "2025-10-25T11:19:11.727817"
+    },
+    "test_Double_Free_Simulation": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:12.894689",
+      "file_size": 619,
+      "entry_point": "_start"
+    },
+    "test_Format_String_Simulation": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:17.744785",
+      "file_size": 908,
+      "entry_point": "_start"
+    },
+    "test_Heap_Overflow": {
+      "status": "FILE_NOT_FOUND",
+      "details": "文件不存在: ward_tests/test_Heap_Overflow.wasm",
+      "timestamp": "2025-10-25T11:19:17.845520"
+    },
+    "test_Infinite_Loop": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:19.014370",
+      "file_size": 515,
+      "entry_point": "_start"
+    },
+    "test_Integer_Overflow": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:20.282187",
+      "file_size": 581,
+      "entry_point": "_start"
+    },
+    "test_Memory_Access": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:21.550041",
+      "file_size": 565,
+      "entry_point": "_start"
+    },
+    "test_Memory_Alignment": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:22.817840",
+      "file_size": 596,
+      "entry_point": "_start"
+    },
+    "test_Null_Pointer_Dereference": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:24.085300",
+      "file_size": 597,
+      "entry_point": "_start"
+    },
+    "test_OOB_Read": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:25.353426",
+      "file_size": 881,
+      "entry_point": "_start"
+    },
+    "test_OOB_Write": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:19:26.626780",
+      "file_size": 778,
+      "entry_point": "_start"
+    }
+  },
+  "summary": {
+    "total_tests": 19,
+    "security_mechanisms_triggered": 0,
+    "completed_normally": 0,
+    "timeouts": 0,
+    "failed_tests": 2,
+    "other_results": 17
+  },
+  "security_effectiveness": {
+    "detection_rate": 0.0,
+    "successful_tests": 17
+  }
+}

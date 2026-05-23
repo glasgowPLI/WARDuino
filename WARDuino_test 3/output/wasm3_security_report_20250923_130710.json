@@ -1,0 +1,116 @@
+{
+  "platform": "wasm3",
+  "timestamp": "2025-09-23T13:07:10.820934",
+  "wasm3_path": "../wasm3/build/wasm3",
+  "timeout": 10,
+  "test_environment": {
+    "manifest_generated": "2025-09-23T12:49:36.823573",
+    "total_tests": 10
+  },
+  "results": {
+    "OOB_Write": {
+      "status": "ERROR",
+      "details": "检测到错误",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: function lookup failed ('_start')\n",
+      "timestamp": "2025-09-23T13:07:02.120713",
+      "file_size": 706
+    },
+    "OOB_Read": {
+      "status": "ERROR",
+      "details": "检测到错误",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: function lookup failed ('_start')\n",
+      "timestamp": "2025-09-23T13:07:06.288940",
+      "file_size": 44
+    },
+    "Stack_Overflow": {
+      "status": "ERROR",
+      "details": "检测到错误",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: function lookup failed ('_start')\n",
+      "timestamp": "2025-09-23T13:07:06.792740",
+      "file_size": 884
+    },
+    "Null_Pointer_Dereference": {
+      "status": "ERROR",
+      "details": "检测到错误",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: function lookup failed ('_start')\n",
+      "timestamp": "2025-09-23T13:07:07.295819",
+      "file_size": 768
+    },
+    "Type_Confusion": {
+      "status": "ERROR",
+      "details": "检测到错误",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: function lookup failed ('_start')\n",
+      "timestamp": "2025-09-23T13:07:07.800046",
+      "file_size": 788
+    },
+    "Uninitialized_Memory": {
+      "status": "ERROR",
+      "details": "检测到错误",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: function lookup failed ('_start')\n",
+      "timestamp": "2025-09-23T13:07:08.304177",
+      "file_size": 741
+    },
+    "Integer_Overflow": {
+      "status": "ERROR",
+      "details": "检测到错误",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: function lookup failed ('_start')\n",
+      "timestamp": "2025-09-23T13:07:08.807639",
+      "file_size": 754
+    },
+    "Infinite_Loop": {
+      "status": "ERROR",
+      "details": "检测到错误",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: function lookup failed ('_start')\n",
+      "timestamp": "2025-09-23T13:07:09.311476",
+      "file_size": 687
+    },
+    "Division_By_Zero": {
+      "status": "ERROR",
+      "details": "检测到错误",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: function lookup failed ('_start')\n",
+      "timestamp": "2025-09-23T13:07:09.816716",
+      "file_size": 764
+    },
+    "Memory_Access": {
+      "status": "ERROR",
+      "details": "检测到错误",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: function lookup failed ('_start')\n",
+      "timestamp": "2025-09-23T13:07:10.320258",
+      "file_size": 742
+    }
+  },
+  "summary": {
+    "total_tests": 10,
+    "security_mechanisms_triggered": 10,
+    "trapped": 0,
+    "errors": 10,
+    "completed_normally": 0,
+    "timeouts": 0,
+    "failed_tests": 0,
+    "other_results": 0
+  },
+  "security_effectiveness": {
+    "detection_rate": 100.0,
+    "successful_tests": 10
+  }
+}

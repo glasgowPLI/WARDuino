@@ -1,0 +1,469 @@
+{
+  "platform": "WARDuino",
+  "timestamp": "2025-10-25T17:42:49.137320",
+  "configs_used": [
+    [
+      "_start",
+      true
+    ]
+  ],
+  "timeout_setting": 5,
+  "summary": {
+    "total_tests": 41,
+    "security_triggered": 41,
+    "detection_rate": 100.0
+  },
+  "results": {
+    "boundary_test": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/boundary_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:41:58.792410",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/boundary_test.wasm"
+    },
+    "test_complex_patterns": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_complex_patterns.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:41:59.959677",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_complex_patterns.wasm"
+    },
+    "complex": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/complex.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:01.128743",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/complex.wasm"
+    },
+    "test_Null_Pointer_Dereference": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Null_Pointer_Dereference.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:02.294175",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Null_Pointer_Dereference.wasm"
+    },
+    "test_Double_Free": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Double_Free.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:03.462553",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Double_Free.wasm"
+    },
+    "test_Division_By_Zero": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Division_By_Zero.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:04.633866",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Division_By_Zero.wasm"
+    },
+    "test_Heap_Overflow": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Heap_Overflow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:05.800013",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Heap_Overflow.wasm"
+    },
+    "test_Integer_Overflow": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Integer_Overflow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:06.965950",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Integer_Overflow.wasm"
+    },
+    "test_Infinite_Loop": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Infinite_Loop.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:08.131912",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Infinite_Loop.wasm"
+    },
+    "test_Double_Free_Simulation": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Double_Free_Simulation.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:09.299787",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Double_Free_Simulation.wasm"
+    },
+    "compute_test": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/compute_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:10.467714",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/compute_test.wasm"
+    },
+    "test_basic_memory": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_basic_memory.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:11.633262",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_basic_memory.wasm"
+    },
+    "test_Memory_Access": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Memory_Access.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:12.799118",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Memory_Access.wasm"
+    },
+    "boundary": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/boundary.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:13.967051",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/boundary.wasm"
+    },
+    "test_Buffer_Underflow": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Buffer_Underflow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:15.137440",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Buffer_Underflow.wasm"
+    },
+    "test_array_bounds": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_array_bounds.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:16.303622",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_array_bounds.wasm"
+    },
+    "step_test": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/step_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:17.469327",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/step_test.wasm"
+    },
+    "pointer_test": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/pointer_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:18.638109",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/pointer_test.wasm"
+    },
+    "test_control_flow": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_control_flow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:19.807280",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_control_flow.wasm"
+    },
+    "memory_safety_test": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/memory_safety_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:20.979541",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/memory_safety_test.wasm"
+    },
+    "pointer": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/pointer.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:22.145812",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/pointer.wasm"
+    },
+    "nomal": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/nomal.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:23.312404",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/nomal.wasm"
+    },
+    "test_pointers": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_pointers.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:24.482268",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_pointers.wasm"
+    },
+    "memory_test": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/memory_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:29.294315",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/memory_test.wasm"
+    },
+    "test_special_cases": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_special_cases.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:30.460244",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_special_cases.wasm"
+    },
+    "complex_test": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/complex_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:31.627106",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/complex_test.wasm"
+    },
+    "test_Memory_Alignment": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Memory_Alignment.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:32.797053",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Memory_Alignment.wasm"
+    },
+    "oob_write": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/oob_write.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:33.963897",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/oob_write.wasm"
+    },
+    "memory_alignment": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/memory_alignment.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:35.130828",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/memory_alignment.wasm"
+    },
+    "test_Format_String_Simulation": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Format_String_Simulation.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:36.296807",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Format_String_Simulation.wasm"
+    },
+    "minimal": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/minimal.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:37.463940",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/minimal.wasm"
+    },
+    "stack_overflow": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/stack_overflow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:38.629620",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/stack_overflow.wasm"
+    },
+    "test_OOB_Read": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_OOB_Read.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:39.796162",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_OOB_Read.wasm"
+    },
+    "warduino_memory_test": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/warduino_memory_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:40.970272",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/warduino_memory_test.wasm"
+    },
+    "test_dynamic_patterns": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_dynamic_patterns.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:42.135723",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_dynamic_patterns.wasm"
+    },
+    "est_Stack_Overflow": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/est_Stack_Overflow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:43.302274",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/est_Stack_Overflow.wasm"
+    },
+    "test_OOB_Write": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_OOB_Write.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:44.470149",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_OOB_Write.wasm"
+    },
+    "oob_read": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/oob_read.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:45.635384",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/oob_read.wasm"
+    },
+    "test_Double_Free.": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Double_Free..wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:46.802154",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/test_Double_Free..wasm"
+    },
+    "control_test": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/control_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:47.968651",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/control_test.wasm"
+    },
+    "minimal_test": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/minimal_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T17:42:49.137294",
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli --no-debug --invoke _start ward_tests/minimal_test.wasm"
+    }
+  }
+}

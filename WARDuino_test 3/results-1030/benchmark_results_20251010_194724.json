@@ -1,0 +1,477 @@
+[
+  {
+    "config": "baseline",
+    "test_program": "fann1.wasm",
+    "avg_time_cycles": 709520.3333333334,
+    "std_time_cycles": 4121.106202627316,
+    "avg_memory_bytes": 145668,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 0.13891983032226562,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "memory",
+    "test_program": "fann1.wasm",
+    "avg_time_cycles": 684278,
+    "std_time_cycles": 2766.5417040052007,
+    "avg_memory_bytes": 145668,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 0.13891983032226562,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "stack",
+    "test_program": "fann1.wasm",
+    "avg_time_cycles": 720104,
+    "std_time_cycles": 1798.5727675020546,
+    "avg_memory_bytes": 145668,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 0.13891983032226562,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "address",
+    "test_program": "fann1.wasm",
+    "avg_time_cycles": 4506192.333333333,
+    "std_time_cycles": 68870.67551820102,
+    "avg_memory_bytes": 145668,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 0.13891983032226562,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "full",
+    "test_program": "fann1.wasm",
+    "avg_time_cycles": 4564529.333333333,
+    "std_time_cycles": 80201.73696581223,
+    "avg_memory_bytes": 145708,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 0.13895797729492188,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "baseline",
+    "test_program": "richards.wasm",
+    "avg_time_cycles": Infinity,
+    "std_time_cycles": 0,
+    "avg_memory_bytes": 0,
+    "std_memory_bytes": 0,
+    "avg_memory_mb": 0.0,
+    "std_memory_mb": 0.0,
+    "success_rate": 0,
+    "iterations": 0,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "memory",
+    "test_program": "richards.wasm",
+    "avg_time_cycles": Infinity,
+    "std_time_cycles": 0,
+    "avg_memory_bytes": 0,
+    "std_memory_bytes": 0,
+    "avg_memory_mb": 0.0,
+    "std_memory_mb": 0.0,
+    "success_rate": 0,
+    "iterations": 0,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "stack",
+    "test_program": "richards.wasm",
+    "avg_time_cycles": Infinity,
+    "std_time_cycles": 0,
+    "avg_memory_bytes": 0,
+    "std_memory_bytes": 0,
+    "avg_memory_mb": 0.0,
+    "std_memory_mb": 0.0,
+    "success_rate": 0,
+    "iterations": 0,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "address",
+    "test_program": "richards.wasm",
+    "avg_time_cycles": Infinity,
+    "std_time_cycles": 0,
+    "avg_memory_bytes": 0,
+    "std_memory_bytes": 0,
+    "avg_memory_mb": 0.0,
+    "std_memory_mb": 0.0,
+    "success_rate": 0,
+    "iterations": 0,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "full",
+    "test_program": "richards.wasm",
+    "avg_time_cycles": Infinity,
+    "std_time_cycles": 0,
+    "avg_memory_bytes": 0,
+    "std_memory_bytes": 0,
+    "avg_memory_mb": 0.0,
+    "std_memory_mb": 0.0,
+    "success_rate": 0,
+    "iterations": 0,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "baseline",
+    "test_program": "binarytrees.wasm",
+    "avg_time_cycles": 1043218.6666666666,
+    "std_time_cycles": 140953.53051744867,
+    "avg_memory_bytes": 8340103,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 7.953742027282715,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "memory",
+    "test_program": "binarytrees.wasm",
+    "avg_time_cycles": 932899,
+    "std_time_cycles": 2181.53638521112,
+    "avg_memory_bytes": 8340103,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 7.953742027282715,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "stack",
+    "test_program": "binarytrees.wasm",
+    "avg_time_cycles": 986007.3333333334,
+    "std_time_cycles": 2724.1803048501274,
+    "avg_memory_bytes": 8340103,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 7.953742027282715,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "address",
+    "test_program": "binarytrees.wasm",
+    "avg_time_cycles": 6163621.333333333,
+    "std_time_cycles": 105322.84926042086,
+    "avg_memory_bytes": 8340103,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 7.953742027282715,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "full",
+    "test_program": "binarytrees.wasm",
+    "avg_time_cycles": 6315559.333333333,
+    "std_time_cycles": 31226.90521542814,
+    "avg_memory_bytes": 8340223,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 7.953856468200684,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "baseline",
+    "test_program": "mandelbrot.wasm",
+    "avg_time_cycles": 650769.6666666666,
+    "std_time_cycles": 1522.0382167781902,
+    "avg_memory_bytes": 212267,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 0.20243358612060547,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "memory",
+    "test_program": "mandelbrot.wasm",
+    "avg_time_cycles": 631941.6666666666,
+    "std_time_cycles": 5727.097374179466,
+    "avg_memory_bytes": 212267,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 0.20243358612060547,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "stack",
+    "test_program": "mandelbrot.wasm",
+    "avg_time_cycles": 665709,
+    "std_time_cycles": 2700.6945402988467,
+    "avg_memory_bytes": 212267,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 0.20243358612060547,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "address",
+    "test_program": "mandelbrot.wasm",
+    "avg_time_cycles": 4136189.6666666665,
+    "std_time_cycles": 34326.11035834578,
+    "avg_memory_bytes": 212267,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 0.20243358612060547,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "full",
+    "test_program": "mandelbrot.wasm",
+    "avg_time_cycles": 4086216,
+    "std_time_cycles": 24493.747447052687,
+    "avg_memory_bytes": 212323,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 0.20248699188232422,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "baseline",
+    "test_program": "memory_matrix1.wasm",
+    "avg_time_cycles": 3675661.3333333335,
+    "std_time_cycles": 16135.334094258269,
+    "avg_memory_bytes": 8339834,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 7.953485488891602,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "memory",
+    "test_program": "memory_matrix1.wasm",
+    "avg_time_cycles": 3531937,
+    "std_time_cycles": 5703.824769398162,
+    "avg_memory_bytes": 8339834,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 7.953485488891602,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "stack",
+    "test_program": "memory_matrix1.wasm",
+    "avg_time_cycles": 3832296,
+    "std_time_cycles": 56650.39070474272,
+    "avg_memory_bytes": 8339834,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 7.953485488891602,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "address",
+    "test_program": "memory_matrix1.wasm",
+    "avg_time_cycles": 23861964,
+    "std_time_cycles": 184421.01378367923,
+    "avg_memory_bytes": 8339834,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 7.953485488891602,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  },
+  {
+    "config": "full",
+    "test_program": "memory_matrix1.wasm",
+    "avg_time_cycles": 25469689.333333332,
+    "std_time_cycles": 1758629.257442379,
+    "avg_memory_bytes": 8339930,
+    "std_memory_bytes": 0.0,
+    "avg_memory_mb": 7.953577041625977,
+    "std_memory_mb": 0.0,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3,
+    "module_analysis": {
+      "imports": [],
+      "exports": [],
+      "problematic_imports": [],
+      "has_problematic_imports": false
+    }
+  }
+]

@@ -1,0 +1,4384 @@
+{
+  "platform": "WARDuino",
+  "timestamp": "2025-10-25T11:35:25.107033",
+  "wdcli_path": "/home/yuxin/WARDuino/build-emu/wdcli",
+  "timeout": 3,
+  "test_environment": {
+    "test_directory": "ward_tests",
+    "report_directory": "ward_tests/report",
+    "total_tests": 216,
+    "total_files": 36
+  },
+  "results": {
+    "boundary_test__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:33:58.229189",
+      "file_size": 499,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary_test.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/boundary_test.wasm"
+    },
+    "boundary_test__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:01.283417",
+      "file_size": 499,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary_test.wasm --invoke _start",
+      "file_path": "ward_tests/boundary_test.wasm"
+    },
+    "boundary_test_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:01.336984",
+      "file_size": 499,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary_test.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/boundary_test.wasm"
+    },
+    "boundary_test_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:01.391380",
+      "file_size": 499,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary_test.wasm --invoke warduino_main",
+      "file_path": "ward_tests/boundary_test.wasm"
+    },
+    "boundary_test_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:01.446508",
+      "file_size": 499,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary_test.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/boundary_test.wasm"
+    },
+    "boundary_test_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:01.503855",
+      "file_size": 499,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary_test.wasm --invoke main",
+      "file_path": "ward_tests/boundary_test.wasm"
+    },
+    "test_complex_patterns__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:01.557238",
+      "file_size": 676,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_complex_patterns.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_complex_patterns.wasm"
+    },
+    "test_complex_patterns__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:04.611856",
+      "file_size": 676,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_complex_patterns.wasm --invoke _start",
+      "file_path": "ward_tests/test_complex_patterns.wasm"
+    },
+    "test_complex_patterns_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:04.667252",
+      "file_size": 676,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_complex_patterns.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_complex_patterns.wasm"
+    },
+    "test_complex_patterns_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:04.721980",
+      "file_size": 676,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_complex_patterns.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_complex_patterns.wasm"
+    },
+    "test_complex_patterns_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:04.775478",
+      "file_size": 676,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_complex_patterns.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_complex_patterns.wasm"
+    },
+    "test_complex_patterns_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:04.829247",
+      "file_size": 676,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_complex_patterns.wasm --invoke main",
+      "file_path": "ward_tests/test_complex_patterns.wasm"
+    },
+    "complex__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:04.883001",
+      "file_size": 761,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/complex.wasm"
+    },
+    "complex__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:34:04.938823",
+      "file_size": 761,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex.wasm --invoke _start",
+      "file_path": "ward_tests/complex.wasm"
+    },
+    "complex_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:04.992508",
+      "file_size": 761,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/complex.wasm"
+    },
+    "complex_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:05.046227",
+      "file_size": 761,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex.wasm --invoke warduino_main",
+      "file_path": "ward_tests/complex.wasm"
+    },
+    "complex_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:05.102746",
+      "file_size": 761,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/complex.wasm"
+    },
+    "complex_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:05.157331",
+      "file_size": 761,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex.wasm --invoke main",
+      "file_path": "ward_tests/complex.wasm"
+    },
+    "test_Null_Pointer_Dereference__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:05.211071",
+      "file_size": 597,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Null_Pointer_Dereference.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_Null_Pointer_Dereference.wasm"
+    },
+    "test_Null_Pointer_Dereference__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:34:05.264977",
+      "file_size": 597,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Null_Pointer_Dereference.wasm --invoke _start",
+      "file_path": "ward_tests/test_Null_Pointer_Dereference.wasm"
+    },
+    "test_Null_Pointer_Dereference_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:05.318604",
+      "file_size": 597,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Null_Pointer_Dereference.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_Null_Pointer_Dereference.wasm"
+    },
+    "test_Null_Pointer_Dereference_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:05.371882",
+      "file_size": 597,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Null_Pointer_Dereference.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_Null_Pointer_Dereference.wasm"
+    },
+    "test_Null_Pointer_Dereference_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:05.425144",
+      "file_size": 597,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Null_Pointer_Dereference.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_Null_Pointer_Dereference.wasm"
+    },
+    "test_Null_Pointer_Dereference_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:05.478835",
+      "file_size": 597,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Null_Pointer_Dereference.wasm --invoke main",
+      "file_path": "ward_tests/test_Null_Pointer_Dereference.wasm"
+    },
+    "test_Division_By_Zero__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:05.532462",
+      "file_size": 591,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Division_By_Zero.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_Division_By_Zero.wasm"
+    },
+    "test_Division_By_Zero__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:08.587912",
+      "file_size": 591,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Division_By_Zero.wasm --invoke _start",
+      "file_path": "ward_tests/test_Division_By_Zero.wasm"
+    },
+    "test_Division_By_Zero_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:08.642371",
+      "file_size": 591,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Division_By_Zero.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_Division_By_Zero.wasm"
+    },
+    "test_Division_By_Zero_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:08.695620",
+      "file_size": 591,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Division_By_Zero.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_Division_By_Zero.wasm"
+    },
+    "test_Division_By_Zero_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:08.749288",
+      "file_size": 591,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Division_By_Zero.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_Division_By_Zero.wasm"
+    },
+    "test_Division_By_Zero_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:08.802832",
+      "file_size": 591,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Division_By_Zero.wasm --invoke main",
+      "file_path": "ward_tests/test_Division_By_Zero.wasm"
+    },
+    "test_Integer_Overflow__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:08.856460",
+      "file_size": 581,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Integer_Overflow.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_Integer_Overflow.wasm"
+    },
+    "test_Integer_Overflow__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:15.494603",
+      "file_size": 581,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Integer_Overflow.wasm --invoke _start",
+      "file_path": "ward_tests/test_Integer_Overflow.wasm"
+    },
+    "test_Integer_Overflow_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:15.548121",
+      "file_size": 581,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Integer_Overflow.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_Integer_Overflow.wasm"
+    },
+    "test_Integer_Overflow_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:15.601939",
+      "file_size": 581,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Integer_Overflow.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_Integer_Overflow.wasm"
+    },
+    "test_Integer_Overflow_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:15.656335",
+      "file_size": 581,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Integer_Overflow.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_Integer_Overflow.wasm"
+    },
+    "test_Integer_Overflow_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:15.712688",
+      "file_size": 581,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Integer_Overflow.wasm --invoke main",
+      "file_path": "ward_tests/test_Integer_Overflow.wasm"
+    },
+    "test_Infinite_Loop__start_nodebug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:18.767559",
+      "file_size": 515,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Infinite_Loop.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_Infinite_Loop.wasm"
+    },
+    "test_Infinite_Loop__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:21.821938",
+      "file_size": 515,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Infinite_Loop.wasm --invoke _start",
+      "file_path": "ward_tests/test_Infinite_Loop.wasm"
+    },
+    "test_Infinite_Loop_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:21.875551",
+      "file_size": 515,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Infinite_Loop.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_Infinite_Loop.wasm"
+    },
+    "test_Infinite_Loop_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:21.929191",
+      "file_size": 515,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Infinite_Loop.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_Infinite_Loop.wasm"
+    },
+    "test_Infinite_Loop_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:21.982797",
+      "file_size": 515,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Infinite_Loop.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_Infinite_Loop.wasm"
+    },
+    "test_Infinite_Loop_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:22.036556",
+      "file_size": 515,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Infinite_Loop.wasm --invoke main",
+      "file_path": "ward_tests/test_Infinite_Loop.wasm"
+    },
+    "test_Double_Free_Simulation__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:22.090794",
+      "file_size": 619,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Double_Free_Simulation.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_Double_Free_Simulation.wasm"
+    },
+    "test_Double_Free_Simulation__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:25.143201",
+      "file_size": 619,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Double_Free_Simulation.wasm --invoke _start",
+      "file_path": "ward_tests/test_Double_Free_Simulation.wasm"
+    },
+    "test_Double_Free_Simulation_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:25.196721",
+      "file_size": 619,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Double_Free_Simulation.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_Double_Free_Simulation.wasm"
+    },
+    "test_Double_Free_Simulation_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:25.250251",
+      "file_size": 619,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Double_Free_Simulation.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_Double_Free_Simulation.wasm"
+    },
+    "test_Double_Free_Simulation_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:25.303424",
+      "file_size": 619,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Double_Free_Simulation.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_Double_Free_Simulation.wasm"
+    },
+    "test_Double_Free_Simulation_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:25.357134",
+      "file_size": 619,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Double_Free_Simulation.wasm --invoke main",
+      "file_path": "ward_tests/test_Double_Free_Simulation.wasm"
+    },
+    "compute_test__start_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name '_start'\n",
+      "timestamp": "2025-10-25T11:34:25.410908",
+      "file_size": 2804,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/compute_test.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/compute_test.wasm"
+    },
+    "compute_test__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name '_start'\n",
+      "timestamp": "2025-10-25T11:34:25.464852",
+      "file_size": 2804,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/compute_test.wasm --invoke _start",
+      "file_path": "ward_tests/compute_test.wasm"
+    },
+    "compute_test_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:25.518246",
+      "file_size": 2804,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/compute_test.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/compute_test.wasm"
+    },
+    "compute_test_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:25.571943",
+      "file_size": 2804,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/compute_test.wasm --invoke warduino_main",
+      "file_path": "ward_tests/compute_test.wasm"
+    },
+    "compute_test_main_nodebug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:26.790046",
+      "file_size": 2804,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/compute_test.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/compute_test.wasm"
+    },
+    "compute_test_main_debug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:28.008630",
+      "file_size": 2804,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/compute_test.wasm --invoke main",
+      "file_path": "ward_tests/compute_test.wasm"
+    },
+    "test_basic_memory__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:28.070345",
+      "file_size": 660,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_basic_memory.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_basic_memory.wasm"
+    },
+    "test_basic_memory__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:34:28.124354",
+      "file_size": 660,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_basic_memory.wasm --invoke _start",
+      "file_path": "ward_tests/test_basic_memory.wasm"
+    },
+    "test_basic_memory_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:28.178831",
+      "file_size": 660,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_basic_memory.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_basic_memory.wasm"
+    },
+    "test_basic_memory_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:28.234860",
+      "file_size": 660,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_basic_memory.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_basic_memory.wasm"
+    },
+    "test_basic_memory_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:28.288346",
+      "file_size": 660,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_basic_memory.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_basic_memory.wasm"
+    },
+    "test_basic_memory_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:28.341665",
+      "file_size": 660,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_basic_memory.wasm --invoke main",
+      "file_path": "ward_tests/test_basic_memory.wasm"
+    },
+    "test_Memory_Access__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:28.396684",
+      "file_size": 565,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Access.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_Memory_Access.wasm"
+    },
+    "test_Memory_Access__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:31.451649",
+      "file_size": 565,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Access.wasm --invoke _start",
+      "file_path": "ward_tests/test_Memory_Access.wasm"
+    },
+    "test_Memory_Access_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:31.507659",
+      "file_size": 565,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Access.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_Memory_Access.wasm"
+    },
+    "test_Memory_Access_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:31.561364",
+      "file_size": 565,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Access.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_Memory_Access.wasm"
+    },
+    "test_Memory_Access_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:31.615938",
+      "file_size": 565,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Access.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_Memory_Access.wasm"
+    },
+    "test_Memory_Access_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:31.669022",
+      "file_size": 565,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Access.wasm --invoke main",
+      "file_path": "ward_tests/test_Memory_Access.wasm"
+    },
+    "boundary__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:31.730594",
+      "file_size": 494,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/boundary.wasm"
+    },
+    "boundary__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:34.785534",
+      "file_size": 494,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary.wasm --invoke _start",
+      "file_path": "ward_tests/boundary.wasm"
+    },
+    "boundary_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:34.839038",
+      "file_size": 494,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/boundary.wasm"
+    },
+    "boundary_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:34.893647",
+      "file_size": 494,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary.wasm --invoke warduino_main",
+      "file_path": "ward_tests/boundary.wasm"
+    },
+    "boundary_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:34.947127",
+      "file_size": 494,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/boundary.wasm"
+    },
+    "boundary_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:35.000226",
+      "file_size": 494,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/boundary.wasm --invoke main",
+      "file_path": "ward_tests/boundary.wasm"
+    },
+    "test_Buffer_Underflow__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:35.053524",
+      "file_size": 945,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Buffer_Underflow.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_Buffer_Underflow.wasm"
+    },
+    "test_Buffer_Underflow__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:34:35.110577",
+      "file_size": 945,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Buffer_Underflow.wasm --invoke _start",
+      "file_path": "ward_tests/test_Buffer_Underflow.wasm"
+    },
+    "test_Buffer_Underflow_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:35.164429",
+      "file_size": 945,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Buffer_Underflow.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_Buffer_Underflow.wasm"
+    },
+    "test_Buffer_Underflow_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:35.217765",
+      "file_size": 945,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Buffer_Underflow.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_Buffer_Underflow.wasm"
+    },
+    "test_Buffer_Underflow_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:35.271349",
+      "file_size": 945,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Buffer_Underflow.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_Buffer_Underflow.wasm"
+    },
+    "test_Buffer_Underflow_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:35.324558",
+      "file_size": 945,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Buffer_Underflow.wasm --invoke main",
+      "file_path": "ward_tests/test_Buffer_Underflow.wasm"
+    },
+    "test_array_bounds__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:35.383783",
+      "file_size": 1013,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_array_bounds.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_array_bounds.wasm"
+    },
+    "test_array_bounds__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:34:35.442099",
+      "file_size": 1013,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_array_bounds.wasm --invoke _start",
+      "file_path": "ward_tests/test_array_bounds.wasm"
+    },
+    "test_array_bounds_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:35.498552",
+      "file_size": 1013,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_array_bounds.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_array_bounds.wasm"
+    },
+    "test_array_bounds_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:35.553813",
+      "file_size": 1013,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_array_bounds.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_array_bounds.wasm"
+    },
+    "test_array_bounds_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:35.611774",
+      "file_size": 1013,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_array_bounds.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_array_bounds.wasm"
+    },
+    "test_array_bounds_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:35.665314",
+      "file_size": 1013,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_array_bounds.wasm --invoke main",
+      "file_path": "ward_tests/test_array_bounds.wasm"
+    },
+    "step_test__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:35.726676",
+      "file_size": 1499,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/step_test.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/step_test.wasm"
+    },
+    "step_test__start_debug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:35.781394",
+      "file_size": 1499,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/step_test.wasm --invoke _start",
+      "file_path": "ward_tests/step_test.wasm"
+    },
+    "step_test_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:35.835283",
+      "file_size": 1499,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/step_test.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/step_test.wasm"
+    },
+    "step_test_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:35.888755",
+      "file_size": 1499,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/step_test.wasm --invoke warduino_main",
+      "file_path": "ward_tests/step_test.wasm"
+    },
+    "step_test_main_nodebug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:37.107866",
+      "file_size": 1499,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/step_test.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/step_test.wasm"
+    },
+    "step_test_main_debug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:38.325426",
+      "file_size": 1499,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/step_test.wasm --invoke main",
+      "file_path": "ward_tests/step_test.wasm"
+    },
+    "pointer_test__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:38.387787",
+      "file_size": 586,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer_test.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/pointer_test.wasm"
+    },
+    "pointer_test__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:41.442502",
+      "file_size": 586,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer_test.wasm --invoke _start",
+      "file_path": "ward_tests/pointer_test.wasm"
+    },
+    "pointer_test_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:41.495945",
+      "file_size": 586,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer_test.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/pointer_test.wasm"
+    },
+    "pointer_test_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:41.551022",
+      "file_size": 586,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer_test.wasm --invoke warduino_main",
+      "file_path": "ward_tests/pointer_test.wasm"
+    },
+    "pointer_test_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:41.606150",
+      "file_size": 586,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer_test.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/pointer_test.wasm"
+    },
+    "pointer_test_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:41.659637",
+      "file_size": 586,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer_test.wasm --invoke main",
+      "file_path": "ward_tests/pointer_test.wasm"
+    },
+    "test_control_flow__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:41.721159",
+      "file_size": 778,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_control_flow.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_control_flow.wasm"
+    },
+    "test_control_flow__start_debug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:41.775207",
+      "file_size": 778,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_control_flow.wasm --invoke _start",
+      "file_path": "ward_tests/test_control_flow.wasm"
+    },
+    "test_control_flow_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:41.828715",
+      "file_size": 778,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_control_flow.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_control_flow.wasm"
+    },
+    "test_control_flow_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:41.882310",
+      "file_size": 778,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_control_flow.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_control_flow.wasm"
+    },
+    "test_control_flow_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:41.936145",
+      "file_size": 778,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_control_flow.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_control_flow.wasm"
+    },
+    "test_control_flow_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:41.989681",
+      "file_size": 778,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_control_flow.wasm --invoke main",
+      "file_path": "ward_tests/test_control_flow.wasm"
+    },
+    "memory_safety_test__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:42.049725",
+      "file_size": 3540,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_safety_test.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/memory_safety_test.wasm"
+    },
+    "memory_safety_test__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:34:42.104133",
+      "file_size": 3540,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_safety_test.wasm --invoke _start",
+      "file_path": "ward_tests/memory_safety_test.wasm"
+    },
+    "memory_safety_test_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:42.160199",
+      "file_size": 3540,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_safety_test.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/memory_safety_test.wasm"
+    },
+    "memory_safety_test_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:42.213859",
+      "file_size": 3540,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_safety_test.wasm --invoke warduino_main",
+      "file_path": "ward_tests/memory_safety_test.wasm"
+    },
+    "memory_safety_test_main_nodebug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:43.435743",
+      "file_size": 3540,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_safety_test.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/memory_safety_test.wasm"
+    },
+    "memory_safety_test_main_debug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:44.657397",
+      "file_size": 3540,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_safety_test.wasm --invoke main",
+      "file_path": "ward_tests/memory_safety_test.wasm"
+    },
+    "pointer__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:44.719679",
+      "file_size": 581,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/pointer.wasm"
+    },
+    "pointer__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:51.361578",
+      "file_size": 581,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer.wasm --invoke _start",
+      "file_path": "ward_tests/pointer.wasm"
+    },
+    "pointer_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:51.415238",
+      "file_size": 581,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/pointer.wasm"
+    },
+    "pointer_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:51.469239",
+      "file_size": 581,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer.wasm --invoke warduino_main",
+      "file_path": "ward_tests/pointer.wasm"
+    },
+    "pointer_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:51.525156",
+      "file_size": 581,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/pointer.wasm"
+    },
+    "pointer_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:51.578761",
+      "file_size": 581,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/pointer.wasm --invoke main",
+      "file_path": "ward_tests/pointer.wasm"
+    },
+    "test_pointers__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:51.638975",
+      "file_size": 634,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_pointers.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_pointers.wasm"
+    },
+    "test_pointers__start_debug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:51.693464",
+      "file_size": 634,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_pointers.wasm --invoke _start",
+      "file_path": "ward_tests/test_pointers.wasm"
+    },
+    "test_pointers_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:51.746862",
+      "file_size": 634,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_pointers.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_pointers.wasm"
+    },
+    "test_pointers_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:51.800026",
+      "file_size": 634,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_pointers.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_pointers.wasm"
+    },
+    "test_pointers_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:51.853332",
+      "file_size": 634,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_pointers.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_pointers.wasm"
+    },
+    "test_pointers_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:51.906933",
+      "file_size": 634,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_pointers.wasm --invoke main",
+      "file_path": "ward_tests/test_pointers.wasm"
+    },
+    "memory_test__start_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name '_start'\n",
+      "timestamp": "2025-10-25T11:34:51.960231",
+      "file_size": 1360,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_test.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/memory_test.wasm"
+    },
+    "memory_test__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name '_start'\n",
+      "timestamp": "2025-10-25T11:34:52.015703",
+      "file_size": 1360,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_test.wasm --invoke _start",
+      "file_path": "ward_tests/memory_test.wasm"
+    },
+    "memory_test_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:52.070159",
+      "file_size": 1360,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_test.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/memory_test.wasm"
+    },
+    "memory_test_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:52.123316",
+      "file_size": 1360,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_test.wasm --invoke warduino_main",
+      "file_path": "ward_tests/memory_test.wasm"
+    },
+    "memory_test_main_nodebug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:53.341871",
+      "file_size": 1360,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_test.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/memory_test.wasm"
+    },
+    "memory_test_main_debug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:54.562490",
+      "file_size": 1360,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_test.wasm --invoke main",
+      "file_path": "ward_tests/memory_test.wasm"
+    },
+    "test_special_cases__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:54.619072",
+      "file_size": 665,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_special_cases.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_special_cases.wasm"
+    },
+    "test_special_cases__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:34:57.672678",
+      "file_size": 665,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_special_cases.wasm --invoke _start",
+      "file_path": "ward_tests/test_special_cases.wasm"
+    },
+    "test_special_cases_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:57.726166",
+      "file_size": 665,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_special_cases.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_special_cases.wasm"
+    },
+    "test_special_cases_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:57.779662",
+      "file_size": 665,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_special_cases.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_special_cases.wasm"
+    },
+    "test_special_cases_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:57.832898",
+      "file_size": 665,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_special_cases.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_special_cases.wasm"
+    },
+    "test_special_cases_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:57.886100",
+      "file_size": 665,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_special_cases.wasm --invoke main",
+      "file_path": "ward_tests/test_special_cases.wasm"
+    },
+    "complex_test__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:57.946131",
+      "file_size": 766,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex_test.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/complex_test.wasm"
+    },
+    "complex_test__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:34:58.000368",
+      "file_size": 766,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex_test.wasm --invoke _start",
+      "file_path": "ward_tests/complex_test.wasm"
+    },
+    "complex_test_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:58.053908",
+      "file_size": 766,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex_test.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/complex_test.wasm"
+    },
+    "complex_test_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:34:58.109986",
+      "file_size": 766,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex_test.wasm --invoke warduino_main",
+      "file_path": "ward_tests/complex_test.wasm"
+    },
+    "complex_test_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:58.163575",
+      "file_size": 766,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex_test.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/complex_test.wasm"
+    },
+    "complex_test_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:34:58.218604",
+      "file_size": 766,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/complex_test.wasm --invoke main",
+      "file_path": "ward_tests/complex_test.wasm"
+    },
+    "test_Memory_Alignment__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:34:58.272962",
+      "file_size": 596,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Alignment.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_Memory_Alignment.wasm"
+    },
+    "test_Memory_Alignment__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:35:01.326761",
+      "file_size": 596,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Alignment.wasm --invoke _start",
+      "file_path": "ward_tests/test_Memory_Alignment.wasm"
+    },
+    "test_Memory_Alignment_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:01.382986",
+      "file_size": 596,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Alignment.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_Memory_Alignment.wasm"
+    },
+    "test_Memory_Alignment_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:01.436490",
+      "file_size": 596,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Alignment.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_Memory_Alignment.wasm"
+    },
+    "test_Memory_Alignment_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:01.489877",
+      "file_size": 596,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Alignment.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_Memory_Alignment.wasm"
+    },
+    "test_Memory_Alignment_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:01.543510",
+      "file_size": 596,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Memory_Alignment.wasm --invoke main",
+      "file_path": "ward_tests/test_Memory_Alignment.wasm"
+    },
+    "oob_write__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:01.597259",
+      "file_size": 888,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_write.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/oob_write.wasm"
+    },
+    "oob_write__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:35:01.651331",
+      "file_size": 888,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_write.wasm --invoke _start",
+      "file_path": "ward_tests/oob_write.wasm"
+    },
+    "oob_write_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:01.705003",
+      "file_size": 888,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_write.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/oob_write.wasm"
+    },
+    "oob_write_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:01.758661",
+      "file_size": 888,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_write.wasm --invoke warduino_main",
+      "file_path": "ward_tests/oob_write.wasm"
+    },
+    "oob_write_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:01.812783",
+      "file_size": 888,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_write.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/oob_write.wasm"
+    },
+    "oob_write_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:01.866476",
+      "file_size": 888,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_write.wasm --invoke main",
+      "file_path": "ward_tests/oob_write.wasm"
+    },
+    "memory_alignment__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:01.921034",
+      "file_size": 1662,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_alignment.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/memory_alignment.wasm"
+    },
+    "memory_alignment__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:35:01.977427",
+      "file_size": 1662,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_alignment.wasm --invoke _start",
+      "file_path": "ward_tests/memory_alignment.wasm"
+    },
+    "memory_alignment_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:02.031928",
+      "file_size": 1662,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_alignment.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/memory_alignment.wasm"
+    },
+    "memory_alignment_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:02.085488",
+      "file_size": 1662,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_alignment.wasm --invoke warduino_main",
+      "file_path": "ward_tests/memory_alignment.wasm"
+    },
+    "memory_alignment_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:02.139133",
+      "file_size": 1662,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_alignment.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/memory_alignment.wasm"
+    },
+    "memory_alignment_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:02.192729",
+      "file_size": 1662,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/memory_alignment.wasm --invoke main",
+      "file_path": "ward_tests/memory_alignment.wasm"
+    },
+    "test_Format_String_Simulation__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:02.245958",
+      "file_size": 908,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Format_String_Simulation.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_Format_String_Simulation.wasm"
+    },
+    "test_Format_String_Simulation__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:35:02.301963",
+      "file_size": 908,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Format_String_Simulation.wasm --invoke _start",
+      "file_path": "ward_tests/test_Format_String_Simulation.wasm"
+    },
+    "test_Format_String_Simulation_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:02.355481",
+      "file_size": 908,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Format_String_Simulation.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_Format_String_Simulation.wasm"
+    },
+    "test_Format_String_Simulation_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:02.431527",
+      "file_size": 908,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Format_String_Simulation.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_Format_String_Simulation.wasm"
+    },
+    "test_Format_String_Simulation_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:02.485123",
+      "file_size": 908,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Format_String_Simulation.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_Format_String_Simulation.wasm"
+    },
+    "test_Format_String_Simulation_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:02.538561",
+      "file_size": 908,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_Format_String_Simulation.wasm --invoke main",
+      "file_path": "ward_tests/test_Format_String_Simulation.wasm"
+    },
+    "minimal__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:02.601684",
+      "file_size": 481,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/minimal.wasm"
+    },
+    "minimal__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:35:05.655472",
+      "file_size": 481,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal.wasm --invoke _start",
+      "file_path": "ward_tests/minimal.wasm"
+    },
+    "minimal_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:05.711295",
+      "file_size": 481,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/minimal.wasm"
+    },
+    "minimal_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:05.764675",
+      "file_size": 481,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal.wasm --invoke warduino_main",
+      "file_path": "ward_tests/minimal.wasm"
+    },
+    "minimal_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:05.818358",
+      "file_size": 481,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/minimal.wasm"
+    },
+    "minimal_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:05.871601",
+      "file_size": 481,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal.wasm --invoke main",
+      "file_path": "ward_tests/minimal.wasm"
+    },
+    "stack_overflow__start_nodebug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:07.090455",
+      "file_size": 653,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/stack_overflow.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/stack_overflow.wasm"
+    },
+    "stack_overflow__start_debug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:08.308735",
+      "file_size": 653,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/stack_overflow.wasm --invoke _start",
+      "file_path": "ward_tests/stack_overflow.wasm"
+    },
+    "stack_overflow_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:08.362525",
+      "file_size": 653,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/stack_overflow.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/stack_overflow.wasm"
+    },
+    "stack_overflow_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:08.415985",
+      "file_size": 653,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/stack_overflow.wasm --invoke warduino_main",
+      "file_path": "ward_tests/stack_overflow.wasm"
+    },
+    "stack_overflow_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:08.469569",
+      "file_size": 653,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/stack_overflow.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/stack_overflow.wasm"
+    },
+    "stack_overflow_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:08.523617",
+      "file_size": 653,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/stack_overflow.wasm --invoke main",
+      "file_path": "ward_tests/stack_overflow.wasm"
+    },
+    "test_OOB_Read__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:08.576978",
+      "file_size": 881,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Read.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_OOB_Read.wasm"
+    },
+    "test_OOB_Read__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:35:08.631978",
+      "file_size": 881,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Read.wasm --invoke _start",
+      "file_path": "ward_tests/test_OOB_Read.wasm"
+    },
+    "test_OOB_Read_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:08.685550",
+      "file_size": 881,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Read.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_OOB_Read.wasm"
+    },
+    "test_OOB_Read_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:08.738713",
+      "file_size": 881,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Read.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_OOB_Read.wasm"
+    },
+    "test_OOB_Read_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:08.795106",
+      "file_size": 881,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Read.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_OOB_Read.wasm"
+    },
+    "test_OOB_Read_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:08.848742",
+      "file_size": 881,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Read.wasm --invoke main",
+      "file_path": "ward_tests/test_OOB_Read.wasm"
+    },
+    "warduino_memory_test__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:08.910507",
+      "file_size": 1510,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/warduino_memory_test.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/warduino_memory_test.wasm"
+    },
+    "warduino_memory_test__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:35:11.964839",
+      "file_size": 1510,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/warduino_memory_test.wasm --invoke _start",
+      "file_path": "ward_tests/warduino_memory_test.wasm"
+    },
+    "warduino_memory_test_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:12.018220",
+      "file_size": 1510,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/warduino_memory_test.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/warduino_memory_test.wasm"
+    },
+    "warduino_memory_test_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:12.071955",
+      "file_size": 1510,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/warduino_memory_test.wasm --invoke warduino_main",
+      "file_path": "ward_tests/warduino_memory_test.wasm"
+    },
+    "warduino_memory_test_main_nodebug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:13.289551",
+      "file_size": 1510,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/warduino_memory_test.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/warduino_memory_test.wasm"
+    },
+    "warduino_memory_test_main_debug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:14.507396",
+      "file_size": 1510,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/warduino_memory_test.wasm --invoke main",
+      "file_path": "ward_tests/warduino_memory_test.wasm"
+    },
+    "test_dynamic_patterns__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:14.562014",
+      "file_size": 1307,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_dynamic_patterns.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_dynamic_patterns.wasm"
+    },
+    "test_dynamic_patterns__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:35:14.617151",
+      "file_size": 1307,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_dynamic_patterns.wasm --invoke _start",
+      "file_path": "ward_tests/test_dynamic_patterns.wasm"
+    },
+    "test_dynamic_patterns_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:14.670734",
+      "file_size": 1307,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_dynamic_patterns.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_dynamic_patterns.wasm"
+    },
+    "test_dynamic_patterns_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:14.724267",
+      "file_size": 1307,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_dynamic_patterns.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_dynamic_patterns.wasm"
+    },
+    "test_dynamic_patterns_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:14.777736",
+      "file_size": 1307,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_dynamic_patterns.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_dynamic_patterns.wasm"
+    },
+    "test_dynamic_patterns_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:14.833935",
+      "file_size": 1307,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_dynamic_patterns.wasm --invoke main",
+      "file_path": "ward_tests/test_dynamic_patterns.wasm"
+    },
+    "test_OOB_Write__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:14.887783",
+      "file_size": 778,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Write.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/test_OOB_Write.wasm"
+    },
+    "test_OOB_Write__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:35:14.941780",
+      "file_size": 778,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Write.wasm --invoke _start",
+      "file_path": "ward_tests/test_OOB_Write.wasm"
+    },
+    "test_OOB_Write_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:14.998114",
+      "file_size": 778,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Write.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/test_OOB_Write.wasm"
+    },
+    "test_OOB_Write_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:15.051912",
+      "file_size": 778,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Write.wasm --invoke warduino_main",
+      "file_path": "ward_tests/test_OOB_Write.wasm"
+    },
+    "test_OOB_Write_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:15.105548",
+      "file_size": 778,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Write.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/test_OOB_Write.wasm"
+    },
+    "test_OOB_Write_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:15.159220",
+      "file_size": 778,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/test_OOB_Write.wasm --invoke main",
+      "file_path": "ward_tests/test_OOB_Write.wasm"
+    },
+    "oob_read__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:15.212917",
+      "file_size": 730,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_read.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/oob_read.wasm"
+    },
+    "oob_read__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-10-25T11:35:15.267157",
+      "file_size": 730,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_read.wasm --invoke _start",
+      "file_path": "ward_tests/oob_read.wasm"
+    },
+    "oob_read_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:15.321093",
+      "file_size": 730,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_read.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/oob_read.wasm"
+    },
+    "oob_read_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:15.374887",
+      "file_size": 730,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_read.wasm --invoke warduino_main",
+      "file_path": "ward_tests/oob_read.wasm"
+    },
+    "oob_read_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:15.431105",
+      "file_size": 730,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_read.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/oob_read.wasm"
+    },
+    "oob_read_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:15.484714",
+      "file_size": 730,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/oob_read.wasm --invoke main",
+      "file_path": "ward_tests/oob_read.wasm"
+    },
+    "control_test__start_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name '_start'\n",
+      "timestamp": "2025-10-25T11:35:15.539335",
+      "file_size": 2652,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/control_test.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/control_test.wasm"
+    },
+    "control_test__start_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name '_start'\n",
+      "timestamp": "2025-10-25T11:35:15.592917",
+      "file_size": 2652,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/control_test.wasm --invoke _start",
+      "file_path": "ward_tests/control_test.wasm"
+    },
+    "control_test_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:15.647834",
+      "file_size": 2652,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/control_test.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/control_test.wasm"
+    },
+    "control_test_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:15.701042",
+      "file_size": 2652,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/control_test.wasm --invoke warduino_main",
+      "file_path": "ward_tests/control_test.wasm"
+    },
+    "control_test_main_nodebug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:16.920458",
+      "file_size": 2652,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/control_test.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/control_test.wasm"
+    },
+    "control_test_main_debug": {
+      "status": "SEGFAULT",
+      "details": "段错误 - 安全机制可能生效",
+      "returncode": -11,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:18.137625",
+      "file_size": 2652,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/control_test.wasm --invoke main",
+      "file_path": "ward_tests/control_test.wasm"
+    },
+    "minimal_test__start_nodebug": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-10-25T11:35:18.199268",
+      "file_size": 486,
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal_test.wasm --no-debug --invoke _start",
+      "file_path": "ward_tests/minimal_test.wasm"
+    },
+    "minimal_test__start_debug": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-10-25T11:35:21.253081",
+      "file_size": 486,
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal_test.wasm --invoke _start",
+      "file_path": "ward_tests/minimal_test.wasm"
+    },
+    "minimal_test_warduino_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:21.306793",
+      "file_size": 486,
+      "entry_point": "warduino_main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal_test.wasm --no-debug --invoke warduino_main",
+      "file_path": "ward_tests/minimal_test.wasm"
+    },
+    "minimal_test_warduino_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'warduino_main'\n",
+      "timestamp": "2025-10-25T11:35:21.361790",
+      "file_size": 486,
+      "entry_point": "warduino_main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal_test.wasm --invoke warduino_main",
+      "file_path": "ward_tests/minimal_test.wasm"
+    },
+    "minimal_test_main_nodebug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:21.417926",
+      "file_size": 486,
+      "entry_point": "main",
+      "use_no_debug": true,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal_test.wasm --no-debug --invoke main",
+      "file_path": "ward_tests/minimal_test.wasm"
+    },
+    "minimal_test_main_debug": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "wdcli: no exported function with name 'main'\n",
+      "timestamp": "2025-10-25T11:35:21.471661",
+      "file_size": 486,
+      "entry_point": "main",
+      "use_no_debug": false,
+      "command": "/home/yuxin/WARDuino/build-emu/wdcli ward_tests/minimal_test.wasm --invoke main",
+      "file_path": "ward_tests/minimal_test.wasm"
+    }
+  },
+  "files_summary": {
+    "ward_tests/boundary_test.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "boundary_test__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "boundary_test__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "boundary_test_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "boundary_test_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "boundary_test_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "boundary_test_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_complex_patterns.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_complex_patterns__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_complex_patterns__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_complex_patterns_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_complex_patterns_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_complex_patterns_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_complex_patterns_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/complex.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "complex__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "complex__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "complex_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "complex_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "complex_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "complex_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_Null_Pointer_Dereference.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_Null_Pointer_Dereference__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Null_Pointer_Dereference__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Null_Pointer_Dereference_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Null_Pointer_Dereference_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Null_Pointer_Dereference_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Null_Pointer_Dereference_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_Division_By_Zero.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_Division_By_Zero__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Division_By_Zero__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Division_By_Zero_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Division_By_Zero_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Division_By_Zero_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Division_By_Zero_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_Integer_Overflow.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_Integer_Overflow__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Integer_Overflow__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Integer_Overflow_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Integer_Overflow_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Integer_Overflow_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Integer_Overflow_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_Infinite_Loop.wasm": {
+      "total_configs": 6,
+      "successful_configs": 0,
+      "best_result": "UNKNOWN",
+      "results": [
+        {
+          "test_name": "test_Infinite_Loop__start_nodebug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Infinite_Loop__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Infinite_Loop_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Infinite_Loop_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Infinite_Loop_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Infinite_Loop_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_Double_Free_Simulation.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_Double_Free_Simulation__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Double_Free_Simulation__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Double_Free_Simulation_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Double_Free_Simulation_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Double_Free_Simulation_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Double_Free_Simulation_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/compute_test.wasm": {
+      "total_configs": 6,
+      "successful_configs": 0,
+      "best_result": "SECURITY_TRIGGERED",
+      "results": [
+        {
+          "test_name": "compute_test__start_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "compute_test__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "compute_test_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "compute_test_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "compute_test_main_nodebug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "compute_test_main_debug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_basic_memory.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_basic_memory__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_basic_memory__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_basic_memory_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_basic_memory_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_basic_memory_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_basic_memory_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_Memory_Access.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_Memory_Access__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Memory_Access__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Memory_Access_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Memory_Access_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Memory_Access_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Memory_Access_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/boundary.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "boundary__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "boundary__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "boundary_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "boundary_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "boundary_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "boundary_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_Buffer_Underflow.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_Buffer_Underflow__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Buffer_Underflow__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Buffer_Underflow_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Buffer_Underflow_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Buffer_Underflow_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Buffer_Underflow_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_array_bounds.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_array_bounds__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_array_bounds__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_array_bounds_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_array_bounds_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_array_bounds_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_array_bounds_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/step_test.wasm": {
+      "total_configs": 6,
+      "successful_configs": 2,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "step_test__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "step_test__start_debug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "step_test_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "step_test_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "step_test_main_nodebug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "step_test_main_debug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/pointer_test.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "pointer_test__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "pointer_test__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "pointer_test_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "pointer_test_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "pointer_test_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "pointer_test_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_control_flow.wasm": {
+      "total_configs": 6,
+      "successful_configs": 2,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_control_flow__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_control_flow__start_debug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_control_flow_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_control_flow_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_control_flow_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_control_flow_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/memory_safety_test.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "memory_safety_test__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "memory_safety_test__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "memory_safety_test_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "memory_safety_test_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "memory_safety_test_main_nodebug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "memory_safety_test_main_debug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/pointer.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "pointer__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "pointer__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "pointer_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "pointer_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "pointer_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "pointer_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_pointers.wasm": {
+      "total_configs": 6,
+      "successful_configs": 2,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_pointers__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_pointers__start_debug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_pointers_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_pointers_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_pointers_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_pointers_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/memory_test.wasm": {
+      "total_configs": 6,
+      "successful_configs": 0,
+      "best_result": "SECURITY_TRIGGERED",
+      "results": [
+        {
+          "test_name": "memory_test__start_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "memory_test__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "memory_test_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "memory_test_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "memory_test_main_nodebug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "memory_test_main_debug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_special_cases.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_special_cases__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_special_cases__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_special_cases_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_special_cases_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_special_cases_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_special_cases_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/complex_test.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "complex_test__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "complex_test__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "complex_test_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "complex_test_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "complex_test_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "complex_test_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_Memory_Alignment.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_Memory_Alignment__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Memory_Alignment__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Memory_Alignment_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Memory_Alignment_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Memory_Alignment_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Memory_Alignment_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/oob_write.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "oob_write__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "oob_write__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "oob_write_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "oob_write_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "oob_write_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "oob_write_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/memory_alignment.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "memory_alignment__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "memory_alignment__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "memory_alignment_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "memory_alignment_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "memory_alignment_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "memory_alignment_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_Format_String_Simulation.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_Format_String_Simulation__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Format_String_Simulation__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Format_String_Simulation_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Format_String_Simulation_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_Format_String_Simulation_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_Format_String_Simulation_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/minimal.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "minimal__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "minimal__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "minimal_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "minimal_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "minimal_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "minimal_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/stack_overflow.wasm": {
+      "total_configs": 6,
+      "successful_configs": 0,
+      "best_result": "SECURITY_TRIGGERED",
+      "results": [
+        {
+          "test_name": "stack_overflow__start_nodebug",
+          "status": "SEGFAULT",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "stack_overflow__start_debug",
+          "status": "SEGFAULT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "stack_overflow_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "stack_overflow_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "stack_overflow_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "stack_overflow_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_OOB_Read.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_OOB_Read__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_OOB_Read__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_OOB_Read_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_OOB_Read_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_OOB_Read_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_OOB_Read_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/warduino_memory_test.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "warduino_memory_test__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "warduino_memory_test__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "warduino_memory_test_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "warduino_memory_test_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "warduino_memory_test_main_nodebug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "warduino_memory_test_main_debug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_dynamic_patterns.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_dynamic_patterns__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_dynamic_patterns__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_dynamic_patterns_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_dynamic_patterns_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_dynamic_patterns_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_dynamic_patterns_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/test_OOB_Write.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "test_OOB_Write__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_OOB_Write__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_OOB_Write_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_OOB_Write_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "test_OOB_Write_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "test_OOB_Write_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/oob_read.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "oob_read__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "oob_read__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "oob_read_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "oob_read_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "oob_read_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "oob_read_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/control_test.wasm": {
+      "total_configs": 6,
+      "successful_configs": 0,
+      "best_result": "SECURITY_TRIGGERED",
+      "results": [
+        {
+          "test_name": "control_test__start_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "control_test__start_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "control_test_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "control_test_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "control_test_main_nodebug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "control_test_main_debug",
+          "status": "SEGFAULT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    },
+    "ward_tests/minimal_test.wasm": {
+      "total_configs": 6,
+      "successful_configs": 1,
+      "best_result": "COMPLETED",
+      "results": [
+        {
+          "test_name": "minimal_test__start_nodebug",
+          "status": "COMPLETED",
+          "entry_point": "_start",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "minimal_test__start_debug",
+          "status": "TIMEOUT",
+          "entry_point": "_start",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "minimal_test_warduino_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "minimal_test_warduino_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "warduino_main",
+          "use_no_debug": false
+        },
+        {
+          "test_name": "minimal_test_main_nodebug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": true
+        },
+        {
+          "test_name": "minimal_test_main_debug",
+          "status": "NON_ZERO_EXIT",
+          "entry_point": "main",
+          "use_no_debug": false
+        }
+      ]
+    }
+  },
+  "summary": {
+    "total_tests": 216,
+    "security_mechanisms_triggered": 14,
+    "completed_normally": 34,
+    "timeouts": 16,
+    "failed_tests": 0,
+    "other_results": 152
+  },
+  "security_effectiveness": {
+    "detection_rate": 6.48,
+    "successful_tests": 216
+  }
+}

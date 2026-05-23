@@ -1,0 +1,597 @@
+{
+  "platform": "WARDuino",
+  "timestamp": "2025-10-25T14:32:07.070323",
+  "configs_used": [
+    [
+      "_start",
+      true
+    ],
+    [
+      "_start",
+      false
+    ]
+  ],
+  "summary": {
+    "total_tests": 72,
+    "security_triggered": 72,
+    "detection_rate": 100.0
+  },
+  "results": {
+    "boundary_test__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/boundary_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:36.941338"
+    },
+    "boundary_test__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/boundary_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:38.109898"
+    },
+    "test_complex_patterns__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_complex_patterns.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:39.277581"
+    },
+    "test_complex_patterns__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_complex_patterns.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:40.446135"
+    },
+    "complex__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/complex.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:41.614284"
+    },
+    "complex__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/complex.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:42.781482"
+    },
+    "test_Null_Pointer_Dereference__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Null_Pointer_Dereference.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:43.948638"
+    },
+    "test_Null_Pointer_Dereference__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Null_Pointer_Dereference.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:45.115692"
+    },
+    "test_Division_By_Zero__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Division_By_Zero.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:46.284627"
+    },
+    "test_Division_By_Zero__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Division_By_Zero.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:47.451097"
+    },
+    "test_Integer_Overflow__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Integer_Overflow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:48.618212"
+    },
+    "test_Integer_Overflow__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Integer_Overflow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:49.786088"
+    },
+    "test_Infinite_Loop__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Infinite_Loop.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:50.954032"
+    },
+    "test_Infinite_Loop__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Infinite_Loop.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:52.120058"
+    },
+    "test_Double_Free_Simulation__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Double_Free_Simulation.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:53.289973"
+    },
+    "test_Double_Free_Simulation__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Double_Free_Simulation.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:54.460149"
+    },
+    "compute_test__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/compute_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:55.626837"
+    },
+    "compute_test__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/compute_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:56.795779"
+    },
+    "test_basic_memory__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_basic_memory.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:57.962611"
+    },
+    "test_basic_memory__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_basic_memory.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:30:59.132258"
+    },
+    "test_Memory_Access__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Memory_Access.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:00.300539"
+    },
+    "test_Memory_Access__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Memory_Access.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:01.468313"
+    },
+    "boundary__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/boundary.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:02.637055"
+    },
+    "boundary__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/boundary.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:03.806074"
+    },
+    "test_Buffer_Underflow__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Buffer_Underflow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:04.977171"
+    },
+    "test_Buffer_Underflow__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Buffer_Underflow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:09.733359"
+    },
+    "test_array_bounds__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_array_bounds.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:10.901666"
+    },
+    "test_array_bounds__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_array_bounds.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:12.075016"
+    },
+    "step_test__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/step_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:13.243618"
+    },
+    "step_test__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/step_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:14.411698"
+    },
+    "pointer_test__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/pointer_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:15.580503"
+    },
+    "pointer_test__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/pointer_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:16.748556"
+    },
+    "test_control_flow__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_control_flow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:17.917243"
+    },
+    "test_control_flow__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_control_flow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:19.085500"
+    },
+    "memory_safety_test__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/memory_safety_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:20.254113"
+    },
+    "memory_safety_test__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/memory_safety_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:21.421309"
+    },
+    "pointer__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/pointer.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:22.590179"
+    },
+    "pointer__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/pointer.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:23.757359"
+    },
+    "test_pointers__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_pointers.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:24.925470"
+    },
+    "test_pointers__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_pointers.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:26.092593"
+    },
+    "memory_test__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/memory_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:27.258904"
+    },
+    "memory_test__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/memory_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:28.428038"
+    },
+    "test_special_cases__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_special_cases.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:29.601578"
+    },
+    "test_special_cases__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_special_cases.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:30.770521"
+    },
+    "complex_test__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/complex_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:31.940121"
+    },
+    "complex_test__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/complex_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:33.107242"
+    },
+    "test_Memory_Alignment__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Memory_Alignment.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:34.278399"
+    },
+    "test_Memory_Alignment__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Memory_Alignment.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:35.445749"
+    },
+    "oob_write__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/oob_write.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:36.616095"
+    },
+    "oob_write__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/oob_write.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:37.785290"
+    },
+    "memory_alignment__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/memory_alignment.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:38.956058"
+    },
+    "memory_alignment__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/memory_alignment.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:40.125783"
+    },
+    "test_Format_String_Simulation__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Format_String_Simulation.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:41.293412"
+    },
+    "test_Format_String_Simulation__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_Format_String_Simulation.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:46.036422"
+    },
+    "minimal__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/minimal.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:47.204184"
+    },
+    "minimal__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/minimal.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:48.370745"
+    },
+    "stack_overflow__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/stack_overflow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:49.538503"
+    },
+    "stack_overflow__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/stack_overflow.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:50.705850"
+    },
+    "test_OOB_Read__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_OOB_Read.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:51.873633"
+    },
+    "test_OOB_Read__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_OOB_Read.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:53.040425"
+    },
+    "warduino_memory_test__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/warduino_memory_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:54.207070"
+    },
+    "warduino_memory_test__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/warduino_memory_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:55.376777"
+    },
+    "test_dynamic_patterns__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_dynamic_patterns.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:56.544064"
+    },
+    "test_dynamic_patterns__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_dynamic_patterns.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:57.713685"
+    },
+    "test_OOB_Write__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_OOB_Write.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:31:58.880609"
+    },
+    "test_OOB_Write__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/test_OOB_Write.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:32:00.052507"
+    },
+    "oob_read__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/oob_read.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:32:01.225168"
+    },
+    "oob_read__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/oob_read.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:32:02.392398"
+    },
+    "control_test__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/control_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:32:03.559974"
+    },
+    "control_test__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/control_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:32:04.732090"
+    },
+    "minimal_test__start_nodebug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/minimal_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": true,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:32:05.900010"
+    },
+    "minimal_test__start_debug": {
+      "status": "SECURITY_TRIGGERED",
+      "file_path": "ward_tests/minimal_test.wasm",
+      "entry_point": "_start",
+      "use_no_debug": false,
+      "returncode": -11,
+      "timestamp": "2025-10-25T14:32:07.070284"
+    }
+  }
+}

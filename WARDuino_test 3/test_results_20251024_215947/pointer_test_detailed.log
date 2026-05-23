@@ -1,0 +1,24 @@
+=== pointer_test 测试日志 ===
+测试文件: ward_tests/pointer_test.wasm
+WARDuino: /home/yuxin/WARDuino/build-emu/wdcli
+退出代码: 1
+运行时间: 0s
+开始时间: 2025年 10月 24日 星期五 21:59:47 CST
+结束时间: 2025年 10月 24日 星期五 21:59:47 CST
+
+输出内容:
+WARDuino WebAssembly Runtime - 0.6.1
+
+Usage:
+    wdcli <file> [options]
+Options:
+    --loop         Let the runtime loop infinitely on exceptions (default: false)
+    --no-debug     Run without debug thread(default: false)
+    --no-socket    Run debug on stdout(default: false)
+    --socket       Port number for debug socket (ignored if '--no-socket' is true) (default: 8192)
+    --paused       Pause program on entry (default: false)
+    --proxy        Localhost port or serial port (ignored if mode is 'proxy')
+    --baudrate     Baudrate to use when connecting to a serial port (ignored if no serial port is provided)
+    --mode         The mode to run in: interpreter, proxy (default: interpreter)
+    --invoke       Invoke a function from the module
+    --version      Get version information

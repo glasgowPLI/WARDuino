@@ -1,0 +1,116 @@
+{
+  "platform": "WARDuino wdcli",
+  "timestamp": "2025-09-23T12:51:18.469746",
+  "wdcli_path": "../WARDuino/build-emu/wdcli",
+  "timeout": 10,
+  "test_environment": {
+    "manifest_generated": "2025-09-23T12:49:36.823573",
+    "total_tests": 10
+  },
+  "results": {
+    "OOB_Write": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: 1",
+      "returncode": 1,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "Failed to listen for incoming connections: Invalid argument\n",
+      "timestamp": "2025-09-23T12:49:44.949882",
+      "file_size": 706
+    },
+    "OOB_Read": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-09-23T12:49:55.461170",
+      "file_size": 44
+    },
+    "Stack_Overflow": {
+      "status": "NON_ZERO_EXIT",
+      "details": "非零退出码: -11",
+      "returncode": -11,
+      "stdout": "Listening on port 127.0.0.1:8192\n",
+      "stderr": "",
+      "timestamp": "2025-09-23T12:49:57.155195",
+      "file_size": 884
+    },
+    "Null_Pointer_Dereference": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-09-23T12:50:07.665120",
+      "file_size": 768
+    },
+    "Type_Confusion": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-09-23T12:50:21.777511",
+      "file_size": 788
+    },
+    "Uninitialized_Memory": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-09-23T12:50:32.285124",
+      "file_size": 741
+    },
+    "Integer_Overflow": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-09-23T12:50:42.788748",
+      "file_size": 754
+    },
+    "Infinite_Loop": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-09-23T12:50:56.943897",
+      "file_size": 687
+    },
+    "Division_By_Zero": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-09-23T12:51:07.457014",
+      "file_size": 764
+    },
+    "Memory_Access": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-09-23T12:51:17.969360",
+      "file_size": 742
+    }
+  },
+  "summary": {
+    "total_tests": 10,
+    "security_mechanisms_triggered": 0,
+    "trapped": 0,
+    "errors": 0,
+    "completed_normally": 0,
+    "timeouts": 8,
+    "failed_tests": 0,
+    "other_results": 2
+  },
+  "security_effectiveness": {
+    "detection_rate": 0.0,
+    "successful_tests": 10
+  }
+}

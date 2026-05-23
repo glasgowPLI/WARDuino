@@ -1,0 +1,222 @@
+[
+  {
+    "config": "baseline",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 166.99653233323866,
+    "std_time_ms": 0.22743199814743728,
+    "avg_memory_kb": 3370.6666666666665,
+    "avg_memory_mb": 3.2916666666666665,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "memory",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 156.7900890004239,
+    "std_time_ms": 0.26319024403625285,
+    "avg_memory_kb": 3584.0,
+    "avg_memory_mb": 3.5,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "stack",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 157.03447967098327,
+    "std_time_ms": 1.0579531733695564,
+    "avg_memory_kb": 3584.0,
+    "avg_memory_mb": 3.5,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "address",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 187.88347099810684,
+    "std_time_ms": 0.3159429728917338,
+    "avg_memory_kb": 38394.666666666664,
+    "avg_memory_mb": 37.494791666666664,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "full",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 188.96514866598105,
+    "std_time_ms": 0.5654157156164157,
+    "avg_memory_kb": 38097.333333333336,
+    "avg_memory_mb": 37.204427083333336,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "baseline",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 11.313421668698235,
+    "std_time_ms": 0.09405622771242997,
+    "avg_memory_kb": 128.0,
+    "avg_memory_mb": 0.125,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "memory",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 11.345697331610912,
+    "std_time_ms": 0.06296105508661527,
+    "avg_memory_kb": 341.3333333333333,
+    "avg_memory_mb": 0.3333333333333333,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "stack",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 11.922502669525178,
+    "std_time_ms": 0.7691859804160731,
+    "avg_memory_kb": 896.0,
+    "avg_memory_mb": 0.875,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "address",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 188.02559966570698,
+    "std_time_ms": 0.4808532024099689,
+    "avg_memory_kb": 38101.333333333336,
+    "avg_memory_mb": 37.208333333333336,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "full",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 188.03531999825887,
+    "std_time_ms": 0.47139491525514604,
+    "avg_memory_kb": 38206.666666666664,
+    "avg_memory_mb": 37.311197916666664,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "baseline",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 21.657602665072773,
+    "std_time_ms": 0.01277813891211517,
+    "avg_memory_kb": 3541.3333333333335,
+    "avg_memory_mb": 3.4583333333333335,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "memory",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 21.8453173317054,
+    "std_time_ms": 0.36556854226472724,
+    "avg_memory_kb": 3669.3333333333335,
+    "avg_memory_mb": 3.5833333333333335,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "stack",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 22.12451933398067,
+    "std_time_ms": 0.873889920847915,
+    "avg_memory_kb": 3712.0,
+    "avg_memory_mb": 3.625,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "address",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 188.06158866694508,
+    "std_time_ms": 0.3189218813425342,
+    "avg_memory_kb": 37797.333333333336,
+    "avg_memory_mb": 36.911458333333336,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "full",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 188.02110599790467,
+    "std_time_ms": 0.8458877015513904,
+    "avg_memory_kb": 38232.0,
+    "avg_memory_mb": 37.3359375,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "baseline",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 53.085807002692796,
+    "std_time_ms": 0.2831324714317118,
+    "avg_memory_kb": 3370.6666666666665,
+    "avg_memory_mb": 3.2916666666666665,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "memory",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 53.07834566823052,
+    "std_time_ms": 0.18369550883438593,
+    "avg_memory_kb": 3584.0,
+    "avg_memory_mb": 3.5,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "stack",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 49.4493170020481,
+    "std_time_ms": 5.897940795152915,
+    "avg_memory_kb": 3541.3333333333335,
+    "avg_memory_mb": 3.4583333333333335,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "address",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 188.11368766910164,
+    "std_time_ms": 0.5040165867633671,
+    "avg_memory_kb": 37958.666666666664,
+    "avg_memory_mb": 37.069010416666664,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  },
+  {
+    "config": "full",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 188.21116433294569,
+    "std_time_ms": 0.7959972038031463,
+    "avg_memory_kb": 37989.333333333336,
+    "avg_memory_mb": 37.098958333333336,
+    "success_rate": 100.0,
+    "iterations": 3,
+    "total_iterations": 3
+  }
+]

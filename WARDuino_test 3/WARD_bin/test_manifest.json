@@ -1,0 +1,110 @@
+{
+  "generated_at": "2025-09-25T17:51:27.209212",
+  "tests": {
+    "OOB_Write": {
+      "description": "\u5185\u5b58\u8d8a\u754c\u5199\u5165\u6d4b\u8bd5",
+      "c_file": "tests/test_OOB_Write.c",
+      "wasm_file": "WARD_bin/test_OOB_Write.wasm",
+      "compilation_success": true,
+      "file_size": 504
+    },
+    "OOB_Read": {
+      "description": "\u5185\u5b58\u8d8a\u754c\u8bfb\u53d6\u6d4b\u8bd5",
+      "c_file": "tests/test_OOB_Read.c",
+      "wasm_file": "WARD_bin/test_OOB_Read.wasm",
+      "compilation_success": true,
+      "file_size": 686
+    },
+    "Stack_Overflow": {
+      "description": "\u6808\u6ea2\u51fa\u6d4b\u8bd5",
+      "c_file": "tests/test_Stack_Overflow.c",
+      "wasm_file": "WARD_bin/test_Stack_Overflow.wasm",
+      "compilation_success": true,
+      "file_size": 614
+    },
+    "Null_Pointer_Dereference": {
+      "description": "\u7a7a\u6307\u9488\u89e3\u5f15\u7528\u6d4b\u8bd5",
+      "c_file": "tests/test_Null_Pointer_Dereference.c",
+      "wasm_file": "WARD_bin/test_Null_Pointer_Dereference.wasm",
+      "compilation_success": true,
+      "file_size": 583
+    },
+    "Uninitialized_Memory": {
+      "description": "\u672a\u521d\u59cb\u5316\u5185\u5b58\u4f7f\u7528\u6d4b\u8bd5",
+      "c_file": "tests/test_Uninitialized_Memory.c",
+      "wasm_file": "WARD_bin/test_Uninitialized_Memory.wasm",
+      "compilation_success": true,
+      "file_size": 668
+    },
+    "Integer_Overflow": {
+      "description": "\u6574\u6570\u6ea2\u51fa\u6d4b\u8bd5",
+      "c_file": "tests/test_Integer_Overflow.c",
+      "wasm_file": "WARD_bin/test_Integer_Overflow.wasm",
+      "compilation_success": true,
+      "file_size": 561
+    },
+    "Infinite_Loop": {
+      "description": "\u65e0\u9650\u5faa\u73af\u6d4b\u8bd5",
+      "c_file": "tests/test_Infinite_Loop.c",
+      "wasm_file": "WARD_bin/test_Infinite_Loop.wasm",
+      "compilation_success": true,
+      "file_size": 526
+    },
+    "Division_By_Zero": {
+      "description": "\u9664\u96f6\u9519\u8bef\u6d4b\u8bd5",
+      "c_file": "tests/test_Division_By_Zero.c",
+      "wasm_file": "WARD_bin/test_Division_By_Zero.wasm",
+      "compilation_success": true,
+      "file_size": 607
+    },
+    "Memory_Access": {
+      "description": "\u5185\u5b58\u8bbf\u95ee\u9519\u8bef\u6d4b\u8bd5",
+      "c_file": "tests/test_Memory_Access.c",
+      "wasm_file": "WARD_bin/test_Memory_Access.wasm",
+      "compilation_success": true,
+      "file_size": 552
+    },
+    "Type_Confusion": {
+      "description": "\u7c7b\u578b\u6df7\u6dc6\u6d4b\u8bd5",
+      "c_file": "tests/test_Type_Confusion.c",
+      "wasm_file": "WARD_bin/test_Type_Confusion.wasm",
+      "compilation_success": true,
+      "file_size": 555
+    },
+    "Memory_Alignment": {
+      "description": "\u5185\u5b58\u5bf9\u9f50\u9519\u8bef\u6d4b\u8bd5",
+      "c_file": "tests/test_Memory_Alignment.c",
+      "wasm_file": "WARD_bin/test_Memory_Alignment.wasm",
+      "compilation_success": true,
+      "file_size": 561
+    },
+    "Buffer_Underflow": {
+      "description": "\u7f13\u51b2\u533a\u4e0b\u6ea2\u6d4b\u8bd5",
+      "c_file": "tests/test_Buffer_Underflow.c",
+      "wasm_file": "WARD_bin/test_Buffer_Underflow.wasm",
+      "compilation_success": true,
+      "file_size": 714
+    },
+    "Double_Free_Simulation": {
+      "description": "\u53cc\u91cd\u91ca\u653e\u6a21\u62df\u6d4b\u8bd5",
+      "c_file": "tests/test_Double_Free_Simulation.c",
+      "wasm_file": "WARD_bin/test_Double_Free_Simulation.wasm",
+      "compilation_success": true,
+      "file_size": 615
+    },
+    "Use_After_Free_Simulation": {
+      "description": "\u91ca\u653e\u540e\u4f7f\u7528\u6a21\u62df\u6d4b\u8bd5",
+      "c_file": "tests/test_Use_After_Free_Simulation.c",
+      "wasm_file": "WARD_bin/test_Use_After_Free_Simulation.wasm",
+      "compilation_success": true,
+      "file_size": 580
+    },
+    "Format_String_Simulation": {
+      "description": "\u683c\u5f0f\u5316\u5b57\u7b26\u4e32\u6f0f\u6d1e\u6a21\u62df\u6d4b\u8bd5",
+      "c_file": "tests/test_Format_String_Simulation.c",
+      "wasm_file": "WARD_bin/test_Format_String_Simulation.wasm",
+      "compilation_success": true,
+      "file_size": 846
+    }
+  }
+}

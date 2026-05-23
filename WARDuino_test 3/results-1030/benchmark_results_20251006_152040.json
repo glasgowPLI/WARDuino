@@ -1,0 +1,462 @@
+[
+  {
+    "config": "baseline",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "Listening on port 127.0.0.1:8192\nFailed to listen for incoming connections: Invalid argument\n",
+      "Listening on port 127.0.0.1:8192\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 297486\nSanitizer Checks: 0\nFunction Calls: 1\nTotal Instructions: 2667416\nExecution Time: 255327 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n",
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 297486\nSanitizer Checks: 0\nFunction Calls: 1\nTotal Instructions: 2667416\nExecution Time: 224033 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 297486\nSanitizer Checks: 0\nFunction Calls: 1\nTotal Instructions: 2667416\nExecution Time: 222339 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n",
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 297486\nSanitizer Checks: 0\nFunction Calls: 1\nTotal Instructions: 2667416\nExecution Time: 222752 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=================================================================\n==18335==ERROR: AddressSanitizer: use-after-poison on address 0x511000000040 at pc 0x590946d6e154 bp 0x7fff42659590 sp 0x7fff42659580\nWRITE of size 8 at 0x511000000040 thread T0\n    #0 0x590946d6e153 in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x590946d5c403 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x720737a2a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x720737a2a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x590946d5e9f4 in _start (/home/yuxin/WARDuino-safe/build-address/wdcli+0x1c9f4) (BuildId: 3911896d47c7665cd10bf2cbe0be78a27c1f7a86)\n\n0x511000000040 is located 0 bytes inside of 248-byte region [0x511000000040,0x511000000138)\nallocated by thread T0 here:\n    #0 0x7207382fd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x590946d932f5 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x510ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x511000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x511000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x511000000100: f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa fa fa fa fa\n  0x511000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18335==ABORTING\n",
+      "=================================================================\n==18336==ERROR: AddressSanitizer: use-after-poison on address 0x511000000040 at pc 0x61d24154f154 bp 0x7ffe09908200 sp 0x7ffe099081f0\nWRITE of size 8 at 0x511000000040 thread T0\n    #0 0x61d24154f153 in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x61d24153d403 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x78179662a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x78179662a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x61d24153f9f4 in _start (/home/yuxin/WARDuino-safe/build-address/wdcli+0x1c9f4) (BuildId: 3911896d47c7665cd10bf2cbe0be78a27c1f7a86)\n\n0x511000000040 is located 0 bytes inside of 248-byte region [0x511000000040,0x511000000138)\nallocated by thread T0 here:\n    #0 0x781796efd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x61d2415742f5 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x510ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x511000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x511000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x511000000100: f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa fa fa fa fa\n  0x511000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18336==ABORTING\n"
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=================================================================\n==18340==ERROR: AddressSanitizer: use-after-poison on address 0x512000000040 at pc 0x640bc7de554d bp 0x7fffe2d06e70 sp 0x7fffe2d06e60\nWRITE of size 8 at 0x512000000040 thread T0\n    #0 0x640bc7de554c in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x640bc7dd3602 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x7d5eddc2a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x7d5eddc2a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x640bc7dd5d54 in _start (/home/yuxin/WARDuino-safe/build-full/wdcli+0x1cd54) (BuildId: 54edcc7e8f99c5cdf0b90316b75338d361c72591)\n\n0x512000000040 is located 0 bytes inside of 280-byte region [0x512000000040,0x512000000158)\nallocated by thread T0 here:\n    #0 0x7d5ede4fd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x640bc7e0aa55 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x511ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x512000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x512000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x512000000100: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa\n  0x512000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18340==ABORTING\n",
+      "=================================================================\n==18341==ERROR: AddressSanitizer: use-after-poison on address 0x512000000040 at pc 0x58a0fd8f554d bp 0x7ffeb7055a20 sp 0x7ffeb7055a10\nWRITE of size 8 at 0x512000000040 thread T0\n    #0 0x58a0fd8f554c in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x58a0fd8e3602 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x760f3a62a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x760f3a62a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x58a0fd8e5d54 in _start (/home/yuxin/WARDuino-safe/build-full/wdcli+0x1cd54) (BuildId: 54edcc7e8f99c5cdf0b90316b75338d361c72591)\n\n0x512000000040 is located 0 bytes inside of 280-byte region [0x512000000040,0x512000000158)\nallocated by thread T0 here:\n    #0 0x760f3aefd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x58a0fd91aa55 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x511ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x512000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x512000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x512000000100: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa\n  0x512000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18341==ABORTING\n"
+    ]
+  },
+  {
+    "config": "baseline",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "Listening on port 127.0.0.1:8192\nFailed to listen for incoming connections: Invalid argument\n",
+      "Listening on port 127.0.0.1:8192\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 12046\nSanitizer Checks: 0\nFunction Calls: 2\nTotal Instructions: 76755\nExecution Time: 6520 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n",
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 4 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 12046\nSanitizer Checks: 0\nFunction Calls: 2\nTotal Instructions: 76755\nExecution Time: 7160 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 12046\nSanitizer Checks: 0\nFunction Calls: 2\nTotal Instructions: 76755\nExecution Time: 6422 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n",
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 12046\nSanitizer Checks: 0\nFunction Calls: 2\nTotal Instructions: 76755\nExecution Time: 6883 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=================================================================\n==18375==ERROR: AddressSanitizer: use-after-poison on address 0x511000000040 at pc 0x5581ede02154 bp 0x7ffe7bcb95c0 sp 0x7ffe7bcb95b0\nWRITE of size 8 at 0x511000000040 thread T0\n    #0 0x5581ede02153 in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x5581eddf0403 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x7d408642a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x7d408642a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x5581eddf29f4 in _start (/home/yuxin/WARDuino-safe/build-address/wdcli+0x1c9f4) (BuildId: 3911896d47c7665cd10bf2cbe0be78a27c1f7a86)\n\n0x511000000040 is located 0 bytes inside of 248-byte region [0x511000000040,0x511000000138)\nallocated by thread T0 here:\n    #0 0x7d4086cfd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x5581ede272f5 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x510ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x511000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x511000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x511000000100: f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa fa fa fa fa\n  0x511000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18375==ABORTING\n",
+      "=================================================================\n==18376==ERROR: AddressSanitizer: use-after-poison on address 0x511000000040 at pc 0x6009c3203154 bp 0x7ffd28601c00 sp 0x7ffd28601bf0\nWRITE of size 8 at 0x511000000040 thread T0\n    #0 0x6009c3203153 in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x6009c31f1403 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x70c18e62a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x70c18e62a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x6009c31f39f4 in _start (/home/yuxin/WARDuino-safe/build-address/wdcli+0x1c9f4) (BuildId: 3911896d47c7665cd10bf2cbe0be78a27c1f7a86)\n\n0x511000000040 is located 0 bytes inside of 248-byte region [0x511000000040,0x511000000138)\nallocated by thread T0 here:\n    #0 0x70c18eefd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x6009c32282f5 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x510ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x511000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x511000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x511000000100: f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa fa fa fa fa\n  0x511000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18376==ABORTING\n"
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=================================================================\n==18380==ERROR: AddressSanitizer: use-after-poison on address 0x512000000040 at pc 0x5ac68e38a54d bp 0x7ffc2c2f6290 sp 0x7ffc2c2f6280\nWRITE of size 8 at 0x512000000040 thread T0\n    #0 0x5ac68e38a54c in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x5ac68e378602 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x7f87ea02a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x7f87ea02a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x5ac68e37ad54 in _start (/home/yuxin/WARDuino-safe/build-full/wdcli+0x1cd54) (BuildId: 54edcc7e8f99c5cdf0b90316b75338d361c72591)\n\n0x512000000040 is located 0 bytes inside of 280-byte region [0x512000000040,0x512000000158)\nallocated by thread T0 here:\n    #0 0x7f87ea8fd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x5ac68e3afa55 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x511ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x512000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x512000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x512000000100: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa\n  0x512000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18380==ABORTING\n",
+      "=================================================================\n==18381==ERROR: AddressSanitizer: use-after-poison on address 0x512000000040 at pc 0x62fa845ed54d bp 0x7fffd80ef490 sp 0x7fffd80ef480\nWRITE of size 8 at 0x512000000040 thread T0\n    #0 0x62fa845ed54c in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x62fa845db602 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x781815c2a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x781815c2a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x62fa845ddd54 in _start (/home/yuxin/WARDuino-safe/build-full/wdcli+0x1cd54) (BuildId: 54edcc7e8f99c5cdf0b90316b75338d361c72591)\n\n0x512000000040 is located 0 bytes inside of 280-byte region [0x512000000040,0x512000000158)\nallocated by thread T0 here:\n    #0 0x7818164fd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x62fa84612a55 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x511ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x512000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x512000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x512000000100: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa\n  0x512000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18381==ABORTING\n"
+    ]
+  },
+  {
+    "config": "baseline",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "Listening on port 127.0.0.1:8192\nFailed to listen for incoming connections: Invalid argument\n",
+      "Listening on port 127.0.0.1:8192\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 8 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 17000\nStack Operations: 7505\nSanitizer Checks: 0\nFunction Calls: 1\nTotal Instructions: 178526\nExecution Time: 15320 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n",
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 8 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 17000\nStack Operations: 7505\nSanitizer Checks: 0\nFunction Calls: 1\nTotal Instructions: 178526\nExecution Time: 15996 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 6 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 9 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 17000\nStack Operations: 7505\nSanitizer Checks: 0\nFunction Calls: 1\nTotal Instructions: 178526\nExecution Time: 15270 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n",
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 6 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 9 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 17000\nStack Operations: 7505\nSanitizer Checks: 0\nFunction Calls: 1\nTotal Instructions: 178526\nExecution Time: 15086 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=================================================================\n==18415==ERROR: AddressSanitizer: use-after-poison on address 0x511000000040 at pc 0x579b6035c154 bp 0x7ffc89b913d0 sp 0x7ffc89b913c0\nWRITE of size 8 at 0x511000000040 thread T0\n    #0 0x579b6035c153 in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x579b6034a403 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x7a36daa2a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x7a36daa2a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x579b6034c9f4 in _start (/home/yuxin/WARDuino-safe/build-address/wdcli+0x1c9f4) (BuildId: 3911896d47c7665cd10bf2cbe0be78a27c1f7a86)\n\n0x511000000040 is located 0 bytes inside of 248-byte region [0x511000000040,0x511000000138)\nallocated by thread T0 here:\n    #0 0x7a36db2fd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x579b603812f5 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x510ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x511000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x511000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x511000000100: f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa fa fa fa fa\n  0x511000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18415==ABORTING\n",
+      "=================================================================\n==18416==ERROR: AddressSanitizer: use-after-poison on address 0x511000000040 at pc 0x628e0e599154 bp 0x7fff67fc8e80 sp 0x7fff67fc8e70\nWRITE of size 8 at 0x511000000040 thread T0\n    #0 0x628e0e599153 in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x628e0e587403 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x7111b3c2a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x7111b3c2a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x628e0e5899f4 in _start (/home/yuxin/WARDuino-safe/build-address/wdcli+0x1c9f4) (BuildId: 3911896d47c7665cd10bf2cbe0be78a27c1f7a86)\n\n0x511000000040 is located 0 bytes inside of 248-byte region [0x511000000040,0x511000000138)\nallocated by thread T0 here:\n    #0 0x7111b44fd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x628e0e5be2f5 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x510ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x511000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x511000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x511000000100: f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa fa fa fa fa\n  0x511000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18416==ABORTING\n"
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=================================================================\n==18420==ERROR: AddressSanitizer: use-after-poison on address 0x512000000040 at pc 0x57bb4177954d bp 0x7ffc69f10b90 sp 0x7ffc69f10b80\nWRITE of size 8 at 0x512000000040 thread T0\n    #0 0x57bb4177954c in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x57bb41767602 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x79ffa082a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x79ffa082a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x57bb41769d54 in _start (/home/yuxin/WARDuino-safe/build-full/wdcli+0x1cd54) (BuildId: 54edcc7e8f99c5cdf0b90316b75338d361c72591)\n\n0x512000000040 is located 0 bytes inside of 280-byte region [0x512000000040,0x512000000158)\nallocated by thread T0 here:\n    #0 0x79ffa10fd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x57bb4179ea55 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x511ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x512000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x512000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x512000000100: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa\n  0x512000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18420==ABORTING\n",
+      "=================================================================\n==18421==ERROR: AddressSanitizer: use-after-poison on address 0x512000000040 at pc 0x5da2f808c54d bp 0x7ffe325eb360 sp 0x7ffe325eb350\nWRITE of size 8 at 0x512000000040 thread T0\n    #0 0x5da2f808c54c in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x5da2f807a602 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x767df642a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x767df642a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x5da2f807cd54 in _start (/home/yuxin/WARDuino-safe/build-full/wdcli+0x1cd54) (BuildId: 54edcc7e8f99c5cdf0b90316b75338d361c72591)\n\n0x512000000040 is located 0 bytes inside of 280-byte region [0x512000000040,0x512000000158)\nallocated by thread T0 here:\n    #0 0x767df6cfd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x5da2f80b1a55 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x511ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x512000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x512000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x512000000100: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa\n  0x512000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18421==ABORTING\n"
+    ]
+  },
+  {
+    "config": "baseline",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "Listening on port 127.0.0.1:8192\nFailed to listen for incoming connections: Invalid argument\n",
+      "Listening on port 127.0.0.1:8192\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 8 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 4 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 3000\nStack Operations: 77504\nSanitizer Checks: 0\nFunction Calls: 3001\nTotal Instructions: 722877\nExecution Time: 61295 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n",
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 10 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 4 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 3000\nStack Operations: 77504\nSanitizer Checks: 0\nFunction Calls: 3001\nTotal Instructions: 722877\nExecution Time: 61147 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 9 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 4 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 3000\nStack Operations: 77504\nSanitizer Checks: 0\nFunction Calls: 3001\nTotal Instructions: 722877\nExecution Time: 60698 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n",
+      "=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 5 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 8 clock cycles\n=============================\n=== Performance Counters ===\nMemory Accesses: 0\nStack Operations: 0\nSanitizer Checks: 0\nFunction Calls: 0\nTotal Instructions: 2\nExecution Time: 4 clock cycles\n=============================\nListening on port 127.0.0.1:8192\n=== Performance Counters ===\nMemory Accesses: 3000\nStack Operations: 77504\nSanitizer Checks: 0\nFunction Calls: 3001\nTotal Instructions: 722877\nExecution Time: 60681 clock cycles\n=============================\nFailed to listen for incoming connections: Invalid argument\n"
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=================================================================\n==18455==ERROR: AddressSanitizer: use-after-poison on address 0x511000000040 at pc 0x610285b1a154 bp 0x7fff57b393e0 sp 0x7fff57b393d0\nWRITE of size 8 at 0x511000000040 thread T0\n    #0 0x610285b1a153 in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x610285b08403 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x79753362a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x79753362a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x610285b0a9f4 in _start (/home/yuxin/WARDuino-safe/build-address/wdcli+0x1c9f4) (BuildId: 3911896d47c7665cd10bf2cbe0be78a27c1f7a86)\n\n0x511000000040 is located 0 bytes inside of 248-byte region [0x511000000040,0x511000000138)\nallocated by thread T0 here:\n    #0 0x797533efd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x610285b3f2f5 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x510ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x511000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x511000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x511000000100: f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa fa fa fa fa\n  0x511000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18455==ABORTING\n",
+      "=================================================================\n==18456==ERROR: AddressSanitizer: use-after-poison on address 0x511000000040 at pc 0x628673167154 bp 0x7ffc6cfafa30 sp 0x7ffc6cfafa20\nWRITE of size 8 at 0x511000000040 thread T0\n    #0 0x628673167153 in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x628673155403 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x7f79d222a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x7f79d222a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x6286731579f4 in _start (/home/yuxin/WARDuino-safe/build-address/wdcli+0x1c9f4) (BuildId: 3911896d47c7665cd10bf2cbe0be78a27c1f7a86)\n\n0x511000000040 is located 0 bytes inside of 248-byte region [0x511000000040,0x511000000138)\nallocated by thread T0 here:\n    #0 0x7f79d2afd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x62867318c2f5 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x510ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x510fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x511000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x511000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x511000000100: f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa fa fa fa fa\n  0x511000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x511000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18456==ABORTING\n"
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": Infinity,
+    "std_time_ms": 0,
+    "avg_memory_kb": 0,
+    "std_memory_kb": 0,
+    "avg_memory_mb": 0.0,
+    "success_rate": 0.0,
+    "iterations": 0,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "output_samples": [
+      "=================================================================\n==18460==ERROR: AddressSanitizer: use-after-poison on address 0x512000000040 at pc 0x62973619a54d bp 0x7ffce8985b00 sp 0x7ffce8985af0\nWRITE of size 8 at 0x512000000040 thread T0\n    #0 0x62973619a54c in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x629736188602 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x723a3d42a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x723a3d42a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x62973618ad54 in _start (/home/yuxin/WARDuino-safe/build-full/wdcli+0x1cd54) (BuildId: 54edcc7e8f99c5cdf0b90316b75338d361c72591)\n\n0x512000000040 is located 0 bytes inside of 280-byte region [0x512000000040,0x512000000158)\nallocated by thread T0 here:\n    #0 0x723a3dcfd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x6297361bfa55 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x511ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x512000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x512000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x512000000100: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa\n  0x512000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18460==ABORTING\n",
+      "=================================================================\n==18461==ERROR: AddressSanitizer: use-after-poison on address 0x512000000040 at pc 0x5f6ee461b54d bp 0x7fff9a26af20 sp 0x7fff9a26af10\nWRITE of size 8 at 0x512000000040 thread T0\n    #0 0x5f6ee461b54c in WARDuino::load_module(unsigned char*, unsigned int, Options) /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872\n    #1 0x5f6ee4609602 in main /home/yuxin/WARDuino-safe/platforms/CLI-Emulator/main.cpp:296\n    #2 0x74c6f7c2a1c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58\n    #3 0x74c6f7c2a28a in __libc_start_main_impl ../csu/libc-start.c:360\n    #4 0x5f6ee460bd54 in _start (/home/yuxin/WARDuino-safe/build-full/wdcli+0x1cd54) (BuildId: 54edcc7e8f99c5cdf0b90316b75338d361c72591)\n\n0x512000000040 is located 0 bytes inside of 280-byte region [0x512000000040,0x512000000158)\nallocated by thread T0 here:\n    #0 0x74c6f84fd340 in calloc ../../../../src/libsanitizer/asan/asan_malloc_linux.cpp:77\n    #1 0x5f6ee4640a55 in acalloc(unsigned long, unsigned long, char const*, bool) /home/yuxin/WARDuino-safe/src/Memory/mem.cpp:32\n\nSUMMARY: AddressSanitizer: use-after-poison /home/yuxin/WARDuino-safe/src/WARDuino/WARDuino.cpp:872 in WARDuino::load_module(unsigned char*, unsigned int, Options)\nShadow bytes around the buggy address:\n  0x511ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0x511fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0x512000000000: fa fa fa fa fa fa fa fa[f7]f7 f7 f7 f7 f7 f7 f7\n  0x512000000080: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7\n  0x512000000100: f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 f7 fa fa fa fa fa\n  0x512000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\n  0x512000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==18461==ABORTING\n"
+    ]
+  }
+]

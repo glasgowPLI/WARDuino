@@ -1,0 +1,382 @@
+[
+  {
+    "config": "baseline",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 168.5990469995886,
+    "std_time_ms": 1.8887926080033217,
+    "avg_memory_kb": 3353.6,
+    "std_memory_kb": 57.243340223994615,
+    "avg_memory_mb": 3.275,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 159.2270790002658,
+    "std_time_ms": 4.56142560155335,
+    "avg_memory_kb": 3584.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 3.5,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 155.27894260012545,
+    "std_time_ms": 3.5820498174153372,
+    "avg_memory_kb": 3558.4,
+    "std_memory_kb": 57.243340223994615,
+    "avg_memory_mb": 3.475,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 187.80882559804013,
+    "std_time_ms": 0.382568512545097,
+    "avg_memory_kb": 38071.2,
+    "std_memory_kb": 53.246596135339956,
+    "avg_memory_mb": 37.17890625,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 188.4419641995919,
+    "std_time_ms": 1.1466041976924328,
+    "avg_memory_kb": 38380.0,
+    "std_memory_kb": 646.6962192559965,
+    "avg_memory_mb": 37.48046875,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "baseline",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 11.274965200573206,
+    "std_time_ms": 0.05177705827486089,
+    "avg_memory_kb": 128.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 0.125,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 11.395228399487678,
+    "std_time_ms": 0.23454694369712206,
+    "avg_memory_kb": 128.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 0.125,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 11.62949639983708,
+    "std_time_ms": 0.5191589076465996,
+    "avg_memory_kb": 128.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 0.125,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 187.9514495987678,
+    "std_time_ms": 0.4333802321227364,
+    "avg_memory_kb": 38420.0,
+    "std_memory_kb": 670.4923564068423,
+    "avg_memory_mb": 37.51953125,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 187.78577060002135,
+    "std_time_ms": 0.4299838797414996,
+    "avg_memory_kb": 38203.2,
+    "std_memory_kb": 61.734917186305516,
+    "avg_memory_mb": 37.3078125,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "baseline",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 21.638522000284865,
+    "std_time_ms": 0.023240926350362155,
+    "avg_memory_kb": 3481.6,
+    "std_memory_kb": 57.243340223994615,
+    "avg_memory_mb": 3.4,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 22.030158997222316,
+    "std_time_ms": 0.32241602766874106,
+    "avg_memory_kb": 3712.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 3.625,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 21.649751799122896,
+    "std_time_ms": 0.028067175296970857,
+    "avg_memory_kb": 3712.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 3.625,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 188.09661059931386,
+    "std_time_ms": 0.20424363075009452,
+    "avg_memory_kb": 37748.8,
+    "std_memory_kb": 468.4903414159144,
+    "avg_memory_mb": 36.8640625,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 187.86509399942588,
+    "std_time_ms": 0.40132320668906724,
+    "avg_memory_kb": 38086.4,
+    "std_memory_kb": 249.4890779172507,
+    "avg_memory_mb": 37.19375,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "baseline",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 53.11198560084449,
+    "std_time_ms": 0.5216417742924893,
+    "avg_memory_kb": 3379.2,
+    "std_memory_kb": 70.10848736066126,
+    "avg_memory_mb": 3.3,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 55.02108619984938,
+    "std_time_ms": 4.535643144208497,
+    "avg_memory_kb": 3558.4,
+    "std_memory_kb": 57.243340223994615,
+    "avg_memory_mb": 3.475,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 53.267286001937464,
+    "std_time_ms": 0.9006460647493727,
+    "avg_memory_kb": 3635.2,
+    "std_memory_kb": 114.48668044798923,
+    "avg_memory_mb": 3.55,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 187.9960663995007,
+    "std_time_ms": 0.5533771310778575,
+    "avg_memory_kb": 38292.0,
+    "std_memory_kb": 461.18976571472183,
+    "avg_memory_mb": 37.39453125,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 188.07666140055517,
+    "std_time_ms": 0.7843426745447957,
+    "avg_memory_kb": 38442.4,
+    "std_memory_kb": 560.018571120637,
+    "avg_memory_mb": 37.54140625,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  }
+]

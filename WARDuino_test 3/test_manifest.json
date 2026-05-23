@@ -1,0 +1,47 @@
+{
+    "generated_at": "2024-01-01T00:00:00Z",
+    "tests": {
+        "OOB_Write": {
+            "description": "内存越界写入测试",
+            "c_file": "tests/oob_write.c",
+            "wasm_file": "WARD_bin/oob_write.wasm",
+            "compilation_success": false,
+            "file_size": 0
+        },
+        "OOB_Read": {
+            "description": "内存越界读取测试", 
+            "c_file": "tests/oob_read.c",
+            "wasm_file": "WARD_bin/oob_read.wasm",
+            "compilation_success": false,
+            "file_size": 0
+        },
+        "Uninitialized_Memory": {
+            "description": "未初始化内存使用测试",
+            "c_file": "tests/uninitialized_memory.c", 
+            "wasm_file": "WARD_bin/uninitialized_memory.wasm",
+            "compilation_success": false,
+            "file_size": 0
+        },
+        "Null_Pointer": {
+            "description": "空指针解引用测试",
+            "c_file": "tests/null_pointer.c",
+            "wasm_file": "WARD_bin/null_pointer.wasm", 
+            "compilation_success": false,
+            "file_size": 0
+        },
+        "Stack_Overflow": {
+            "description": "栈溢出测试",
+            "c_file": "tests/stack_overflow.c",
+            "wasm_file": "WARD_bin/stack_overflow.wasm",
+            "compilation_success": false,
+            "file_size": 0
+        },
+        "Memory_Alignment": {
+            "description": "内存对齐错误测试",
+            "c_file": "tests/memory_alignment.c",
+            "wasm_file": "WARD_bin/memory_alignment.wasm",
+            "compilation_success": false,
+            "file_size": 0
+        }
+    }
+}

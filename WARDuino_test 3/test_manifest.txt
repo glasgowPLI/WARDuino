@@ -1,0 +1,18 @@
+WARDuino测试模块清单
+生成时间: 2025年 10月 25日 星期六 10:47:09 CST
+成功编译: 18 个模块
+
+可用测试模块:
+
+
+测试分类:
+- 基础功能测试: compute_test.wasm, control_test.wasm, memory_test.wasm
+- 内存安全测试: oob_read.wasm, oob_write.wasm, stack_overflow.wasm
+- 边界检查测试: test_Buffer_Underflow.wasm, test_OOB_Read.wasm, test_OOB_Write.wasm
+- 算术异常测试: test_Division_By_Zero.wasm, test_Integer_Overflow.wasm
+- 指针安全测试: test_Null_Pointer_Dereference.wasm, test_Memory_Access.wasm
+- 控制流测试: test_Infinite_Loop.wasm
+- 内存管理测试: test_Double_Free.wasm, test_Heap_Overflow.wasm
+
+使用说明:
+使用WARDuino运行时加载这些WASM模块进行内存安全测试。

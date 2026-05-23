@@ -1,0 +1,161 @@
+{
+  "platform": "wasm3",
+  "timestamp": "2025-09-27T09:26:47.082700",
+  "wasm3_path": "../wasm3/build/wasm3",
+  "timeout": 10,
+  "test_environment": {
+    "manifest_generated": "2025-09-25T17:51:27.209212",
+    "total_tests": 15
+  },
+  "results": {
+    "OOB_Write": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:25.849435",
+      "file_size": 504
+    },
+    "OOB_Read": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:26.372466",
+      "file_size": 686
+    },
+    "Stack_Overflow": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:26.878393",
+      "file_size": 614
+    },
+    "Null_Pointer_Dereference": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:27.382413",
+      "file_size": 583
+    },
+    "Uninitialized_Memory": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:31.545216",
+      "file_size": 668
+    },
+    "Integer_Overflow": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:32.048281",
+      "file_size": 561
+    },
+    "Infinite_Loop": {
+      "status": "TIMEOUT",
+      "details": "执行超时",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-09-27T09:26:42.555722",
+      "file_size": 526
+    },
+    "Division_By_Zero": {
+      "status": "TRAPPED",
+      "details": "WASM陷阱触发 - 安全机制生效",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: [trap] integer divide by zero\n",
+      "timestamp": "2025-09-27T09:26:43.059169",
+      "file_size": 607
+    },
+    "Memory_Access": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:43.563426",
+      "file_size": 552
+    },
+    "Type_Confusion": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:44.066474",
+      "file_size": 555
+    },
+    "Memory_Alignment": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:44.569677",
+      "file_size": 561
+    },
+    "Buffer_Underflow": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:45.073146",
+      "file_size": 714
+    },
+    "Double_Free_Simulation": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:45.576174",
+      "file_size": 615
+    },
+    "Use_After_Free_Simulation": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:46.079328",
+      "file_size": 580
+    },
+    "Format_String_Simulation": {
+      "status": "COMPLETED",
+      "details": "正常完成（可能安全机制未生效）",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-27T09:26:46.582370",
+      "file_size": 846
+    }
+  },
+  "summary": {
+    "total_tests": 15,
+    "security_mechanisms_triggered": 1,
+    "trapped": 1,
+    "errors": 0,
+    "completed_normally": 13,
+    "timeouts": 1,
+    "failed_tests": 0,
+    "other_results": 0
+  },
+  "security_effectiveness": {
+    "detection_rate": 6.67,
+    "successful_tests": 15
+  }
+}

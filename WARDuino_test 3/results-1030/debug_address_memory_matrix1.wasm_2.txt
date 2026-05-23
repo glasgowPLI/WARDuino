@@ -1,0 +1,4 @@
+=== STDOUT ===
+Could not find primitive memset 
+
+=== STDERR ===

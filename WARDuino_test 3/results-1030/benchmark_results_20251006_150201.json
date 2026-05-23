@@ -1,0 +1,382 @@
+[
+  {
+    "config": "baseline",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 234.75336600240553,
+    "std_time_ms": 4.7713034088417965,
+    "avg_memory_kb": 3584.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 3.5,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 232.5536413991358,
+    "std_time_ms": 0.6278410801375262,
+    "avg_memory_kb": 3686.4,
+    "std_memory_kb": 57.243340223994615,
+    "avg_memory_mb": 3.6,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 232.85746420006035,
+    "std_time_ms": 0.24439847684524205,
+    "avg_memory_kb": 3686.4,
+    "std_memory_kb": 57.243340223994615,
+    "avg_memory_mb": 3.6,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 256.0248381996644,
+    "std_time_ms": 99.09814870944123,
+    "avg_memory_kb": 38650.4,
+    "std_memory_kb": 112.55576395724921,
+    "avg_memory_mb": 37.74453125,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "compute_test.wasm",
+    "avg_time_ms": 211.7006508007762,
+    "std_time_ms": 0.39760735117110957,
+    "avg_memory_kb": 38520.8,
+    "std_memory_kb": 250.92468989718807,
+    "avg_memory_mb": 37.61796875,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "baseline",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 11.673297401284799,
+    "std_time_ms": 0.22208301966702682,
+    "avg_memory_kb": 128.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 0.125,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 11.526004002371337,
+    "std_time_ms": 0.11483521352498399,
+    "avg_memory_kb": 153.6,
+    "std_memory_kb": 57.243340223994615,
+    "avg_memory_mb": 0.15,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 11.524348999955691,
+    "std_time_ms": 0.10071326264450593,
+    "avg_memory_kb": 128.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 0.125,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 209.69915599853266,
+    "std_time_ms": 3.1531670900821145,
+    "avg_memory_kb": 37575.2,
+    "std_memory_kb": 2172.2401340551646,
+    "avg_memory_mb": 36.69453125,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "stack_test.wasm",
+    "avg_time_ms": 212.11539579962846,
+    "std_time_ms": 0.7942931571984936,
+    "avg_memory_kb": 38757.6,
+    "std_memory_kb": 167.89520541099438,
+    "avg_memory_mb": 37.84921875,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "baseline",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 22.036947798915207,
+    "std_time_ms": 0.09008929814587548,
+    "avg_memory_kb": 3686.4,
+    "std_memory_kb": 57.243340223994615,
+    "avg_memory_mb": 3.6,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 22.163116399315186,
+    "std_time_ms": 0.3333713099011133,
+    "avg_memory_kb": 3840.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 3.75,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 22.14841559762135,
+    "std_time_ms": 0.30380270354227334,
+    "avg_memory_kb": 3840.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 3.75,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 209.0313275984954,
+    "std_time_ms": 3.904293850947921,
+    "avg_memory_kb": 38690.4,
+    "std_memory_kb": 604.9039593191633,
+    "avg_memory_mb": 37.78359375,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "memory_test.wasm",
+    "avg_time_ms": 211.63721679913579,
+    "std_time_ms": 0.3096386549740944,
+    "avg_memory_kb": 38752.8,
+    "std_memory_kb": 360.7813742420748,
+    "avg_memory_mb": 37.84453125,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "baseline",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 73.11338460131083,
+    "std_time_ms": 3.9297298405016403,
+    "avg_memory_kb": 3584.0,
+    "std_memory_kb": 90.50966799187809,
+    "avg_memory_mb": 3.5,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "memory",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 77.03623699781019,
+    "std_time_ms": 4.934895341851235,
+    "avg_memory_kb": 3788.8,
+    "std_memory_kb": 114.48668044798923,
+    "avg_memory_mb": 3.7,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "stack",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 75.22815219999757,
+    "std_time_ms": 1.1617954860420607,
+    "avg_memory_kb": 3712.0,
+    "std_memory_kb": 0.0,
+    "avg_memory_mb": 3.625,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "address",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 212.23598779761232,
+    "std_time_ms": 1.4781290913629739,
+    "avg_memory_kb": 38776.8,
+    "std_memory_kb": 69.5931031065579,
+    "avg_memory_mb": 37.86796875,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "config": "full",
+    "test_program": "control_test.wasm",
+    "avg_time_ms": 212.4405921989819,
+    "std_time_ms": 1.1149973523871908,
+    "avg_memory_kb": 38917.6,
+    "std_memory_kb": 173.03410068538514,
+    "avg_memory_mb": 38.00546875,
+    "success_rate": 100.0,
+    "iterations": 5,
+    "total_iterations": 5,
+    "return_codes": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  }
+]

@@ -1,0 +1,219 @@
+{
+  "platform": "wasm3",
+  "wasm3_version": "Wasm3 v0.5.1 on x86_64\nBuild: Sep 17 2025 16:37:48, GCC 13.3.0",
+  "timestamp": "2025-09-26T13:00:51.422291",
+  "wasm3_path": "/usr/local/bin/wasm3",
+  "timeout": 10,
+  "test_environment": {
+    "manifest_generated": "2025-09-25T17:51:27.209212",
+    "total_tests": 15
+  },
+  "results": {
+    "OOB_Write": {
+      "status": "FALSE_NEGATIVE",
+      "details": "安全漏洞未检测: 越界写入应该触发内存保护",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:46.861415",
+      "file_size": 504,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_OOB_Write.wasm"
+      ]
+    },
+    "OOB_Read": {
+      "status": "FALSE_NEGATIVE",
+      "details": "安全漏洞未检测: 越界读取应该触发边界检查",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:46.965581",
+      "file_size": 686,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_OOB_Read.wasm"
+      ]
+    },
+    "Stack_Overflow": {
+      "status": "FALSE_NEGATIVE",
+      "details": "安全漏洞未检测: 栈溢出应该被检测",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:47.069290",
+      "file_size": 614,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Stack_Overflow.wasm"
+      ]
+    },
+    "Null_Pointer_Dereference": {
+      "status": "FALSE_NEGATIVE",
+      "details": "安全漏洞未检测: 空指针解引用应该被阻止",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:47.173585",
+      "file_size": 583,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Null_Pointer_Dereference.wasm"
+      ]
+    },
+    "Uninitialized_Memory": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:47.276877",
+      "file_size": 668,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Uninitialized_Memory.wasm"
+      ]
+    },
+    "Integer_Overflow": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:47.380378",
+      "file_size": 561,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Integer_Overflow.wasm"
+      ]
+    },
+    "Infinite_Loop": {
+      "status": "TIMEOUT_DETECTED",
+      "details": "成功检测到无限循环（超时）",
+      "returncode": -1,
+      "stdout": "",
+      "stderr": "执行超时",
+      "timestamp": "2025-09-26T13:00:50.485562",
+      "file_size": 526,
+      "args": []
+    },
+    "Division_By_Zero": {
+      "status": "WASM3_ERROR",
+      "details": "wasm3错误",
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Error: [trap] integer divide by zero\n",
+      "timestamp": "2025-09-26T13:00:50.588992",
+      "file_size": 607,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Division_By_Zero.wasm"
+      ]
+    },
+    "Memory_Access": {
+      "status": "FALSE_NEGATIVE",
+      "details": "安全漏洞未检测: 无效内存访问应该被阻止",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:50.693131",
+      "file_size": 552,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Memory_Access.wasm"
+      ]
+    },
+    "Type_Confusion": {
+      "status": "FALSE_NEGATIVE",
+      "details": "安全漏洞未检测: 类型混淆应该被检测",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:50.796434",
+      "file_size": 555,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Type_Confusion.wasm"
+      ]
+    },
+    "Memory_Alignment": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:50.900714",
+      "file_size": 561,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Memory_Alignment.wasm"
+      ]
+    },
+    "Buffer_Underflow": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:51.005611",
+      "file_size": 714,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Buffer_Underflow.wasm"
+      ]
+    },
+    "Double_Free_Simulation": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:51.109789",
+      "file_size": 615,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Double_Free_Simulation.wasm"
+      ]
+    },
+    "Use_After_Free_Simulation": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:51.214121",
+      "file_size": 580,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Use_After_Free_Simulation.wasm"
+      ]
+    },
+    "Format_String_Simulation": {
+      "status": "COMPLETED",
+      "details": "正常完成",
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "",
+      "timestamp": "2025-09-26T13:00:51.321693",
+      "file_size": 846,
+      "args": [
+        "/usr/local/bin/wasm3",
+        "WARD_bin/test_Format_String_Simulation.wasm"
+      ]
+    }
+  },
+  "summary": {
+    "total_tests": 15,
+    "security_mechanisms_triggered": 1,
+    "false_negatives": 6,
+    "completed_normally": 7,
+    "timeouts": 1,
+    "failed_tests": 0,
+    "effective_tests": 15
+  },
+  "security_effectiveness": {
+    "detection_rate": 6.67,
+    "false_negative_rate": 40.0,
+    "successful_tests": 15
+  }
+}

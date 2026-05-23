@@ -1,0 +1,33 @@
+WARDuino内存安全测试报告
+生成时间: 2025年 10月 24日 星期五 21:59:47 CST
+WARDuino路径: /home/yuxin/WARDuino/build-emu/wdcli
+测试目录: /home/yuxin/WARDuino_test
+================================
+
+总体统计:
+总测试数: 18
+检测到的违规: 18
+未检测到的违规: 0
+检测率: 100%
+
+详细结果:
+minimal_test: DETECTED (退出码: 1)
+test_basic_memory: DETECTED (退出码: 1)
+complex: DETECTED (退出码: 1)
+test_control_flow: DETECTED (退出码: 1)
+minimal: DETECTED (退出码: 1)
+boundary: DETECTED (退出码: 1)
+pointer: DETECTED (退出码: 1)
+warduino_memory_test: DETECTED (退出码: 1)
+test_special_cases: DETECTED (退出码: 1)
+test_complex_patterns: DETECTED (退出码: 1)
+complex_test: DETECTED (退出码: 1)
+boundary_test: DETECTED (退出码: 1)
+test_dynamic_patterns: DETECTED (退出码: 1)
+test_array_bounds: DETECTED (退出码: 1)
+step_test: DETECTED (退出码: 1)
+test_pointers: DETECTED (退出码: 1)
+memory_safety_test: DETECTED (退出码: 1)
+pointer_test: DETECTED (退出码: 1)
+
+日志文件保存在: test_results_20251024_215947/
